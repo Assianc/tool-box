@@ -1,0 +1,39 @@
+科技爱好者周刊（第 286 期）：蓝色指示灯的解决方案
+你们知道我想说什么
+我提议--发掘一下Cloudflare
+免费的CHATGPT PLUS的账号，诗词大赛爬楼
+一只蹭热点的潘多拉魔盒
+感觉社区很多伙伴都很抵制号商
+SmartGit/SmartSVN/SmartSynchronize 激活方法
+如何通过PKCE获取ChatGPT的AccessToken
+赛博整活，你怎么看？当然，没活可以咬打火机:crazy_face:
+科技爱好者周刊（第 285 期）：为什么 PPT 不如备忘录
+摇摇乐cocopilot
+e5开发者挂载rclone调优
+Jetbrains系列产品重置试用方法[归档]
+Copilot 月抛开车，还有6个位置，速来
+如何像吾皇一样可以对抗OpenAI，需要学习哪些技术？
+关于ja-netfilter适配Java17的问题
+我们也要用Gemini Pro
+Power插件应用：搞定tinyMediaManager
+我和Copilot的不解之缘
+如何1分钟拥有热佬的网站
+DBeaver Ultimate 22.1 旗舰版激活方法
+给大家介绍一下PandoraNext
+一篇关于TeamCity的水文
+cocopilot企业车队免费3个月,10个名额.
+科技爱好者周刊（第 287 期）：禄丰恐龙谷记行
+我爬了Openai官网，把GPT3.5做成了一个Api
+Cockpit安装配置速记
+2024-01-25 健身日记
+求助帖，FlareSolverr返回的user-agent用不了啊
+简简单单让Copilot Chat用上GPT-4！
+Power插件应用：搞定YouTrack和Upsource
+面试被吐槽项目没有难点，没有to c经验，怎么破局？
+又水一篇JProfiler博文
+基于nodejs+express+ts实现共享站的web端接口转api接口
+“SSLHandshakeException: No appropriate protocol”
+今天晚上 俺要在这里歇息
+介绍一个”牛逼闪闪”开源库：ja-netfilter
+你们赢了，但我却没有输
+再水一篇install4j博文
