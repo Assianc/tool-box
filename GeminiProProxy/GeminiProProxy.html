@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST 请求示例</title>
+</head>
+<body>
+    <h2>发送 POST 请求</h2>
+    <form id="myForm">
+        <label for="story">故事内容：</label><br>
+        <input type="text" id="story" name="story" value="Write a story about a magic backpack"><br><br>
+        <input type="submit" value="提交">
+    </form>
+
+    <script>
+        // 表单提交时执行的函数
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            // 阻止默认表单提交行为
+            event.preventDefault();
+
+            // 定义要发送的数据
+            var formData = {
+                "contents": [
+                    {
+                        "parts": [
+                            {
+                                "text": document.getElementById("story").value
+                            }
+                        ]
+                    }
+                ]
+            };
+
+            // 发送 POST 请求
+            fetch("https://gemini.bxin.top/v1beta/models/gemini-pro:generateContent?key=AIzaSyAk3B8oqFNlkMtVkxwbYfPD_XOH3GGiNl4", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data); // 输出响应结果到控制台
+                // 在这里可以对响应结果进行处理
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
