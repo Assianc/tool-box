@@ -209,7 +209,7 @@ def main():
         print(f"链接3抽奖获得{description}")
         res4 = f"链接3抽奖获得{description}"
 
-    title = f"天翼云签到 {netdiskBonus}"
+    title = f"天翼云签到 {netdiskBonus}M"
     content = f"""
     {res1}
     {res2}
