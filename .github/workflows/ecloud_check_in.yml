@@ -1,4 +1,4 @@
-name: Daily Python Script
+name: Ecloud Check in
 
 on:
   schedule:
@@ -19,10 +19,10 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r ecloud/requirements.txt
 
       - name: Run Python script
-        run: python ecloud_check_in.py
+        run: python ecloud/ecloud_check_in.py
         env:
           ECLOUD_USERNAME: ${{ secrets.EcloudUsername }}
           ECLOUD_PASSWORD: ${{ secrets.EcloudPassword }}
