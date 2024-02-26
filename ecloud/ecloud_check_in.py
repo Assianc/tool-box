@@ -175,12 +175,9 @@ def main():
     }
     response = s.get(surl, headers=headers)
     netdiskBonus = response.json()['netdiskBonus']
-    if response.json()['isSign'] == "false":
-        print(f"未签到，签到获得{netdiskBonus}M空间")
-        res1 = f"未签到，签到获得{netdiskBonus}M空间"
-    else:
-        print(f"已经签到过了，签到获得{netdiskBonus}M空间")
-        res1 = f"已经签到过了，签到获得{netdiskBonus}M空间"
+
+    print(f"签到获得{netdiskBonus}M空间")
+    res1 = f"签到获得{netdiskBonus}M空间"
 
     response = s.get(url, headers=headers)
     if "errorCode" in response.text:
