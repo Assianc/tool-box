@@ -10,6 +10,9 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.header import Header
 
+from dotenv import load_dotenv
+
+load_dotenv()
 # 在下面两行的引号内贴上账号（仅支持手机号）和密码
 username = os.environ['ECLOUD_USERNAME']
 password = os.environ['ECLOUD_PASSWORD']
