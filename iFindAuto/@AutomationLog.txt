@@ -1,6 +1,0 @@
-2024-01-31 16:18:54.612 thsauto.py[6] <module> -> Find Control Timeout(10s): {ClassName: 'Notepad', ControlType: WindowControl}
-2024-01-31 16:19:56.692 thsauto.py[11] <module> -> Find Control Timeout(10s): {ControlType: EditControl}
-2024-01-31 16:29:11.358 thsauto.py[7] <module> -> Find Control Timeout(10s): {ClassName: '1', ControlType: WindowControl}
-2024-01-31 19:24:51.140 iFindAuto.py[23] <module> -> Find Control Timeout(10s): {AutomationId: 59393, ControlType: ToolBarControl}
-2024-01-31 19:42:03.232 iFindAuto.py[19] <module> -> Find Control Timeout(10s): {Class: 'msctls_progress32', ControlType: EditControl}
-2024-01-31 19:42:30.978 iFindAuto.py[18] <module> -> Find Control Timeout(10s): {ClassName: 'msctls_progress32', ControlType: EditControl}
