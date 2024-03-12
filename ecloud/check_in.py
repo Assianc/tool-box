@@ -12,6 +12,8 @@ from email.header import Header
 
 from dotenv import load_dotenv
 
+from message.message import Messages
+
 load_dotenv()
 # 在下面两行的引号内贴上账号（仅支持手机号）和密码
 username = os.environ['ECLOUD_USERNAME']
@@ -209,14 +211,19 @@ def main():
         print(f"链接3抽奖获得{description}")
         res4 = f"链接3抽奖获得{description}"
 
-    title = f"天翼云签到 {netdiskBonus}M"
     content = f"""
     {res1}
     {res2}
     {res3}
     {res4}
     """
-    send_email(title, content)
+    message = {
+        "title": f"天翼云签到推送",
+        "content": content,
+        "template": "markdown",
+        "channel": "wechat"
+    }
+    Messages.push_plus(**message)
 
 
 if __name__ == "__main__":
