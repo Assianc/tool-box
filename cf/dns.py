@@ -3,7 +3,9 @@ import traceback
 import time
 import os
 from dotenv import load_dotenv
-from message.message import Messages
+import sys
+
+sys.path.append("/message")
 
 load_dotenv()
 # API 密钥
@@ -90,6 +92,7 @@ def main():
         "template": "markdown",
         "channel": "wechat"
     }
+    from message.message import Messages
     Messages.push_plus(**message)
 
 
