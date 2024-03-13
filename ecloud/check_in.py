@@ -1,3 +1,4 @@
+import json
 import os
 import time
 import re
@@ -9,10 +10,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.header import Header
-
 from dotenv import load_dotenv
-
-from message.message import Messages
 
 load_dotenv()
 # 在下面两行的引号内贴上账号（仅支持手机号）和密码
@@ -223,7 +221,23 @@ def main():
         "template": "markdown",
         "channel": "wechat"
     }
-    Messages.push_plus(**message)
+    push_plus(**message)
+
+
+def push_plus(**kwargs):
+    PUSHPLUS_TOKEN = os.environ["PUSHPLUS_TOKEN"]
+    url = 'http://www.pushplus.plus/send'
+    data = {
+        "token": PUSHPLUS_TOKEN,
+        "title": kwargs.get("title"),
+        "content": kwargs.get("content"),
+        "template": kwargs.get("template"),
+        "channel": kwargs.get("channel")
+    }
+    body = json.dumps(data).encode(encoding='utf-8')
+    headers = {'Content-Type': 'application/json'}
+    requests.post(url, data=body, headers=headers)
+    print("send push plus success")
 
 
 if __name__ == "__main__":
