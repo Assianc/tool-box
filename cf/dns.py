@@ -5,7 +5,7 @@ import os
 from dotenv import load_dotenv
 import sys
 
-sys.path.append("/message")
+sys.path.append("/home/runner/work/tool-box/tool-box/message")
 
 load_dotenv()
 # API 密钥
