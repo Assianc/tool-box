@@ -12,6 +12,8 @@ CF_API_TOKEN = os.environ["CF_API_TOKEN"]
 CF_ZONE_ID = os.environ["CF_ZONE_ID"]
 CF_DNS_NAME = os.environ["CF_DNS_NAME"]
 
+pushplush = os.environ["PUSHPLUS_TOKEN"]
+
 headers = {
     'Authorization': f'Bearer {CF_API_TOKEN}',
     'Content-Type': 'application/json'
@@ -95,10 +97,9 @@ def main():
 
 
 def push_plus(**kwargs):
-    PUSHPLUS_TOKEN = os.environ["PUSHPLUS_TOKEN"]
     url = 'http://www.pushplus.plus/send'
     data = {
-        "token": PUSHPLUS_TOKEN,
+        "token": pushplush,
         "title": kwargs.get("title"),
         "content": kwargs.get("content"),
         "template": kwargs.get("template"),

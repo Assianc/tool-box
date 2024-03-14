@@ -16,6 +16,7 @@ load_dotenv()
 # 在下面两行的引号内贴上账号（仅支持手机号）和密码
 username = os.environ['ECLOUD_USERNAME']
 password = os.environ['ECLOUD_PASSWORD']
+pushplush = os.environ["PUSHPLUS_TOKEN"]
 
 assert username and password, "请填入有效账号和密码"
 
@@ -225,10 +226,9 @@ def main():
 
 
 def push_plus(**kwargs):
-    PUSHPLUS_TOKEN = os.environ["PUSHPLUS_TOKEN"]
     url = 'http://www.pushplus.plus/send'
     data = {
-        "token": PUSHPLUS_TOKEN,
+        "token": pushplush,
         "title": kwargs.get("title"),
         "content": kwargs.get("content"),
         "template": kwargs.get("template"),

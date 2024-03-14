@@ -10,10 +10,10 @@ class Messages(object):
 
     @classmethod
     def push_plus(cls, **kwargs):
-        PUSHPLUS_TOKEN = os.environ["PUSHPLUS_TOKEN"]
+        pushplush = os.environ["PUSHPLUS_TOKEN"]
         url = 'http://www.pushplus.plus/send'
         data = {
-            "token": PUSHPLUS_TOKEN,
+            "token": pushplush,
             "title": kwargs.get("title"),
             "content": kwargs.get("content"),
             "template": kwargs.get("template"),
