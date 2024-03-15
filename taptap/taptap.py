@@ -70,7 +70,11 @@ def create_message(data):
     name = data.get('data').get('name')
     time = data.get('data').get('stat').get('spent_tips')
     now = datetime.datetime.now()
-    content = f'{name}在{now.strftime("%Y-%m-%d %H:%M:%S")}玩了{time}'
+    content = f"""
+    时间：{time}
+    昵称：{name}
+    游戏时间：{now}
+    """
     print(content)
     message = {
         "title": title,
