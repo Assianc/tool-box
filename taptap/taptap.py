@@ -73,7 +73,7 @@ def create_message(data):
     content = f"""
     游戏时间：{time}
     昵称：{name}
-    查询时间：{now}
+    查询时间：{now.strftime('%Y-%m-%d %H:%M:%S')}
     """
     print(content)
     message = {
