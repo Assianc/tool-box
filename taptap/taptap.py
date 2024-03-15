@@ -16,7 +16,7 @@ smtp_server = 'smtp.163.com'  # SMTP 服务器地址
 smtp_port = 25  # SMTP 服务器端口号
 sender_email = os.environ['SENDER_EMAIL']
 sender_password = os.environ['SENDER_PASSWORD']
-receiver_email = 'pinhsin@163.com,taptap@bxin.top'  # 收件人邮箱
+receiver_email = '1277544694@qq.com'  # 收件人邮箱
 
 
 def getdata():
@@ -83,7 +83,7 @@ def create_message(data):
         "channel": "wechat"
     }
     push_plus(**message)
-    # send_email(title, content)
+    send_email(title, content)
 
 
 def send_email(subject, content):
