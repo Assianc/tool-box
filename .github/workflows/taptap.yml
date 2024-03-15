@@ -2,7 +2,9 @@ name: TapTap
 
 on:
   schedule:
-    - cron: '0 */1 * * *'
+    - cron: '0 0 * * *'
+    - cron: '0 5 * * *'
+    - cron: '0 10 * * *'
   watch:
     types: started
 
