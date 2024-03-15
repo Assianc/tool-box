@@ -7,6 +7,7 @@ from email.mime.multipart import MIMEMultipart
 from email.header import Header
 import requests
 from dotenv import load_dotenv
+import pytz
 
 load_dotenv()
 pushplush = os.environ["PUSHPLUS_TOKEN"]
@@ -69,7 +70,10 @@ def create_message(data):
     title = 'TapTap推送'
     name = data.get('data').get('name')
     time = data.get('data').get('stat').get('spent_tips')
-    now = datetime.datetime.now()
+
+    tz = pytz.timezone('Asia/Shanghai')
+
+    now = tz.localize(datetime.datetime.now())
     content = f"""
     游戏时间：{time}
     昵称：{name}
