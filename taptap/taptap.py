@@ -1,12 +1,22 @@
 import json
 import os
 import datetime
-
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.header import Header
 import requests
 from dotenv import load_dotenv
 
 load_dotenv()
 pushplush = os.environ["PUSHPLUS_TOKEN"]
+
+# 邮件推送的配置信息
+smtp_server = 'smtp.163.com'  # SMTP 服务器地址
+smtp_port = 25  # SMTP 服务器端口号
+sender_email = os.environ['SENDER_EMAIL']
+sender_password = os.environ['SENDER_PASSWORD']
+receiver_email = 'pinhsin@163.com,taptap@bxin.top'  # 收件人邮箱
 
 
 def getdata():
@@ -69,6 +79,29 @@ def create_message(data):
         "channel": "wechat"
     }
     push_plus(**message)
+    # send_email(title, content)
+
+
+def send_email(subject, content):
+    msg = MIMEMultipart()
+    msg['From'] = sender_email
+    msg['To'] = receiver_email
+    msg['Subject'] = Header(subject, 'utf-8')
+
+    text_part = MIMEText(content, 'plain', 'utf-8')
+    msg.attach(text_part)
+
+    try:
+        server = smtplib.SMTP(smtp_server, smtp_port)
+        server.starttls()  # 开启安全连接
+        server.login(sender_email, sender_password)
+        server.sendmail(sender_email, receiver_email, msg.as_string())
+        print("邮件发送成功")
+    except Exception as e:
+        print("邮件发送失败:", str(e))
+    finally:
+        if 'server' in locals():
+            server.quit()
 
 
 def main():
