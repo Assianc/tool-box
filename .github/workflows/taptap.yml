@@ -1,0 +1,29 @@
+name: TapTap
+
+on:
+  schedule:
+    - cron: '0 */1 * * *'
+  watch:
+    types: started
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v3
+      - name: 'Set up Python'
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: 'Install dependencies'
+        run: pip install -r requirements.txt
+
+      - name: 'Run script'
+        env:
+          PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
+          SENDER_EMAIL: ${{ secrets.SenderEmail }}
+          SENDER_PASSWORD: ${{ secrets.SenderPassword }}
+        run: python taptap/taptap.py
