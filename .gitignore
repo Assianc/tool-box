@@ -1,3 +1,4 @@
 /.idea
 /.env
 /venv/
+/bing/images/*.jpg
