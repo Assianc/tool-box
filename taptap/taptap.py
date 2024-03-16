@@ -71,9 +71,7 @@ def create_message(data):
     name = data.get('data').get('name')
     time = data.get('data').get('stat').get('spent_tips')
 
-    tz = pytz.timezone('Asia/Shanghai')
-
-    now = tz.localize(datetime.datetime.now())
+    now = datetime.datetime.now()
     content = f"""
     游戏时间：{time}
     昵称：{name}
