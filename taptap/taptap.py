@@ -87,7 +87,7 @@ def create_message(data):
         "channel": "wechat"
     }
     push_plus(**message)
-    send_email(title, content)
+    # send_email(title, content)
 
 
 def send_email(subject, content):

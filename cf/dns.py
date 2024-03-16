@@ -2,7 +2,6 @@ import json
 
 import requests
 import traceback
-import time
 import os
 from dotenv import load_dotenv
 
@@ -111,7 +110,7 @@ def push_plus(**kwargs):
     body = json.dumps(data).encode(encoding='utf-8')
     headers = {'Content-Type': 'application/json'}
     requests.post(url, data=body, headers=headers)
-    print("send push plus success")
+    print("send pushplus success")
 
 
 if __name__ == '__main__':
