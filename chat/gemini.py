@@ -9,7 +9,6 @@ def gemini(content):
     key = os.environ['GEMINI_KEY']
     # 定义请求的 URL
     url = f"https://gemini.bxin.top/v1beta/models/gemini-pro:generateContent?key={key}"
-    print(url)
 
     # 定义要发送的 JSON 数据
     data = {
@@ -37,6 +36,6 @@ def gemini(content):
 
 
 if __name__ == '__main__':
-    content = "帮我写一篇关于人工智能的文章"
+    content = "明天是周末，没有课，使用作为写一段庆祝的话"
     result = gemini(content)
     print(result)
