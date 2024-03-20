@@ -60,13 +60,9 @@ def update_dns_record(record_id, name, cf_ip):
     response = requests.put(url, headers=headers, json=data)
 
     if response.status_code == 200:
-        # print(f"cf_dns_change success: ---- Time: " + str(
-        #     time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())) + " ---- ip：" + str(cf_ip))
-        return f"ip {cf_ip} 解析成功"
+        return True
     else:
         traceback.print_exc()
-        # print(f"cf_dns_change ERROR: ---- Time: " + str(
-        #     time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())) + " ---- MESSAGE: " + str(response.text))
         return f"ip {cf_ip} 解析失败：{response.text}"
 
 
@@ -76,26 +72,23 @@ def main():
     ip_addresses_str = get_cf_speed_test_ip()
     ip_addresses = ip_addresses_str.split(',')
     dns_records = get_dns_records(CF_DNS_NAME)
-    content = f'{CF_DNS_NAME}'
-    # print(dns_records)
-    # print(CF_DNS_NAME)
-    # print(ip_addresses)
+    content = f''
+
     # 遍历 IP 地址列表
     for index, ip_address in enumerate(ip_addresses):
         # 执行 DNS 变更
         dns = update_dns_record(dns_records[index], CF_DNS_NAME, ip_address)
-        content = f"""
-        {content}
-        {dns}
-        """
+        if dns.startswith('ip'):
+            content += f'{dns}\n'
 
-    message = {
-        "title": "IP优选推送",
-        "content": content,
-        "template": "markdown",
-        "channel": "wechat"
-    }
-    push_plus(**message)
+    if content:
+        message = {
+            "title": "IP优选推送",
+            "content": content,
+            "template": "markdown",
+            "channel": "wechat"
+        }
+        push_plus(**message)
 
 
 def push_plus(**kwargs):
