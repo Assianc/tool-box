@@ -1,0 +1,27 @@
+name: 'cust-schedule'
+
+on:
+  schedule:
+    - cron: '0 12 * * *'
+  watch:
+    types: started
+
+jobs:
+    build:
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: 'Checkout'
+          uses: actions/checkout@v3
+        - name: 'Set up Python'
+          uses: actions/setup-python@v4
+          with:
+            python-version: '3.x'
+
+        - name: 'Install dependencies'
+          run: pip install -r requirements.txt
+        - name: 'Run script'
+          env:
+            CF_API_TOKEN: ${{ secrets.GEMINI_KEY }}
+            PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
+          run: python cust/schedule.py

@@ -13,8 +13,8 @@ key = os.environ['GEMINI_KEY']
 
 def get_data():
     cookies = {
-        'JSESSIONID': '53e4fcce-ff47-43ea-9607-e93165c04f0f',
-        'wengine_new_ticket': '0461f710f03609f2',
+        'JSESSIONID': 'b0896545-ada7-4a4a-8edf-12bed26cec25',
+        'wengine_new_ticket': '94ac39b143f32d5f',
     }
 
     headers = {
@@ -32,11 +32,15 @@ def get_data():
     try:
         response = requests.get('https://kbpro.cust.edu.cn/Schedule/getSchedulejson', cookies=cookies, headers=headers)
         with open("data.json", "w") as json_file:
-            json.dump(response.text, json_file)
-        return json.loads(response.text)
-    except:
-        with open("data.json", "r") as json_file:
-            return json.load(json_file)
+            json.dump(json.loads(response.text), json_file, ensure_ascii=False, indent=4)
+    except Exception as e:
+        print(e)
+        return False
+
+
+def read_data():
+    with open("data.json", "r") as json_file:
+        return json.load(json_file)
 
 
 def parse(courses):
@@ -51,9 +55,9 @@ def parse(courses):
     if days_diff % 7 != 0:
         week_number += 1
 
+    # print(courses)
     for course in courses:
-        print(int(course['dayOfWeek']) - 1 == weekday)
-        print(course['weekDescription'][week_number] == '1')
+        # print(course)
         if int(course['dayOfWeek']) - 1 == weekday and course['weekDescription'][week_number] == '1':
             content += f"""
             {course['courseName']}
@@ -93,7 +97,6 @@ def push_plus(**kwargs):
 def gemini(content):
     # 定义请求的 URL
     url = f"https://gemini.bxin.top/v1beta/models/gemini-pro:generateContent?key={key}"
-    print(url)
 
     # 定义要发送的 JSON 数据
     data = {
@@ -125,14 +128,18 @@ def main():
     tomorrow = today + timedelta(days=1)
     content = None
     if tomorrow.weekday() < 5:
-        courses = get_data()
+        courses = read_data()
         if not parse(courses):
-            content = gemini('明天是周末，使用中文写一段庆祝的话！')
+            content = gemini("""
+            使用中文
+            明天是周末，写一段庆祝的话！
+            对象是一个大学生
+            """)
     else:
         content = gemini('明天没有课，使用中文写一段庆祝的话！')
 
     if content:
-        content = content['candidates']['content']['parts']['text']
+        content = content['candidates'][0]['content']['parts'][0]['text']
         message = {
             "title": "课表推送",
             "content": content,
@@ -143,4 +150,5 @@ def main():
 
 
 if __name__ == '__main__':
+    # get_data()
     main()
