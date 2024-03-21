@@ -60,7 +60,7 @@ def update_dns_record(record_id, name, cf_ip):
     response = requests.put(url, headers=headers, json=data)
 
     if response.status_code == 200:
-        return True
+        return '解析成功'
     else:
         traceback.print_exc()
         return f"ip {cf_ip} 解析失败：{response.text}"
