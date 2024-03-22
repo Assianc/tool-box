@@ -39,7 +39,7 @@ def get_data():
 
 
 def read_data():
-    with open("data.json", "r") as json_file:
+    with open("cust/data.json", "r") as json_file:
         return json.load(json_file)
 
 
@@ -124,9 +124,6 @@ def gemini(content):
 
 
 def main():
-    # 打印当前根目录下的所有文件
-    print(os.listdir("."))
-
     today = datetime.today()
     tomorrow = today + timedelta(days=1)
     content = None
