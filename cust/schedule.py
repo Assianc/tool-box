@@ -124,6 +124,9 @@ def gemini(content):
 
 
 def main():
+    # 打印当前根目录下的所有文件
+
+
     today = datetime.today()
     tomorrow = today + timedelta(days=1)
     content = None
@@ -151,4 +154,5 @@ def main():
 
 if __name__ == '__main__':
     # get_data()
-    main()
+    print(os.listdir("."))
+    # main()
