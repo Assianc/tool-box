@@ -32,6 +32,21 @@ class ImageDriver:
             print(f'获取{self.driver}壁纸失败：{e}')
 
 
+def download_image(image_url):
+    """
+    下载图片
+    :param image_url: 图片链接
+    :return:
+    """
+    image_id = image_url.split('id=')[1].split('_')[0]
+    image_path = f'images/{image_id}.jpg'
+    if not os.path.exists(image_path):
+        urllib.request.urlretrieve(image_url, image_path)
+        print(f'壁纸下载成功：{image_path}')
+    else:
+        print(f'壁纸已存在：{image_path}')
+
+
 def main():
     load_dotenv()
     try:
@@ -43,15 +58,9 @@ def main():
     image_driver = ImageDriver(driver)
     image_url = image_driver.get_image_url()
     if image_url:
-        image_id = image_url.split('id=')[1].split('_')[0]
-        image_path = f'images/{image_id}.jpg'
-        if not os.path.exists(image_path):
-            urllib.request.urlretrieve(image_url, image_path)
-            print(f'壁纸下载成功：{image_path}')
-        else:
-            print(f'壁纸已存在：{image_path}')
+        download_image(image_url)
     else:
-        print('获取壁纸失败')
+        print('获取壁纸链接失败')
 
 
 if __name__ == '__main__':
