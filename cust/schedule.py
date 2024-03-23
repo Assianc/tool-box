@@ -120,13 +120,11 @@ def gemini(content):
     response = requests.post(url, json=data, headers=headers)
 
     try:
-        response = response.json()
+        return response.json()
     except requests.exceptions.JSONDecodeError as e:
         print("JSON 解码错误:", e)
-        print("响应内容:", response)
-
-    # 输出响应结果
-    return response
+        print("响应内容:", response.text)
+        return None
 
 
 def main():
@@ -146,13 +144,14 @@ def main():
 
     if content:
         content = content['candidates'][0]['content']['parts'][0]['text']
-        message = {
-            "title": "课表推送",
-            "content": content,
-            "template": "markdown",
-            "channel": "wechat"
-        }
-        push_plus(**message)
+
+    message = {
+        "title": "课表推送",
+        "content": content,
+        "template": "markdown",
+        "channel": "wechat"
+    }
+    push_plus(**message)
 
 
 if __name__ == '__main__':
