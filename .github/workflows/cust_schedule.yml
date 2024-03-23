@@ -5,23 +5,26 @@ on:
     - cron: '0 12 * * *'
   watch:
     types: started
+  push:
+    branches:
+      - master
 
 jobs:
-    build:
-      runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-      steps:
-        - name: 'Checkout'
-          uses: actions/checkout@v3
-        - name: 'Set up Python'
-          uses: actions/setup-python@v4
-          with:
-            python-version: '3.x'
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v3
+      - name: 'Set up Python'
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
 
-        - name: 'Install dependencies'
-          run: pip install -r cust/requirements.txt
-        - name: 'Run script'
-          env:
-            GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
-            PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
-          run: python cust/schedule.py
+      - name: 'Install dependencies'
+        run: pip install -r cust/requirements.txt
+      - name: 'Run script'
+        env:
+          GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
+          PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
+        run: python cust/schedule.py

@@ -119,8 +119,14 @@ def gemini(content):
     # 发送 POST 请求
     response = requests.post(url, json=data, headers=headers)
 
+    try:
+        response = response.json()
+    except requests.exceptions.JSONDecodeError as e:
+        print("JSON 解码错误:", e)
+        print("响应内容:", response)
+
     # 输出响应结果
-    return response.json()
+    return response
 
 
 def main():
