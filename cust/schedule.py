@@ -1,5 +1,6 @@
 import json
 import os
+from typing import Any
 
 import requests
 from datetime import datetime, timedelta
@@ -65,18 +66,7 @@ def parse(courses):
             {course['beginSection']}~{course['endSection']}节
             {course['teacherName']}
             """
-
-    if content:
-        message = {
-            "title": "课表推送",
-            "content": content,
-            "template": "markdown",
-            "channel": "wechat"
-        }
-        push_plus(**message)
-        return True
-    else:
-        return False
+    return content
 
 
 def push_plus(**kwargs):
@@ -120,11 +110,12 @@ def gemini(content):
     response = requests.post(url, json=data, headers=headers)
 
     try:
-        return response.json()
+        response = response.json()
+        return response['candidates'][0]['content']['parts'][0]['text']
     except requests.exceptions.JSONDecodeError as e:
         print("JSON 解码错误:", e)
         print("响应内容:", response.text)
-        return None
+        return "明天没课啦！"
 
 
 def main():
@@ -133,17 +124,10 @@ def main():
     content = None
     if tomorrow.weekday() < 5:
         courses = read_data()
-        if not parse(courses):
-            content = gemini("""
-            使用中文
-            明天是周末，写一段庆祝的话！
-            对象是一个大学生
-            """)
-    else:
-        content = gemini('明天没有课，使用中文写一段庆祝的话！')
+        content = parse(courses)
 
-    if content:
-        content = content['candidates'][0]['content']['parts'][0]['text']
+    if not content:
+        content = gemini('使用中文为一名大学生，写一段庆祝一天没有课程的文案！')
 
     message = {
         "title": "课表推送",
