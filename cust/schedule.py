@@ -1,6 +1,5 @@
 import json
 import os
-from typing import Any
 
 import requests
 from datetime import datetime, timedelta
@@ -86,7 +85,7 @@ def push_plus(**kwargs):
 
 def gemini(content):
     # 定义请求的 URL
-    url = f"https://gemini.bxin.top/v1beta/models/gemini-pro:generateContent?key={key}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={key}"
 
     # 定义要发送的 JSON 数据
     data = {
