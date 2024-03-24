@@ -1,0 +1,12 @@
+requests~=2.31.0
+python-dotenv~=1.0.1
+rsa~=4.9
+pandas~=2.2.1
+pyecharts~=2.0.5
+pdf2docx~=0.5.8
+openpyxl~=3.1.2
+aiohttp~=3.9.3
+pytz~=2024.1
+Telethon~=1.34.0
+pillow~=10.2.0
+tqdm~=4.66.2
