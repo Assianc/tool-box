@@ -10,7 +10,6 @@ import requests
 from dotenv import load_dotenv
 
 load_dotenv()
-pushplush = os.environ["PUSHPLUS_TOKEN"]
 
 # 邮件推送的配置信息
 smtp_server = 'smtp.163.com'  # SMTP 服务器地址
@@ -50,20 +49,21 @@ def getdata():
     response = requests.get('https://www.taptap.cn/webapiv2/user/v1/detail', params=params, headers=headers)
     return response.json()
 
-
-def push_plus(**kwargs):
-    url = 'http://www.pushplus.plus/send'
+def cf_worker(message, api_type='default', worker_url='https://qyapi.bxin.top/'):
+    # 构建POST请求的数据
     data = {
-        "token": pushplush,
-        "title": kwargs.get("title"),
-        "content": kwargs.get("content"),
-        "template": kwargs.get("template"),
-        "channel": kwargs.get("channel")
+        'type': api_type,
+        'message': message,
     }
-    body = json.dumps(data).encode(encoding='utf-8')
-    headers = {'Content-Type': 'application/json'}
-    requests.post(url, data=body, headers=headers)
-    print("send push plus success")
+
+    # 发送POST请求到Cloudflare Worker
+    response = requests.post(worker_url, json=data)
+
+    # 检查响应状态码
+    if response.ok:
+        print('Message sent successfully')
+    else:
+        print('Failed to send message')
 
 
 def create_message(data):
@@ -77,15 +77,7 @@ def create_message(data):
     昵称：{name}
     查询时间：{now.strftime('%Y-%m-%d %H:%M:%S')}
     """
-    print(content)
-    message = {
-        "title": title,
-        "content": content,
-        "template": "markdown",
-        "channel": "wechat"
-    }
-    push_plus(**message)
-    # send_email(title, content)
+    cf_worker(content)
 
 
 def send_email(subject, content):
