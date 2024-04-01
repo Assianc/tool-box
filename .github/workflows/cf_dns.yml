@@ -3,8 +3,6 @@ name: 'cf-dns'
 on:
   schedule:
     - cron: '0 */6 * * *'
-  watch:
-    types: started
 
 jobs:
   build:
