@@ -1,13 +1,7 @@
 import json
-import os
 
 import requests
 from datetime import datetime, timedelta
-
-from dotenv import load_dotenv
-
-load_dotenv()
-key = os.environ['GEMINI_KEY']
 
 
 def get_data():
@@ -79,40 +73,6 @@ def cf_worker(message, api_type='default', worker_url='https://qyapi.bxin.top/')
         print('Failed to send message')
 
 
-def gemini(content):
-    # 定义请求的 URL
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={key}"
-
-    # 定义要发送的 JSON 数据
-    data = {
-        "contents": [
-            {
-                "parts": [
-                    {
-                        "text": content
-                    }
-                ]
-            }
-        ]
-    }
-
-    # 定义请求头
-    headers = {
-        "Content-Type": "application/json"
-    }
-
-    # 发送 POST 请求
-    response = requests.post(url, json=data, headers=headers)
-
-    try:
-        response = response.json()
-        return response['candidates'][0]['content']['parts'][0]['text']
-    except requests.exceptions.JSONDecodeError as e:
-        print("JSON 解码错误:", e)
-        print("响应内容:", response.text)
-        return "明天没课啦！"
-
-
 def main():
     today = datetime.today()
     tomorrow = today + timedelta(days=1)
@@ -121,10 +81,10 @@ def main():
         courses = read_data()
         content = parse(courses)
 
-    if not content:
-        content = gemini('使用中文为一名大学生，写一段庆祝明天没有课程的文案！')
+    if content is None:
+        content = '明天没课啦'
 
-    cf_worker(content)
+    cf_worker(content, 'course')
 
 
 if __name__ == '__main__':

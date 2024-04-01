@@ -13,7 +13,10 @@ export default {
     let webhookUrl;
     if (type === 'default') {
       webhookUrl = env.WEBHOOK_URL;
-    } else {
+    } else if (type === 'course') {
+      webhookUrl = env.COURSE;
+    }
+    else {
       return new Response('Invalid type', { status: 400 });
     }
 

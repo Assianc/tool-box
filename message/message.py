@@ -54,7 +54,7 @@ class Messages(object):
         """
         通过Cloudflare Worker发送消息，基于企业微信机器人
 
-        :param api_type: 发送消息使用的webhook，目前只支持default
+        :param api_type: 发送消息使用的webhook，默认为 default，发送课表使用course
         :param message:
         :param worker_url: worker地址
         :return:
