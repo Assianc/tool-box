@@ -32,8 +32,13 @@ def get_data():
 
 
 def read_data():
-    with open("./data.json", "r") as json_file:
-        return json.load(json_file)
+    try:
+        with open("./data.json", "r") as json_file:
+            return json.load(json_file)
+    except:
+        # GitHub action
+        with open("cust/data.json", "r") as json_file:
+            return json.load(json_file)
 
 
 def parse(courses):
