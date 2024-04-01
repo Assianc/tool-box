@@ -11,8 +11,6 @@ CF_API_TOKEN = os.environ["CF_API_TOKEN"]
 CF_ZONE_ID = os.environ["CF_ZONE_ID"]
 CF_DNS_NAME = os.environ["CF_DNS_NAME"]
 
-pushplush = os.environ["PUSHPLUS_TOKEN"]
-
 headers = {
     'Authorization': f'Bearer {CF_API_TOKEN}',
     'Content-Type': 'application/json'
@@ -82,28 +80,24 @@ def main():
             content += f'{dns}\n'
 
     if content:
-        message = {
-            "title": "IP优选推送",
-            "content": content,
-            "template": "markdown",
-            "channel": "wechat"
-        }
-        push_plus(**message)
+        cf_worker(content)
 
 
-def push_plus(**kwargs):
-    url = 'http://www.pushplus.plus/send'
+def cf_worker(message, api_type='default', worker_url='https://qyapi.bxin.top/'):
+    # 构建POST请求的数据
     data = {
-        "token": pushplush,
-        "title": kwargs.get("title"),
-        "content": kwargs.get("content"),
-        "template": kwargs.get("template"),
-        "channel": kwargs.get("channel")
+        'type': api_type,
+        'message': message,
     }
-    body = json.dumps(data).encode(encoding='utf-8')
-    headers = {'Content-Type': 'application/json'}
-    requests.post(url, data=body, headers=headers)
-    print("send pushplus success")
+
+    # 发送POST请求到Cloudflare Worker
+    response = requests.post(worker_url, json=data)
+
+    # 检查响应状态码
+    if response.ok:
+        print('Message sent successfully')
+    else:
+        print('Failed to send message')
 
 
 if __name__ == '__main__':

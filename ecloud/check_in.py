@@ -16,7 +16,6 @@ load_dotenv()
 # 在下面两行的引号内贴上账号（仅支持手机号）和密码
 username = os.environ['ECLOUD_USERNAME']
 password = os.environ['ECLOUD_PASSWORD']
-pushplush = os.environ["PUSHPLUS_TOKEN"]
 
 assert username and password, "请填入有效账号和密码"
 
@@ -216,28 +215,25 @@ def main():
     {res3}
     {res4}
     """
-    message = {
-        "title": f"天翼云签到推送",
-        "content": content,
-        "template": "markdown",
-        "channel": "wechat"
-    }
-    push_plus(**message)
+
+    cf_worker(content)
 
 
-def push_plus(**kwargs):
-    url = 'http://www.pushplus.plus/send'
+def cf_worker(message, api_type='default', worker_url='https://qyapi.bxin.top/'):
+    # 构建POST请求的数据
     data = {
-        "token": pushplush,
-        "title": kwargs.get("title"),
-        "content": kwargs.get("content"),
-        "template": kwargs.get("template"),
-        "channel": kwargs.get("channel")
+        'type': api_type,
+        'message': message,
     }
-    body = json.dumps(data).encode(encoding='utf-8')
-    headers = {'Content-Type': 'application/json'}
-    requests.post(url, data=body, headers=headers)
-    print("send push plus success")
+
+    # 发送POST请求到Cloudflare Worker
+    response = requests.post(worker_url, json=data)
+
+    # 检查响应状态码
+    if response.ok:
+        print('Message sent successfully')
+    else:
+        print('Failed to send message')
 
 
 if __name__ == "__main__":

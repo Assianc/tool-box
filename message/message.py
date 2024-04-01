@@ -35,7 +35,7 @@ class Messages(object):
         # message={
         #     "msgtype": "markdown",
         #     "content": content
-        #}
+        # }
         load_dotenv()
         webhook_url = os.environ["QYAPI"]
         headers = {'Content-Type': 'application/json'}
@@ -48,3 +48,28 @@ class Messages(object):
 
         response = requests.post(webhook_url, headers=headers, data=json.dumps(payload))
         print(response.text)
+
+    @classmethod
+    def cf_worker(cls, message, api_type='default', worker_url='https://qyapi.bxin.top/'):
+        """
+        通过Cloudflare Worker发送消息，基于企业微信机器人
+
+        :param api_type: 发送消息使用的webhook，目前只支持default
+        :param message:
+        :param worker_url: worker地址
+        :return:
+        """
+        # 构建POST请求的数据
+        data = {
+            'type': api_type,
+            'message': message,
+        }
+
+        # 发送POST请求到Cloudflare Worker
+        response = requests.post(worker_url, json=data)
+
+        # 检查响应状态码
+        if response.ok:
+            print('Message sent successfully')
+        else:
+            print('Failed to send message')

@@ -7,7 +7,6 @@ from datetime import datetime, timedelta
 from dotenv import load_dotenv
 
 load_dotenv()
-pushplush = os.environ["PUSHPLUS_TOKEN"]
 key = os.environ['GEMINI_KEY']
 
 
@@ -39,7 +38,7 @@ def get_data():
 
 
 def read_data():
-    with open("cust/data.json", "r") as json_file:
+    with open("data.json", "r") as json_file:
         return json.load(json_file)
 
 
@@ -59,28 +58,25 @@ def parse(courses):
     for course in courses:
         # print(course)
         if int(course['dayOfWeek']) - 1 == weekday and course['weekDescription'][week_number] == '1':
-            content += f"""
-            {course['courseName']}
-            {course['classroomName']}
-            {course['beginSection']}~{course['endSection']}节
-            {course['teacherName']}
-            """
+            content += f"{course['courseName']}\n{course['classroomName']}\n{course['beginSection']}~{course['endSection']}节\n{course['teacherName']}\n"
     return content
 
 
-def push_plus(**kwargs):
-    url = 'http://www.pushplus.plus/send'
+def cf_worker(message, api_type='default', worker_url='https://qyapi.bxin.top/'):
+    # 构建POST请求的数据
     data = {
-        "token": pushplush,
-        "title": kwargs.get("title"),
-        "content": kwargs.get("content"),
-        "template": kwargs.get("template"),
-        "channel": kwargs.get("channel")
+        'type': api_type,
+        'message': message,
     }
-    body = json.dumps(data).encode(encoding='utf-8')
-    headers = {'Content-Type': 'application/json'}
-    requests.post(url, data=body, headers=headers)
-    print("send pushplus success")
+
+    # 发送POST请求到Cloudflare Worker
+    response = requests.post(worker_url, json=data)
+
+    # 检查响应状态码
+    if response.ok:
+        print('Message sent successfully')
+    else:
+        print('Failed to send message')
 
 
 def gemini(content):
@@ -126,15 +122,9 @@ def main():
         content = parse(courses)
 
     if not content:
-        content = gemini('使用中文为一名大学生，写一段庆祝一天没有课程的文案！')
+        content = gemini('使用中文为一名大学生，写一段庆祝明天没有课程的文案！')
 
-    message = {
-        "title": "课表推送",
-        "content": content,
-        "template": "markdown",
-        "channel": "wechat"
-    }
-    push_plus(**message)
+    cf_worker(content)
 
 
 if __name__ == '__main__':
