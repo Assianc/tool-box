@@ -50,19 +50,23 @@ class Messages(object):
         print(response.text)
 
     @classmethod
-    def cf_worker(cls, message, api_type='default', worker_url='https://qyapi.bxin.top/'):
+    def cf_worker(cls, message, method='qywx', api_type='default', worker_url='https://qyapi.bxin.top/'):
         """
         通过Cloudflare Worker发送消息，基于企业微信机器人
 
         :param api_type: 发送消息使用的webhook，默认为 default，发送课表使用course
+        :param method: 发送消息的方式，qywx：企业微信
         :param message:
         :param worker_url: worker地址
         :return:
         """
         # 构建POST请求的数据
         data = {
-            'type': api_type,
-            'message': message,
+            'method': method,
+            'content':{
+                'type': api_type,
+                'message': message,
+            }
         }
 
         # 发送POST请求到Cloudflare Worker

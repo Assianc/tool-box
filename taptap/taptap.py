@@ -49,11 +49,15 @@ def getdata():
     response = requests.get('https://www.taptap.cn/webapiv2/user/v1/detail', params=params, headers=headers)
     return response.json()
 
-def cf_worker(message, api_type='default', worker_url='https://qyapi.bxin.top/'):
+
+def cf_worker(message, method='qywx', api_type='default', worker_url='https://qyapi.bxin.top/'):
     # 构建POST请求的数据
     data = {
-        'type': api_type,
-        'message': message,
+        'method': method,
+        'content': {
+            'type': api_type,
+            'message': message,
+        }
     }
 
     # 发送POST请求到Cloudflare Worker
