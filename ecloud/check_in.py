@@ -230,13 +230,7 @@ def cf_worker(message, method='qywx', api_type='default', worker_url='https://qy
     }
 
     # 发送POST请求到Cloudflare Worker
-    response = requests.post(worker_url, json=data)
-
-    # 检查响应状态码
-    if response.ok:
-        print('Message sent successfully')
-    else:
-        print('Failed to send message')
+    requests.post(worker_url, json=data)
 
 
 if __name__ == "__main__":
