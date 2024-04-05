@@ -65,39 +65,12 @@ def cf_worker(message, method='qywx', api_type='default', worker_url='https://qy
 
 
 def create_message(data):
-    title = 'TapTap推送'
     name = data.get('data').get('name')
     time = data.get('data').get('stat').get('spent_tips')
 
     now = datetime.datetime.now()
-    content = f"""
-    游戏时间：{time}
-    昵称：{name}
-    查询时间：{now.strftime('%Y-%m-%d %H:%M:%S')}
-    """
+    content = f"游戏时间：{time}\n昵称：{name}\n查询时间：{now.strftime('%Y-%m-%d %H:%M:%S')}"
     cf_worker(content)
-
-
-def send_email(subject, content):
-    msg = MIMEMultipart()
-    msg['From'] = sender_email
-    msg['To'] = receiver_email
-    msg['Subject'] = Header(subject, 'utf-8')
-
-    text_part = MIMEText(content, 'plain', 'utf-8')
-    msg.attach(text_part)
-
-    try:
-        server = smtplib.SMTP(smtp_server, smtp_port)
-        server.starttls()  # 开启安全连接
-        server.login(sender_email, sender_password)
-        server.sendmail(sender_email, receiver_email, msg.as_string())
-        print("邮件发送成功")
-    except Exception as e:
-        print("邮件发送失败:", str(e))
-    finally:
-        if 'server' in locals():
-            server.quit()
 
 
 def main():

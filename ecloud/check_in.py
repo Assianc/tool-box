@@ -182,41 +182,46 @@ def main():
     print(f"签到获得{netdiskBonus}M空间")
     res1 = f"签到获得{netdiskBonus}M空间"
 
+    temp2 = temp3 = temp4 = None
+
     response = s.get(url, headers=headers)
     if "errorCode" in response.text:
         print(response.text)
         res2 = ""
     else:
+        temp2 = response.text
         description = response.json()['description']
-        print(f"抽奖获得{description}")
-        res2 = f"抽奖获得{description}"
+        print(f"抽奖获得*{description}")
+        res2 = f"抽奖获得*{description}"
 
     response = s.get(url2, headers=headers)
     if "errorCode" in response.text:
         print(response.text)
         res3 = ""
     else:
+        temp3 = response.text
         description = response.json()['description']
-        print(f"抽奖获得{description}")
-        res3 = f"抽奖获得{description}"
+        print(f"抽奖获得*{description}")
+        res3 = f"抽奖获得*{description}"
 
     response = s.get(url3, headers=headers)
     if "errorCode" in response.text:
         print(response.text)
         res4 = ""
     else:
+        temp4 = response.text
         description = response.json()['description']
-        print(f"链接3抽奖获得{description}")
-        res4 = f"链接3抽奖获得{description}"
+        print(f"抽奖获得*{description}")
+        res4 = f"抽奖获得*{description}"
 
-    content = f"""
-    {res1}
-    {res2}
-    {res3}
-    {res4}
-    """
+    content = f"{res1}\n{res2}\n{res3}\n{res4}"
+
+    temp_msg = f'{temp2}\n{temp3}\n{temp4}'
 
     cf_worker(content)
+    cf_worker(temp2)
+    cf_worker(temp3)
+    cf_worker(temp4)
 
 
 def cf_worker(message, method='qywx', api_type='default', worker_url='https://qyapi.bxin.top/'):
