@@ -130,30 +130,8 @@ def login(username, password):
         s.get(redirect_url)
         return s
     except Exception as e:
-        send_email("天翼云签到登录失败", str(e))
+        cf_worker(f"天翼云签到登录失败{str(e)}")
         return None
-
-
-def send_email(subject, content):
-    msg = MIMEMultipart()
-    msg['From'] = sender_email
-    msg['To'] = receiver_email
-    msg['Subject'] = Header(subject, 'utf-8')
-
-    text_part = MIMEText(content, 'plain', 'utf-8')
-    msg.attach(text_part)
-
-    try:
-        server = smtplib.SMTP(smtp_server, smtp_port)
-        server.starttls()  # 开启安全连接
-        server.login(sender_email, sender_password)
-        server.sendmail(sender_email, receiver_email, msg.as_string())
-        print("邮件发送成功")
-    except Exception as e:
-        print("邮件发送失败:", str(e))
-    finally:
-        if 'server' in locals():
-            server.quit()
 
 
 def main():
@@ -179,49 +157,38 @@ def main():
     response = s.get(surl, headers=headers)
     netdiskBonus = response.json()['netdiskBonus']
 
-    print(f"签到获得{netdiskBonus}M空间")
     res1 = f"签到获得{netdiskBonus}M空间"
-
-    temp2 = temp3 = temp4 = None
 
     response = s.get(url, headers=headers)
     if "errorCode" in response.text:
         print(response.text)
         res2 = ""
     else:
-        temp2 = response.text
-        description = response.json()['description']
-        print(f"抽奖获得*{description}")
-        res2 = f"抽奖获得*{description}"
+        description = response.json()['prizeName']
+
+        res2 = f"抽奖获得{description}"
 
     response = s.get(url2, headers=headers)
     if "errorCode" in response.text:
         print(response.text)
         res3 = ""
     else:
-        temp3 = response.text
-        description = response.json()['description']
-        print(f"抽奖获得*{description}")
-        res3 = f"抽奖获得*{description}"
+        description = response.json()['prizeName']
+
+        res3 = f"抽奖获得{description}"
 
     response = s.get(url3, headers=headers)
     if "errorCode" in response.text:
         print(response.text)
         res4 = ""
     else:
-        temp4 = response.text
-        description = response.json()['description']
-        print(f"抽奖获得*{description}")
+        description = response.json()['prizeName']
+
         res4 = f"抽奖获得*{description}"
 
     content = f"{res1}\n{res2}\n{res3}\n{res4}"
 
-    temp_msg = f'{temp2}\n{temp3}\n{temp4}'
-
     cf_worker(content)
-    cf_worker(temp2)
-    cf_worker(temp3)
-    cf_worker(temp4)
 
 
 def cf_worker(message, method='qywx', api_type='default', worker_url='https://qyapi.bxin.top/'):
