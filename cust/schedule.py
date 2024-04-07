@@ -61,7 +61,7 @@ def parse(courses):
     return content
 
 
-def cf_worker(message, method='qywx', api_type='default', worker_url='https://qyapi.bxin.top/'):
+def cf_worker(message, method='qywx', api_type='default', worker_url='https://qyapi.bxin.top/msg'):
     # 构建POST请求的数据
     data = {
         'method': method,

@@ -184,14 +184,14 @@ def main():
     else:
         description = response.json()['prizeName']
 
-        res4 = f"抽奖获得*{description}"
+        res4 = f"抽奖获得{description}"
 
     content = f"{res1}\n{res2}\n{res3}\n{res4}"
 
     cf_worker(content)
 
 
-def cf_worker(message, method='qywx', api_type='default', worker_url='https://qyapi.bxin.top/'):
+def cf_worker(message, method='qywx', api_type='default', worker_url='https://qyapi.bxin.top/msg'):
     # 构建POST请求的数据
     data = {
         'method': method,
