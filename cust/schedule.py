@@ -61,18 +61,23 @@ def parse(courses):
     return content
 
 
-def cf_worker(message, method='qywx', api_type='default', worker_url='https://qyapi.bxin.top/msg'):
+def cf_worker(message, method="qywx", api_type="default", msgtype="text", worker_url="https://qyapi.bxin.top/msg",
+              webhook=None):
     # 构建POST请求的数据
     data = {
-        'method': method,
-        'content': {
-            'type': api_type,
-            'message': message,
-        }
+        "method": method,
+        "content": {
+            "type": api_type,
+            "msgtype": msgtype,
+            "message": message,
+            "webhook": webhook,
+        },
     }
 
     # 发送POST请求到Cloudflare Worker
-    requests.post(worker_url, json=data)
+    response = requests.post(worker_url, json=data)
+
+    print(response.text)
 
 
 def main():
@@ -86,7 +91,7 @@ def main():
     if content is None:
         content = '明天没课啦'
 
-    cf_worker(content, 'course')
+    cf_worker(content, api_type='course')
 
 
 if __name__ == '__main__':
