@@ -1,4 +1,3 @@
-import json
 import os
 import time
 import re
@@ -6,10 +5,6 @@ import base64
 import hashlib
 import rsa
 import requests
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
-from email.header import Header
 from dotenv import load_dotenv
 
 load_dotenv()

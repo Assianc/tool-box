@@ -1,9 +1,3 @@
-import asyncio
-import json
-import logging
-import os
-import time
-import aiohttp
 from telethon import events
 from telethon.sync import TelegramClient
 import requests

@@ -1,6 +1,4 @@
 import os
-from random import random
-
 import requests
 from dotenv import load_dotenv
 
