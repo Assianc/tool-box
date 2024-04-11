@@ -59,8 +59,13 @@ def update_dns_record(record_id, name, cf_ip):
     if response.status_code == 200:
         return '解析成功'
     else:
-        traceback.print_exc()
-        return f"ip {cf_ip} 解析失败：{response.text}"
+        data = response.json()
+        error_msg = data['errors'][0]['message']
+        if error_msg == 'Record already exists.':
+            return '解析已存在'
+        else:
+            traceback.print_exc()
+            return f"ip {cf_ip} 解析失败：{response.text}"
 
 
 # 主函数
