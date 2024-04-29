@@ -48,6 +48,6 @@ class Gemini(object):
 
 
 if __name__ == '__main__':
-    content = "明天是周末，没有课，使用作为写一段庆祝的话"
+    content = "hello"
     result = Gemini.chat(content)
     print(result)
