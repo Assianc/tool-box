@@ -8,10 +8,13 @@ from dotenv import load_dotenv
 
 
 def apriori_analysis(random_string):
-    file_path = "also_bought.txt"
-    # 读取数据
-    with open(file_path, "r") as f:
-        content = f.read()
+    try:
+        with open('./also_bought.txt', "r") as f:
+            content = f.read()
+    except:
+        # GitHub Action
+        with open('socialNetworking/also_bought.txt', "r") as f:
+            content = f.read()
 
     lines = content.splitlines()
 
