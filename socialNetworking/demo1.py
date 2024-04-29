@@ -103,8 +103,11 @@ def main():
     apriori_analysis(random_string)
 
     # 文件接收方式,二选一
-    cf_r2(random_string)
-    send_email(random_string)
+    try:
+        cf_r2(random_string)
+        send_email(random_string)
+    except:
+        pass
 
 
 if __name__ == '__main__':
