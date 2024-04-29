@@ -1,6 +1,11 @@
 import os
 import random
+import smtplib
 import string
+from email import encoders
+from email.mime.base import MIMEBase
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 import boto3
 from apyori import apriori
@@ -59,10 +64,47 @@ def cf_r2(random_string):
     print(f'https://cloud.bxin.top/social/{object_key}')
 
 
+def send_email(random_string):
+    load_dotenv()
+    # 电子邮件配置
+    sender_email = os.environ['SENDER_EMAIL']
+    sender_password = os.environ['SENDER_PASSWORD']
+    receiver_emails = ['social@bxin.top']
+
+    article_content = f"关联规则"
+
+    # 创建MIMEText对象
+    msg = MIMEMultipart()
+    msg.attach(MIMEText(article_content, 'plain'))
+    # 设置发件人和收件人
+    msg['From'] = sender_email
+    msg['Subject'] = f'关联规则'
+
+    # 添加附件
+    filename = f"socialnet_{random_string}.csv"
+    attachment = open(filename, "rb")
+
+    part = MIMEBase('application', 'octet-stream')
+    part.set_payload(attachment.read())
+    encoders.encode_base64(part)
+    part.add_header('Content-Disposition', f"attachment; filename= {filename}")
+    msg.attach(part)
+
+    # 连接到SMTP服务器并发送邮件
+    with smtplib.SMTP_SSL('smtp.163.com', 465) as server:
+        server.login(sender_email, sender_password)
+        for receiver_email in receiver_emails:
+            msg['To'] = receiver_email
+            server.sendmail(sender_email, receiver_email, msg.as_string())
+
+
 def main():
     random_string = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
     apriori_analysis(random_string)
+
+    # 文件接收方式,二选一
     cf_r2(random_string)
+    send_email(random_string)
 
 
 if __name__ == '__main__':
