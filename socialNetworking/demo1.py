@@ -8,30 +8,40 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 import boto3
+import pandas as pd
 from apyori import apriori
 from dotenv import load_dotenv
 
 
 def apriori_analysis(random_string):
+    file_name = "also_bought.txt"
     try:
-        with open('./also_bought.txt', "r") as f:
+        with open(file_name, "r") as f:
             content = f.read()
     except:
         # GitHub Action
-        with open('socialNetworking/also_bought.txt', "r") as f:
-            content = f.read()
+        with open(f'socialNetworking/{file_name}', "r") as file:
+            content = file.read()
 
     lines = content.splitlines()
 
     data = [eval(line) for line in lines]
 
     # 调用 apriori 函数计算关联规则
-    items = apriori(data, min_support=10 / len(data))
+    items = apriori(data, min_support=1 / len(data))
 
-    items_list = list(items)
-
-    with open(f"socialnet_{random_string}.csv", "w") as file:
-        file.write(str(items_list))
+    result_list = []
+    # 输出关联规则
+    for item in items:
+        result = [
+            item.items,
+            item.support,
+            item.ordered_statistics[0].confidence,
+            item.ordered_statistics[0].lift
+        ]
+        result_list.append(result)
+    df = pd.DataFrame(result_list, columns=['items', 'support', 'confidence', 'lift'])
+    df.to_csv(f"apriori_{random_string}.csv", index=False)
 
 
 def cf_r2(random_string):
