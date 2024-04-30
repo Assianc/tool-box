@@ -28,7 +28,7 @@ def apriori_analysis(random_string):
     data = [eval(line) for line in lines]
 
     # 调用 apriori 函数计算关联规则
-    items = apriori(data, min_support=1 / len(data))
+    items = apriori(data, min_support=10 / len(data))
 
     result_list = []
     # 输出关联规则
