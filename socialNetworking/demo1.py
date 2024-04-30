@@ -41,7 +41,7 @@ def apriori_analysis(random_string):
         ]
         result_list.append(result)
     df = pd.DataFrame(result_list, columns=['items', 'support', 'confidence', 'lift'])
-    df.to_csv(f"apriori_{random_string}.csv", index=False)
+    df.to_csv(f"socialnet_{random_string}.csv", index=False)
 
 
 def cf_r2(random_string):
@@ -71,17 +71,17 @@ def cf_r2(random_string):
             Key=f'social/{object_key}'
         )
 
-    print(f'https://cloud.bxin.top/social/{object_key}')
+    return f"https://cloud.bxin.top/social/{object_key}"
 
 
-def send_email(random_string):
+def send_email(link):
     load_dotenv()
     # 电子邮件配置
     sender_email = os.environ['SENDER_EMAIL']
     sender_password = os.environ['SENDER_PASSWORD']
     receiver_emails = ['social@bxin.top']
 
-    article_content = f"关联规则"
+    article_content = link
 
     # 创建MIMEText对象
     msg = MIMEMultipart()
@@ -90,14 +90,9 @@ def send_email(random_string):
     msg['From'] = sender_email
     msg['Subject'] = f'关联规则'
 
-    # 添加附件
-    filename = f"socialnet_{random_string}.csv"
-    attachment = open(filename, "rb")
-
     part = MIMEBase('application', 'octet-stream')
-    part.set_payload(attachment.read())
+
     encoders.encode_base64(part)
-    part.add_header('Content-Disposition', f"attachment; filename= {filename}")
     msg.attach(part)
 
     # 连接到SMTP服务器并发送邮件
@@ -112,12 +107,11 @@ def main():
     random_string = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
     apriori_analysis(random_string)
 
-    # 文件接收方式,二选一
     try:
-        cf_r2(random_string)
-        send_email(random_string)
-    except:
-        pass
+        link = cf_r2(random_string)
+        send_email(link)
+    except Exception as e:
+        send_email(str(e))
 
 
 if __name__ == '__main__':
