@@ -14,13 +14,6 @@ password = os.environ['ECLOUD_PASSWORD']
 
 assert username and password, "请填入有效账号和密码"
 
-# 邮件推送的配置信息
-smtp_server = 'smtp.163.com'  # SMTP 服务器地址
-smtp_port = 25  # SMTP 服务器端口号
-sender_email = os.environ['SENDER_EMAIL']
-sender_password = os.environ['SENDER_PASSWORD']
-receiver_email = 'pinhsin@163.com'  # 收件人邮箱
-
 BI_RM = list("0123456789abcdefghijklmnopqrstuvwxyz")
 B64MAP = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
 
@@ -137,9 +130,11 @@ def main():
 
     rand = str(round(time.time() * 1000))
     surl = f'https://api.cloud.189.cn/mkt/userSign.action?rand={rand}&clientType=TELEANDROID&version=8.6.3&model=SM-G930K'
-    url = f'https://m.cloud.189.cn/v2/drawPrizeMarketDetails.action?taskId=TASK_SIGNIN&activityId=ACT_SIGNIN'
-    url2 = f'https://m.cloud.189.cn/v2/drawPrizeMarketDetails.action?taskId=TASK_SIGNIN_PHOTOS&activityId=ACT_SIGNIN'
-    url3 = f'https://m.cloud.189.cn/v2/drawPrizeMarketDetails.action?taskId=TASK_2022_FLDFS_KJ&activityId=ACT_SIGNIN'
+    url_list = [
+        'https://m.cloud.189.cn/v2/drawPrizeMarketDetails.action?taskId=TASK_SIGNIN&activityId=ACT_SIGNIN',
+        'https://m.cloud.189.cn/v2/drawPrizeMarketDetails.action?taskId=TASK_SIGNIN_PHOTOS&activityId=ACT_SIGNIN',
+        f'https://m.cloud.189.cn/v2/drawPrizeMarketDetails.action?taskId=TASK_2022_FLDFS_KJ&activityId=ACT_SIGNIN'
+    ]
     headers = {
         'User-Agent': 'Mozilla/5.0 (Linux; Android 5.1.1; SM-G930K Build/NRD90M; wv) AppleWebKit/537.36 (KHTML, '
                       'like Gecko) Version/4.0 Chrome/74.0.3729.136 Mobile Safari/537.36 Ecloud/8.6.3 Android/22 '
@@ -152,36 +147,17 @@ def main():
     response = s.get(surl, headers=headers)
     netdiskBonus = response.json()['netdiskBonus']
 
-    res1 = f"签到获得{netdiskBonus}M空间"
+    content = f"签到获得{netdiskBonus}M空间"
 
-    response = s.get(url, headers=headers)
-    if "errorCode" in response.text:
-        print(response.text)
-        res2 = ""
-    else:
-        description = response.json()['prizeName']
+    for url in url_list:
+        time.sleep(5)
+        response = s.get(url, headers=headers)
+        if "errorCode" in response.text:
+            print(response.text)
+        else:
+            description = response.json()['prizeName']
 
-        res2 = f"抽奖获得{description}"
-
-    response = s.get(url2, headers=headers)
-    if "errorCode" in response.text:
-        print(response.text)
-        res3 = ""
-    else:
-        description = response.json()['prizeName']
-
-        res3 = f"抽奖获得{description}"
-
-    response = s.get(url3, headers=headers)
-    if "errorCode" in response.text:
-        print(response.text)
-        res4 = ""
-    else:
-        description = response.json()['prizeName']
-
-        res4 = f"抽奖获得{description}"
-
-    content = f"{res1}\n{res2}\n{res3}\n{res4}"
+            content += f"\n抽奖获得{description}"
 
     cf_worker(content)
 
