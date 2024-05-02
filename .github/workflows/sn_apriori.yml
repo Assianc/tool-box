@@ -1,8 +1,6 @@
 name: 'apriori'
 
 on:
-  watch:
-    types: started
 
 jobs:
   build:

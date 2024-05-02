@@ -1,6 +1,8 @@
 name: Login
 
 on:
+  watch:
+    types: started
   schedule:
     - cron: '30 8 */7 * *'
 
