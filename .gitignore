@@ -3,3 +3,5 @@
 /venv/
 /bing/images/*.jpg
 /test
+/node_modules
+/package*.json
