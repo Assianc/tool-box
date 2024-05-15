@@ -14,39 +14,13 @@
     },
     {
         "beginSection": "1",
-        "buildingName": "南区研究生教学楼",
-        "campus": "南校区",
-        "classroomName": "研105",
-        "courseName": "计算机组成原理",
-        "courseType": "理论",
-        "dayOfWeek": "4",
-        "endSection": "2",
-        "isUndergraduate": "1",
-        "teacherName": "朱利莞",
-        "weekDescription": "0000000001111111100000000"
-    },
-    {
-        "beginSection": "1",
-        "buildingName": "南区研究生教学楼",
-        "campus": "南校区",
-        "classroomName": "研201",
-        "courseName": "计算机组成原理",
-        "courseType": "理论",
-        "dayOfWeek": "2",
-        "endSection": "2",
-        "isUndergraduate": "1",
-        "teacherName": "朱利莞",
-        "weekDescription": "0000000001111111100000000"
-    },
-    {
-        "beginSection": "1",
         "classroomName": "实验室",
         "courseName": "编程工具学习（Python）",
         "courseType": "实践",
         "dayOfWeek": "1",
         "endSection": "8",
         "isUndergraduate": "1",
-        "teacherName": "周凌玥 国琳",
+        "teacherName": "国琳 周凌玥",
         "weekDescription": "0000000000000000011100000"
     },
     {
@@ -57,7 +31,7 @@
         "dayOfWeek": "3",
         "endSection": "8",
         "isUndergraduate": "1",
-        "teacherName": "周凌玥 国琳",
+        "teacherName": "国琳 周凌玥",
         "weekDescription": "0000000000000000011100000"
     },
     {
@@ -79,7 +53,7 @@
         "dayOfWeek": "5",
         "endSection": "8",
         "isUndergraduate": "1",
-        "teacherName": "周凌玥 国琳",
+        "teacherName": "国琳 周凌玥",
         "weekDescription": "0000000000000000011100000"
     },
     {
@@ -135,6 +109,30 @@
         "weekDescription": "0111111111111111100000000"
     },
     {
+        "beginSection": "3",
+        "buildingName": "南区研究生教学楼",
+        "campus": "南校区",
+        "classroomName": "研105",
+        "courseName": "计算机组成原理",
+        "courseType": "理论",
+        "dayOfWeek": "5",
+        "endSection": "4",
+        "isUndergraduate": "1",
+        "teacherName": "朱利莞",
+        "weekDescription": "0000000001111111100000000"
+    },
+    {
+        "beginSection": "5",
+        "classroomName": "",
+        "courseName": "数据挖掘与商务智能",
+        "courseType": "理论",
+        "dayOfWeek": "2",
+        "endSection": "6",
+        "isUndergraduate": "1",
+        "teacherName": "董元方",
+        "weekDescription": "0010010100100100000000000"
+    },
+    {
         "beginSection": "5",
         "buildingName": "西区第一教学楼",
         "campus": "西校区",
@@ -145,7 +143,7 @@
         "endSection": "6",
         "isUndergraduate": "1",
         "teacherName": "董元方",
-        "weekDescription": "0111111111111111100000000"
+        "weekDescription": "0101101011011011100000000"
     },
     {
         "beginSection": "5",
@@ -170,8 +168,21 @@
         "dayOfWeek": "3",
         "endSection": "6",
         "isUndergraduate": "1",
-        "teacherName": "朱利莞",
+        "teacherName": "陈洪生",
         "weekDescription": "0000000000000111100000000"
+    },
+    {
+        "beginSection": "5",
+        "buildingName": "南区研究生教学楼",
+        "campus": "南校区",
+        "classroomName": "研105",
+        "courseName": "计算机组成原理",
+        "courseType": "理论",
+        "dayOfWeek": "1",
+        "endSection": "6",
+        "isUndergraduate": "1",
+        "teacherName": "朱利莞",
+        "weekDescription": "0000000001111111100000000"
     },
     {
         "beginSection": "5",
@@ -220,7 +231,7 @@
         "dayOfWeek": "3",
         "endSection": "8",
         "isUndergraduate": "1",
-        "teacherName": "朱利莞",
+        "teacherName": "陈洪生",
         "weekDescription": "0000000000000111100000000"
     }
 ]
