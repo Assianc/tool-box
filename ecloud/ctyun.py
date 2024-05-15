@@ -4,7 +4,7 @@ import time
 from environs import Env
 
 
-def keep_alive(ctyun):
+def keep_alive(ctyun, retire=3, delay=10):
     # 设置API的URL和路径
     url = "https://desk.ctyun.cn:8810/api/"
     computer_connect = "desktop/client/connect"
@@ -59,8 +59,18 @@ def keep_alive(ctyun):
     }
 
     # 发起POST请求连接云电脑
-    response = requests.post(url + computer_connect, data=device_info, headers=headers)
-    return response.json()
+    retries = 3
+    for attempt in range(retries):
+        try:
+            response = requests.post(url + computer_connect, data=device_info, headers=headers, timeout=30)
+            response.raise_for_status()
+            return response.json()
+        except requests.exceptions.ConnectTimeout:
+            if attempt < retries - 1:
+                time.sleep(delay)
+                continue
+            else:
+                raise "连接超时"
 
 
 def cf_worker(message, method="qywx", api_type="default", msgtype="text", worker_url="https://qyapi.bxin.top/msg",
@@ -87,12 +97,15 @@ def main():
     env.read_env()
     ctyuns = env.json("CTYUN")
     for ctyun in ctyuns:
-        data = keep_alive(ctyun)
-        code = data["code"]
-        if code == 0:
-            cf_worker(f"{ctyun['objId']} 保活成功")
-        else:
-            cf_worker(f"保活失败：{data}")
+        try:
+            data = keep_alive(ctyun)
+            code = data["code"]
+            if code == 0:
+                cf_worker(f"{ctyun['objId']} 保活成功")
+            else:
+                cf_worker(f"保活失败：{data}")
+        except Exception as e:
+            cf_worker(f"保活失败：{e}")
 
 
 if __name__ == '__main__':

@@ -1,26 +1,26 @@
-name: 'apriori'
-
-on:
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v3
-      - name: 'Set up Python'
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: 'Install dependencies'
-        run: pip install -r socialNetworking/requirements.txt
-      - name: 'Run script'
-        env:
-          ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
-          ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
-          SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
-          SENDER_EMAIL: ${{ secrets.SENDEREMAIL }}
-          SENDER_PASSWORD: ${{ secrets.SENDERPASSWORD }}
-        run: python socialNetworking/demo1.py
+#name: 'apriori'
+#
+#on:
+#
+#jobs:
+#  build:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: 'Checkout'
+#        uses: actions/checkout@v3
+#      - name: 'Set up Python'
+#        uses: actions/setup-python@v4
+#        with:
+#          python-version: '3.x'
+#
+#      - name: 'Install dependencies'
+#        run: pip install -r socialNetworking/requirements.txt
+#      - name: 'Run script'
+#        env:
+#          ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
+#          ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
+#          SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
+#          SENDER_EMAIL: ${{ secrets.SENDEREMAIL }}
+#          SENDER_PASSWORD: ${{ secrets.SENDERPASSWORD }}
+#        run: python socialNetworking/demo1.py
