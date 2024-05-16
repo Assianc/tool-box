@@ -2,18 +2,7 @@ import os
 import traceback
 
 import requests
-from dotenv import load_dotenv
-
-load_dotenv()
-# API 密钥
-CF_API_TOKEN = os.environ["CF_API_TOKEN"]
-CF_ZONE_ID = os.environ["CF_ZONE_ID"]
-CF_DNS_NAME = os.environ["CF_DNS_NAME"]
-
-headers = {
-    'Authorization': f'Bearer {CF_API_TOKEN}',
-    'Content-Type': 'application/json'
-}
+from environs import Env
 
 
 def get_cf_speed_test_ip(timeout=10, max_retries=5):
@@ -31,9 +20,14 @@ def get_cf_speed_test_ip(timeout=10, max_retries=5):
 
 
 # 获取 DNS 记录
-def get_dns_records(name):
+def get_dns_records(name, cf, ):
+    headers = {
+        'Authorization': f'Bearer {cf["API_TOKEN"]}',
+        'Content-Type': 'application/json'
+    }
+
     def_info = []
-    url = f'https://api.cloudflare.com/client/v4/zones/{CF_ZONE_ID}/dns_records'
+    url = f'https://api.cloudflare.com/client/v4/zones/{cf["ZONE_ID"]}/dns_records'
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
         records = response.json()['result']
@@ -46,8 +40,13 @@ def get_dns_records(name):
 
 
 # 更新 DNS 记录
-def update_dns_record(record_id, name, cf_ip):
-    url = f'https://api.cloudflare.com/client/v4/zones/{CF_ZONE_ID}/dns_records/{record_id}'
+def update_dns_record(record_id, name, cf_ip, cf):
+    headers = {
+        'Authorization': f'Bearer {cf["API_TOKEN"]}',
+        'Content-Type': 'application/json'
+    }
+
+    url = f'https://api.cloudflare.com/client/v4/zones/{cf["ZONE_ID"]}/dns_records/{record_id}'
     data = {
         'type': 'A',
         'name': name,
@@ -68,27 +67,8 @@ def update_dns_record(record_id, name, cf_ip):
             return f"ip {cf_ip} 解析失败：{response.text}"
 
 
-# 主函数
-def main():
-    # 获取最新优选IP
-    ip_addresses_str = get_cf_speed_test_ip()
-    ip_addresses = ip_addresses_str.split(',')
-    dns_records = get_dns_records(CF_DNS_NAME)
-    content = f''
-
-    # 遍历 IP 地址列表
-    for index, ip_address in enumerate(ip_addresses):
-        # 执行 DNS 变更
-        dns = update_dns_record(dns_records[index], CF_DNS_NAME, ip_address)
-        if dns.startswith('ip'):
-            content += f'{dns}\n'
-
-    if content:
-        cf_worker(content)
-
-
-def cf_worker(message, method="qywx", api_type="default", msgtype="text", worker_url="https://qyapi.bxin.top/msg",
-              webhook=None):
+def msg(message, method="qywx", api_type="default", msgtype="text", worker_url="https://qyapi.bxin.top/msg",
+        webhook=None):
     # 构建POST请求的数据
     data = {
         "method": method,
@@ -101,9 +81,34 @@ def cf_worker(message, method="qywx", api_type="default", msgtype="text", worker
     }
 
     # 发送POST请求到Cloudflare Worker
-    response = requests.post(worker_url, json=data)
+    requests.post(worker_url, json=data)
 
-    print(response.text)
+
+# 主函数
+def main():
+    # 读取环境变量
+    env = Env()
+    env.read_env()
+    CF = env.json("CF")
+    CF_DNS_NAME = env.str("CF_DNS_NAME")
+
+    # 获取最新优选IP
+    ip_addresses_str = get_cf_speed_test_ip()
+    ip_addresses = ip_addresses_str.split(',')
+
+    for i in range(len(CF)):
+        dns_records = get_dns_records(CF_DNS_NAME, CF[i])
+        content = f''
+
+        # 遍历 IP 地址列表
+        for index, ip_address in enumerate(ip_addresses):
+            # 执行 DNS 变更
+            dns = update_dns_record(dns_records[index], CF_DNS_NAME, ip_address, CF[i])
+            if dns.startswith('ip'):
+                content += f'{dns}\n'
+
+        if content:
+            msg(content)
 
 
 if __name__ == '__main__':
