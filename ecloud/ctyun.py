@@ -101,7 +101,8 @@ def main():
             data = keep_alive(ctyun)
             code = data["code"]
             if code == 0:
-                cf_worker(f"{ctyun['objId']} 保活成功")
+                # cf_worker(f"{ctyun['objId']} 保活成功")
+                pass
             else:
                 cf_worker(f"保活失败：{data}")
         except Exception as e:
