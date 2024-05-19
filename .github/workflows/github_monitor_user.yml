@@ -31,6 +31,7 @@ jobs:
       - name: Update data
         env:
           GITHUB_TOKEN: ${{ secrets.GithubToken }}
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.PersonalAccessToken }}
         run: |
           mkdir -p data
           git config --global user.email "action@github.com"
