@@ -24,6 +24,8 @@ jobs:
         run: pip install -r github/requirements.txt
 
       - name: 'Run script'
+        env:
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.PersonalAccessToken }}
         run: python github/monitor_user.py
 
       - name: Update data
