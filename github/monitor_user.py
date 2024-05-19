@@ -94,7 +94,7 @@ def monitor_user_updates(users, latest_ids):
     return new_event_ids
 
 
-def cf_msg(message, method="qywx", webhook="H", type="text", worker_url="https://api.xbxin.com/msg", ):
+def cf_msg(message, method="qywx", webhook="W", type="text", worker_url="https://api.xbxin.com/msg", ):
     data = {
         "method": method,
         "content": {
