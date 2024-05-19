@@ -11,7 +11,7 @@ def read_latest_ids(data_file):
     :return:
     """
     # Github action
-    github_file = f"/github/{data_file}"
+    github_file = f"github/{data_file}"
     if os.path.exists(github_file):
         with open(github_file, 'r') as f:
             return json.load(f)
@@ -52,7 +52,7 @@ def save_latest_ids(data_file, latest_ids):
     :return:
     """
     # Github action
-    github_file = f"/github/{data_file}"
+    github_file = f"github/{data_file}"
     try:
         with open(github_file, 'w') as f:
             json.dump(latest_ids, f)
