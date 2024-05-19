@@ -27,8 +27,8 @@ jobs:
         run: python github/monitor_user.py
 
       - name: Update data
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GithubToken }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GithubToken }}
         run: |
           mkdir -p data
           git config --global user.email "action@github.com"
