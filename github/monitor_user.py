@@ -108,7 +108,7 @@ def cf_msg(message, method="qywx", webhook="H", type="text", worker_url="https:/
 
 
 def main():
-    users = ['ZhouBinxin']  # GitHub 用户名列表
+    users = ['ZhouBinxin','sakura-ryoko','Fallen-Breath']  # GitHub 用户名列表
     data_file = 'data.json'
     latest_ids = read_latest_ids(data_file)
     new_latest_ids = monitor_user_updates(users, latest_ids)
