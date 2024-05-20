@@ -70,7 +70,7 @@ def monitor_user_updates(users, latest_ids):
 
     for user in users:
         events = fetch_latest_events(user)
-
+        messages = ''
         if events:
             new_event_id = events[0]['id']
             if user not in latest_ids:
@@ -81,16 +81,29 @@ def monitor_user_updates(users, latest_ids):
                     if event['id'] == latest_ids[user]:
                         break
 
+                    created_at = event['created_at']
+                    event_type = event['type']
                     repo = event['repo']['name']
-                    try:
-                        commit = event['payload']['commits'][0]['message']
-                        message = f"用户: {user} 在仓库: {repo} 提交了更新: {commit}"
-                    except:
-                        message = f"用户: {user} 在仓库有新的操作"
 
-                    cf_msg(message)
+                    message = f"{created_at}\n仓库：{repo}\n"
+                    if event_type == 'PushEvent':
+                        # 提交信息
+                        message += f"提交信息：{event['payload']['commits'][0]['message']}"
+                    elif event_type == 'DeleteEvent':
+                        # 删除信息
+                        message += f"删除信息：{event['payload']['ref_type']} {event['payload']['ref']} was deleted"
+                    elif event_type == 'CreateEvent':
+                        # 创建信息
+                        message += f"创建信息：{event['payload']['ref_type']} {event['payload']['ref']} was created"
+                    else:
+                        # 事件类型
+                        message += f"事件类型：{event_type}\n"
+                        # 未处理
+                        message += f"未处理：{event['payload']}"
 
+                    messages += message + "\n——————————"
             new_event_ids[user] = new_event_id
+        cf_msg(messages)
     return new_event_ids
 
 
