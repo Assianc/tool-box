@@ -42,8 +42,12 @@ def msg(message, method="qywx", webhook="H", msgtype="text", worker_url="https:/
 
 
 def main():
-    with open("latest.txt", "r") as file:
-        latest = file.readline().strip()
+    try:
+        with open("latest.txt", "r") as file:
+            latest = file.readline().strip()
+    except:
+        with open("linuxdo/latest.txt", "r") as file:
+            latest = file.readline().strip()
 
     if latest:
         latest = int(latest)
@@ -89,8 +93,12 @@ def main():
         print(e)
 
     # 保存最新的文章ID
-    with open('latest.txt', 'w') as file:
-        file.write(str(new_latest))
+    try:
+        with open('latest.txt', 'w') as file:
+            file.write(str(new_latest))
+    except:
+        with open("linuxdo/latest.txt", "w") as file:
+            file.write(str(new_latest))
 
 
 if __name__ == "__main__":
