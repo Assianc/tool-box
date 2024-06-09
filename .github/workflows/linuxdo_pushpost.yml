@@ -1,0 +1,32 @@
+name: Linux DO Push Post
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v3
+      - name: 'Set up Python'
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: 'Install dependencies'
+        run: pip install -r linuxdo/requirements.txt
+
+      - name: 'Run script'
+        run: python linuxdo/pushpost.py
+
+      - name: Update data
+        run: |
+          mkdir -p data
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          git add -A
+          git commit -m "ci: update data (automatically)" || exit 0
+          git push

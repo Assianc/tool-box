@@ -4,7 +4,7 @@ import time
 from environs import Env
 
 
-def keep_alive(ctyun, retire=3, delay=10):
+def keep_alive(ctyun, retries=3, delay=10):
     # 设置API的URL和路径
     url = "https://desk.ctyun.cn:8810/api/"
     computer_connect = "desktop/client/connect"
@@ -59,7 +59,6 @@ def keep_alive(ctyun, retire=3, delay=10):
     }
 
     # 发起POST请求连接云电脑
-    retries = 3
     for attempt in range(retries):
         try:
             response = requests.post(url + computer_connect, data=device_info, headers=headers, timeout=30)

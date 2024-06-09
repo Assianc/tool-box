@@ -1,0 +1,1775 @@
+{
+  "title": "[教程]uptimekuma+ntqq部署监控，服务寄了随时知道！",
+  "title_detail": {
+    "type": "text/plain",
+    "language": null,
+    "base": "",
+    "value": "[教程]uptimekuma+ntqq部署监控，服务寄了随时知道！"
+  },
+  "authors": [
+    {
+      "name": "youyi1314"
+    }
+  ],
+  "author": "youyi1314",
+  "author_detail": {
+    "name": "youyi1314"
+  },
+  "tags": [
+    {
+      "term": "网络安全",
+      "scheme": null,
+      "label": null
+    }
+  ],
+  "summary": "<p>粽嗦粥汁，uptimekuma可以接SMTP服务（白嫖可看我之前的文章 <a href="https://linux.do/t/topic/44624/24">【serv00教程】利用serv00的邮箱搭建SMTP服务 -软件分享 - LINUX DO</a>或者 <a href="https://blog.theyouy.site/archives/serv00-SMTP"rel="noopener nofollow ugc">使用serv00的邮箱搭建SMTP服务-youyiの小破站 (theyouyi.site)</a>)<br />\n今天带来一个接qq机器人的方式</p>\n<h1><a class="anchor" href="https://linux.do#h-1" name="h-1"></a>下载准备</h1>\n<p><a href="https://github.com/louislam/uptime-kuma" rel="noopener nofollow ugc">luptime-kuma本体（<strong>下面简称监控</strong>） (github.com)</a><br />\n<a href="https://llonebot.github.io/zh-CN/" rel="noopener nofollow ugc">LLOneBot协议</a><br />\n<a href="https://liteloaderqqnt.github.io/" rel="noopener nofollow ugc">LiteLoaderQQNT协议</a></p>\n<h1><a class="anchor" href="https://linux.do#h-2" name="h-2"></a>安装</h1>\n<p>首先下载ntqq（pc版，win和linux都可以）<br />\n然后在上述链接下载俩个协议端和监控（安装教程里面很详细都是傻瓜一键式，这里不在多述）</p>\n<h1><a class="anchor" href="https://linux.do#h-3" name="h-3"></a>配置</h1>\n<p>在ntqq→设置→LLOneBot中启用http服务，然后http服务监听端口里写一个没被占用的，在写一个AccessToken然后<strong>点击保存</strong>（有个铸币没点保存导致监控一直报错，是谁我不说）<br />\n就像这样<br />\n</p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/c/0/c0be66fcb0cb0496297a2cbe15d25ff8f66b256f.png" title="image"><img alt="image" height="378" src="https://cdn.linux.do/uploads/default/optimized/3X/c/0/c0be66fcb0cb0496297a2cbe15d25ff8f66b256f_2_690x378.png" width="690" /></a></div><br />\n然后在监控中<br />\n通知类型选OneBot<br />\nHTTP地址填<a href="http://127.0.0.1" rel="noopener nofollow ugc">http://127.0.0.1</a>:port（如果是局域网，或者一个在wsl，一个在win就填你qq所安装的那个系统在局域网中的ip，比如我监控是在wsl中，qq是在win中，我wsl的地址是172.xx，win的地址是192.xx，那么我在监控中写的地址就是192.xx）<br />\nAccessToken就是你写的<br />\n消息类型你要私人发就私聊，群聊发就群聊<br />\n<strong>用户ID这个就是qq号（群号）</strong><br />\nexample：<br />\n<div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/b/5/b5f81c85f3ed4f0336aeca47cd09a282cfd037d2.png" title="image"><img alt="image" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/b/5/b5f81c85f3ed4f0336aeca47cd09a282cfd037d2_2_288x500.png" width="288" /></a></div><br />\n效果<br />\n<img alt="image" height="123" src="https://cdn.linux.do/uploads/default/original/3X/4/5/45043fa70ff772268795edef0d7eed30892d6f30.png" width="475" /><p></p>\n<h1><a class="anchor" href="https://linux.do#h-4" name="h-4"></a>广告</h1>\n<p>博客地址 <a href="https://blog.theyouyi.site/archives/uptimekuma-ntqq" rel="noopener nofollow ugc">uptimekuma监控+QQ推送-youyiの小破站 (theyouyi.site)</a><br />\nqwq</p>\n            <p><small>3 个帖子 - 3 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108119">阅读完整话题</a></p>",
+  "summary_detail"
+  : {
+  "type": "text/html",
+  "language": null,
+  "base": "",
+  "value": "<p>粽嗦粥汁，uptimekuma可以接SMTP服务（白嫖可看我之前的文章 <a href="
+  https:
+  //linux.do/t/topic/44624/24">【serv00教程】利用serv00的邮箱搭建SMTP服务 - 软件分享 - LINUX DO</a>或者 <a href="https://blog.theyouyi.site/archives/serv00-SMTP" rel="noopener nofollow ugc">使用serv00的邮箱搭建SMTP服务-youyiの小破站 (theyouyi.site)</a>)<br />\n今天带来一个接qq机器人的方式</p>\n<h1><a class="anchor" href="https://linux.do#h-1" name="h-1"></a>下载准备</h1>\n<p><a href="https://github.com/louislam/uptime-kuma" rel="noopener nofollow ugc">luptime-kuma本体（<strong>下面简称监控</strong>） (github.com)</a><br />\n<a href="https://llonebot.github.io/zh-CN/" rel="noopener nofollow ugc">LLOneBot协议</a><br />\n<a href="https://liteloaderqqnt.github.io/" rel="noopener nofollow ugc">LiteLoaderQQNT协议</a></p>\n<h1><a class="anchor" href="https://linux.do#h-2" name="h-2"></a>安装</h1>\n<p>首先下载ntqq（pc版，win和linux都可以）<br />\n然后在上述链接下载俩个协议端和监控（安装教程里面很详细都是傻瓜一键式，这里不在多述）</p>\n<h1><a class="anchor" href="https://linux.do#h-3" name="h-3"></a>配置</h1>\n<p>在ntqq→设置→LLOneBot中启用http服务，然后http服务监听端口里写一个没被占用的，在写一个AccessToken然后<strong>点击保存</strong>（有个铸币没点保存导致监控一直报错，是谁我不说）<br />\n就像这样<br />\n</p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/c/0/c0be66fcb0cb0496297a2cbe15d25ff8f66b256f.png" title="image"><img alt="image" height="378" src="https://cdn.linux.do/uploads/default/optimized/3X/c/0/c0be66fcb0cb0496297a2cbe15d25ff8f66b256f_2_690x378.png" width="690" /></a></div><br />\n然后在监控中<br />\n通知类型选OneBot<br />\nHTTP地址填<a href="http://127.0.0.1" rel="noopener nofollow ugc">http://127.0.0.1</a>:port（如果是局域网，或者一个在wsl，一个在win就填你qq所安装的那个系统在局域网中的ip，比如我监控是在wsl中，qq是在win中，我wsl的地址是172.xx，win的地址是192.xx，那么我在监控中写的地址就是192.xx）<br />\nAccessToken就是你写的<br />\n消息类型你要私人发就私聊，群聊发就群聊<br />\n<strong>用户ID这个就是qq号（群号）</strong><br />\nexample：<br />\n<div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/b/5/b5f81c85f3ed4f0336aeca47cd09a282cfd037d2.png" title="image"><img alt="image" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/b/5/b5f81c85f3ed4f0336aeca47cd09a282cfd037d2_2_288x500.png" width="288" /></a></div><br />\n效果<br />\n<img alt="image" height="123" src="https://cdn.linux.do/uploads/default/original/3X/4/5/45043fa70ff772268795edef0d7eed30892d6f30.png" width="475" /><p></p>\n<h1><a class="anchor" href="https://linux.do#h-4" name="h-4"></a>广告</h1>\n<p>博客地址 <a href="https://blog.theyouyi.site/archives/uptimekuma-ntqq" rel="noopener nofollow ugc">uptimekuma监控+QQ推送-youyiの小破站 (theyouyi.site)</a><br />\nqwq</p>\n            <p><small>3 个帖子 - 3 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108119">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108119"
+}
+],
+"link": "https://linux.do/t/topic/108119",
+"published": "Sun, 09 Jun 2024 06:54:38 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=6,
+tm_min=54,
+tm_sec=38,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108119",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108119.rss",
+"title": "[教程]uptimekuma+ntqq部署监控，服务寄了随时知道！"
+}
+},
+{
+"title": "今天发现账户OTP双重登录报错",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "今天发现账户OTP双重登录报错"
+},
+"authors": [
+{
+"name": "surfmichaela"
+}
+],
+"author": "surfmichaela",
+"author_detail": {
+"name": "surfmichaela"
+},
+"tags": [
+{
+"term": "运营反馈",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p>问题多个场景双因素登录错误</p>\n<p>1.双重代码登录，提示，验证码无效。每个代码只能使用一次。</p>\n<p>2.apple通行密钥登录报错。</p>\n<p>3.重新绑定新的二维码提示：验证码无效。每个代码只能使用一次。</p>\n<p>4.现在是通过恢复代码之一登录进来发帖咨询一下原因</p>\n<p>是否触发了什么风控策略，账户最近一周没登录过</p>\n            <p><small>9 个帖子 - 4 位参与者</small></p>\n            <p><a href="https: //linux.do/t/topic/108118">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p>问题多个场景双因素登录错误</p>\n<p>1.双重代码登录，提示，验证码无效。每个代码只能使用一次。</p>\n<p>2.apple通行密钥登录报错。</p>\n<p>3.重新绑定新的二维码提示：验证码无效。每个代码只能使用一次。</p>\n<p>4.现在是通过恢复代码之一登录进来发帖咨询一下原因</p>\n<p>是否触发了什么风控策略，账户最近一周没登录过</p>\n            <p><small>9 个帖子 - 4 位参与者</small></p>\n            <p><a href="https: //linux.do/t/topic/108118">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108118"
+}
+],
+"link": "https://linux.do/t/topic/108118",
+"published": "Sun, 09 Jun 2024 06:54:09 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=6,
+tm_min=54,
+tm_sec=9,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108118",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108118.rss",
+"title": "今天发现账户OTP双重登录报错"
+}
+},
+{
+"title": "QQ年SVIP只要49？？？尊嘟假嘟o.O",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "QQ年SVIP只要49？？？尊嘟假嘟o.O"
+},
+"authors": [
+{
+"name": "TSINGHUA"
+}
+],
+"author": "TSINGHUA",
+"author_detail": {
+"name": "TSINGHUA"
+},
+"tags": [
+{
+"term": "搞七捻三",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/5/6/56ba0923218f3c096fc5c516354c762db94d5ad5.jpeg" title="Screenshot_2024-06-09-14-13-03-663_com.taobao.taobao"><img alt="Screenshot_2024-06-09-14-13-03-663_com.taobao.taobao" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/5/6/56ba0923218f3c096fc5c516354c762db94d5ad5_2_224x500.jpeg" width="224" /></a></div><br />\n<div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/b/4/b43d7d35903d81cb0b01ba522111dc76f1f5df35.jpeg" title="Screenshot_2024-06-09-14-13-08-603_com.taobao.taobao-edit"><img alt="Screenshot_2024-06-09-14-13-08-603_com.taobao.taobao-edit" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/b/4/b43d7d35903d81cb0b01ba522111dc76f1f5df35_2_660x500.jpeg" width="660" /></a></div><p></p>\n<p>如图 淘宝上看到了<br />\n真的心动了 但是怕有什么套路 特此来问问各位有经验的佬友们<img alt=":face_with_monocle:" class="emoji" height="20" src="https://cdn.linux.do/images/emoji/apple/face_with_monocle.png?v=12" title=":face_with_monocle:" width="20" /><img alt=":partying_face:" class="emoji" height="20" src="https://cdn.linux.do/images/emoji/apple/partying_face.png?v=12" title=":partying_face:" width="20" /></p>\n            <p><small>26 个帖子 - 23 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108100">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https: //cdn.linux.do/uploads/default/original/3X/5/6/56ba0923218f3c096fc5c516354c762db94d5ad5.jpeg" title="Screenshot_2024-06-09-14-13-03-663_com.taobao.taobao"><img alt="Screenshot_2024-06-09-14-13-03-663_com.taobao.taobao" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/5/6/56ba0923218f3c096fc5c516354c762db94d5ad5_2_224x500.jpeg" width="224" /></a></div><br />\n<div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/b/4/b43d7d35903d81cb0b01ba522111dc76f1f5df35.jpeg" title="Screenshot_2024-06-09-14-13-08-603_com.taobao.taobao-edit"><img alt="Screenshot_2024-06-09-14-13-08-603_com.taobao.taobao-edit" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/b/4/b43d7d35903d81cb0b01ba522111dc76f1f5df35_2_660x500.jpeg" width="660" /></a></div><p></p>\n<p>如图 淘宝上看到了<br />\n真的心动了 但是怕有什么套路 特此来问问各位有经验的佬友们<img alt=":face_with_monocle:" class="emoji" height="20" src="https://cdn.linux.do/images/emoji/apple/face_with_monocle.png?v=12" title=":face_with_monocle:" width="20" /><img alt=":partying_face:" class="emoji" height="20" src="https://cdn.linux.do/images/emoji/apple/partying_face.png?v=12" title=":partying_face:" width="20" /></p>\n            <p><small>26 个帖子 - 23 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108100">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108100"
+}
+],
+"link": "https://linux.do/t/topic/108100",
+"published": "Sun, 09 Jun 2024 06:14:23 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=6,
+tm_min=14,
+tm_sec=23,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108100",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108100.rss",
+"title": "QQ年SVIP只要49？？？尊嘟假嘟o.O"
+}
+},
+{
+"title": "华为手机如何刷机，如何选择安全的华为刷机包，如何解华为bl锁",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "华为手机如何刷机，如何选择安全的华为刷机包，如何解华为bl锁"
+},
+"authors": [
+{
+"name": "多模态耗材"
+}
+],
+"author": "多模态耗材",
+"author_detail": {
+"name": "多模态耗材"
+},
+"tags": [
+{
+"term": "快问快答",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p>技术论坛咋没刷机相关勒</p>\n            <p><small>13 个帖子 - 10 位参与者</small></p>\n            <p><a href="https: //linux.do/t/topic/108099">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p>技术论坛咋没刷机相关勒</p>\n            <p><small>13 个帖子 - 10 位参与者</small></p>\n            <p><a href="https: //linux.do/t/topic/108099">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108099"
+}
+],
+"link": "https://linux.do/t/topic/108099",
+"published": "Sun, 09 Jun 2024 06:12:37 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=6,
+tm_min=12,
+tm_sec=37,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108099",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108099.rss",
+"title": "华为手机如何刷机，如何选择安全的华为刷机包，如何解华为bl锁"
+}
+},
+{
+"title": "有什么靠谱好用的安卓上运行的安卓虚拟机吗",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "有什么靠谱好用的安卓上运行的安卓虚拟机吗"
+},
+"authors": [
+{
+"name": "wm"
+}
+],
+"author": "wm",
+"author_detail": {
+"name": "wm"
+},
+"tags": [
+{
+"term": "快问快答",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p>vmospro用了<br />\n但是打不开我的那个游戏，直接黑屏闪退，无论哪个版本都是</p>\n            <p><small>14 个帖子 - 6 位参与者</small></p>\n            <p><a href="https: //linux.do/t/topic/108098">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p>vmospro用了<br />\n但是打不开我的那个游戏，直接黑屏闪退，无论哪个版本都是</p>\n            <p><small>14 个帖子 - 6 位参与者</small></p>\n            <p><a href="https: //linux.do/t/topic/108098">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108098"
+}
+],
+"link": "https://linux.do/t/topic/108098",
+"published": "Sun, 09 Jun 2024 06:07:57 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=6,
+tm_min=7,
+tm_sec=57,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108098",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108098.rss",
+"title": "有什么靠谱好用的安卓上运行的安卓虚拟机吗"
+}
+},
+{
+"title": "现在有些新闻都是GPT写的了？",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "现在有些新闻都是GPT写的了？"
+},
+"authors": [
+{
+"name": "小粉兔"
+}
+],
+"author": "小粉兔",
+"author_detail": {
+"name": "小粉兔"
+},
+"tags": [
+{
+"term": "人工智能",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/8/4/84cec9bb0fbe2611906892a8b5aff5715d7aa7b6.jpeg" title="2121222.PNG"><img alt="2121222.PNG" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/8/4/84cec9bb0fbe2611906892a8b5aff5715d7aa7b6_2_411x500.jpeg" width="411" /></a></div><br />\n经典的GPT风格啊<p></p>\n            <p><small>10 个帖子 - 10 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108095">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https: //cdn.linux.do/uploads/default/original/3X/8/4/84cec9bb0fbe2611906892a8b5aff5715d7aa7b6.jpeg" title="2121222.PNG"><img alt="2121222.PNG" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/8/4/84cec9bb0fbe2611906892a8b5aff5715d7aa7b6_2_411x500.jpeg" width="411" /></a></div><br />\n经典的GPT风格啊<p></p>\n            <p><small>10 个帖子 - 10 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108095">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108095"
+}
+],
+"link": "https://linux.do/t/topic/108095",
+"published": "Sun, 09 Jun 2024 06:03:17 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=6,
+tm_min=3,
+tm_sec=17,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108095",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108095.rss",
+"title": "现在有些新闻都是GPT写的了？"
+}
+},
+{
+"title": "求问, 端午节去还没订婚的女朋友家送什么礼物",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "求问, 端午节去还没订婚的女朋友家送什么礼物"
+},
+"authors": [
+{
+"name": "Sunny"
+}
+],
+"author": "Sunny",
+"author_detail": {
+"name": "Sunny"
+},
+"tags": [
+{
+"term": "搞七捻三",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p>已经见过她父母好多次了, 现在已经买了粽子礼盒了,  看看还需要买什么东西 人在上海这边  希望能外卖送到的东西</p>\n            <p><small>9 个帖子 - 7 位参与者</small></p>\n            <p><a href="https: //linux.do/t/topic/108093">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p>已经见过她父母好多次了, 现在已经买了粽子礼盒了,  看看还需要买什么东西 人在上海这边  希望能外卖送到的东西</p>\n            <p><small>9 个帖子 - 7 位参与者</small></p>\n            <p><a href="https: //linux.do/t/topic/108093">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108093"
+}
+],
+"link": "https://linux.do/t/topic/108093",
+"published": "Sun, 09 Jun 2024 06:01:25 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=6,
+tm_min=1,
+tm_sec=25,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108093",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108093.rss",
+"title": "求问, 端午节去还没订婚的女朋友家送什么礼物"
+}
+},
+{
+"title": "【程序员梗图】第三期 量大管饱！",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "【程序员梗图】第三期 量大管饱！"
+},
+"authors": [
+{
+"name": "暗黑林志玲"
+}
+],
+"author": "暗黑林志玲",
+"author_detail": {
+"name": "暗黑林志玲"
+},
+"tags": [
+{
+"term": "职场",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p>各位佬友，端午假期期间，快让我看看有几个人是端午节还在吭哧吭哧刷论坛的！<br />\n最后，新一期的程序员梗图奉上，提前祝各位端午节安康！</p>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/9/1/91497dfcb87e4ac40cd827dd43c8846473761484.jpeg" title="r1"><img alt="r1" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/9/1/91497dfcb87e4ac40cd827dd43c8846473761484_2_343x500.jpeg" width="343" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/2/0/20861bb9661a00ed0212cd581eac12b5e5651dea.jpeg" title="r2"><img alt="r2" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/2/0/20861bb9661a00ed0212cd581eac12b5e5651dea_2_452x500.jpeg" width="452" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/0/9/09bc63a83f82170601576c5397e9fbc44bd7d146.jpeg" title="r3"><img alt="r3" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/0/9/09bc63a83f82170601576c5397e9fbc44bd7d146_2_343x500.jpeg" width="343" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p><img alt="r4" height="405" src="https://cdn.linux.do/uploads/default/original/3X/a/5/a521f9371fa683ece410e842bb158c3bd1c507ea.jpeg" width="480" /></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/9/a/9a61a121a9bca4a19d0d79f9bc47a0df46201ee5.jpeg" title="r5"><img alt="r5" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/9/a/9a61a121a9bca4a19d0d79f9bc47a0df46201ee5_2_462x500.jpeg" width="462" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/5/b/5b66f5eb646800f5982db64e8b485a24426b69f2.jpeg" title="r6"><img alt="r6" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/5/b/5b66f5eb646800f5982db64e8b485a24426b69f2_2_398x500.jpeg" width="398" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/6/0/606a5936b56cc9ba0e9a1d3f94647ca0a5c1e76a.jpeg" title="r7"><img alt="r7" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/6/0/606a5936b56cc9ba0e9a1d3f94647ca0a5c1e76a_2_490x500.jpeg" width="490" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/2/1/2164d97ad0653ee872146adf7d12eee0d4ac3640.jpeg" title="r8"><img alt="r8" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/2/1/2164d97ad0653ee872146adf7d12eee0d4ac3640_2_328x500.jpeg" width="328" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/8/9/89c4d6b0c2a0272d06dd73e2224f0cc3031bf4c2.jpeg" title="r9"><img alt="r9" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/8/9/89c4d6b0c2a0272d06dd73e2224f0cc3031bf4c2_2_501x500.jpeg" width="501" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/a/6/a601cea749ff1da1a44f9dc2d9b90cd537844f42.jpeg" title="r10"><img alt="r10" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/a/6/a601cea749ff1da1a44f9dc2d9b90cd537844f42_2_389x500.jpeg" width="389" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/0/d/0db7dfc553228eb6be855fc462d4d2459d41fc15.jpeg" title="r11"><img alt="r11" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/0/d/0db7dfc553228eb6be855fc462d4d2459d41fc15_2_407x500.jpeg" width="407" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/8/4/84dd3743da711c85853b3764a1b16889e20012e3.jpeg" title="r12"><img alt="r12" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/8/4/84dd3743da711c85853b3764a1b16889e20012e3_2_400x500.jpeg" width="400" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/4/1/41c0abba9eec0d9727dd88502c06ba409b895b95.jpeg" title="r13"><img alt="r13" height="499" src="https://cdn.linux.do/uploads/default/optimized/3X/4/1/41c0abba9eec0d9727dd88502c06ba409b895b95_2_516x499.jpeg" width="516" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p><img alt="r14" height="360" src="https://cdn.linux.do/uploads/default/original/3X/b/e/be78c61263910cc8a1276730ca81e5cf48e0b18e.jpeg" width="480" /></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/2/c/2c679672217e9ba60f083c24fb69fbfbb433af76.jpeg" title="r15"><img alt="r15" height="500" src="https://cdn.linux.do/uploads/default/original/3X/2/c/2c679672217e9ba60f083c24fb69fbfbb433af76.jpeg" width="411" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p><img alt="r16" height="383" src="https://cdn.linux.do/uploads/default/original/3X/0/3/0380c846b40c8ccddb1ea142dd9787b17072fe68.jpeg" width="480" /></p>\n</blockquote>\n<blockquote>\n<p><img alt="r17" height="455" src="https://cdn.linux.do/uploads/default/original/3X/7/6/76979448bbc4e26b53460882ffe8fe8fc9bf8e08.jpeg" width="480" /></p>\n</blockquote>\n<blockquote>\n<p><img alt="r18" height="460" src="https://cdn.linux.do/uploads/default/original/3X/b/0/b09d754b04ec6e6c916638b1d9b50f4feb43e3e6.jpeg" width="460" /></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/1/5/1587ad83b09c0d1ccc978c2569be557abd0e81af.jpeg" title="r19"><img alt="r19" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/1/5/1587ad83b09c0d1ccc978c2569be557abd0e81af_2_375x500.jpeg" width="375" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/d/0/d07749a269ae731f97db23d572154aa507ce4033.jpeg" title="r20"><img alt="r20" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/d/0/d07749a269ae731f97db23d572154aa507ce4033_2_434x500.jpeg" width="434" /></a></div><p></p>\n</blockquote>\n            <p><small>10 个帖子 - 10 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108091">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p>各位佬友，端午假期期间，快让我看看有几个人是端午节还在吭哧吭哧刷论坛的！<br />\n最后，新一期的程序员梗图奉上，提前祝各位端午节安康！</p>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https: //cdn.linux.do/uploads/default/original/3X/9/1/91497dfcb87e4ac40cd827dd43c8846473761484.jpeg" title="r1"><img alt="r1" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/9/1/91497dfcb87e4ac40cd827dd43c8846473761484_2_343x500.jpeg" width="343" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/2/0/20861bb9661a00ed0212cd581eac12b5e5651dea.jpeg" title="r2"><img alt="r2" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/2/0/20861bb9661a00ed0212cd581eac12b5e5651dea_2_452x500.jpeg" width="452" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/0/9/09bc63a83f82170601576c5397e9fbc44bd7d146.jpeg" title="r3"><img alt="r3" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/0/9/09bc63a83f82170601576c5397e9fbc44bd7d146_2_343x500.jpeg" width="343" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p><img alt="r4" height="405" src="https://cdn.linux.do/uploads/default/original/3X/a/5/a521f9371fa683ece410e842bb158c3bd1c507ea.jpeg" width="480" /></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/9/a/9a61a121a9bca4a19d0d79f9bc47a0df46201ee5.jpeg" title="r5"><img alt="r5" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/9/a/9a61a121a9bca4a19d0d79f9bc47a0df46201ee5_2_462x500.jpeg" width="462" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/5/b/5b66f5eb646800f5982db64e8b485a24426b69f2.jpeg" title="r6"><img alt="r6" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/5/b/5b66f5eb646800f5982db64e8b485a24426b69f2_2_398x500.jpeg" width="398" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/6/0/606a5936b56cc9ba0e9a1d3f94647ca0a5c1e76a.jpeg" title="r7"><img alt="r7" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/6/0/606a5936b56cc9ba0e9a1d3f94647ca0a5c1e76a_2_490x500.jpeg" width="490" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/2/1/2164d97ad0653ee872146adf7d12eee0d4ac3640.jpeg" title="r8"><img alt="r8" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/2/1/2164d97ad0653ee872146adf7d12eee0d4ac3640_2_328x500.jpeg" width="328" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/8/9/89c4d6b0c2a0272d06dd73e2224f0cc3031bf4c2.jpeg" title="r9"><img alt="r9" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/8/9/89c4d6b0c2a0272d06dd73e2224f0cc3031bf4c2_2_501x500.jpeg" width="501" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/a/6/a601cea749ff1da1a44f9dc2d9b90cd537844f42.jpeg" title="r10"><img alt="r10" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/a/6/a601cea749ff1da1a44f9dc2d9b90cd537844f42_2_389x500.jpeg" width="389" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/0/d/0db7dfc553228eb6be855fc462d4d2459d41fc15.jpeg" title="r11"><img alt="r11" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/0/d/0db7dfc553228eb6be855fc462d4d2459d41fc15_2_407x500.jpeg" width="407" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/8/4/84dd3743da711c85853b3764a1b16889e20012e3.jpeg" title="r12"><img alt="r12" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/8/4/84dd3743da711c85853b3764a1b16889e20012e3_2_400x500.jpeg" width="400" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/4/1/41c0abba9eec0d9727dd88502c06ba409b895b95.jpeg" title="r13"><img alt="r13" height="499" src="https://cdn.linux.do/uploads/default/optimized/3X/4/1/41c0abba9eec0d9727dd88502c06ba409b895b95_2_516x499.jpeg" width="516" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p><img alt="r14" height="360" src="https://cdn.linux.do/uploads/default/original/3X/b/e/be78c61263910cc8a1276730ca81e5cf48e0b18e.jpeg" width="480" /></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/2/c/2c679672217e9ba60f083c24fb69fbfbb433af76.jpeg" title="r15"><img alt="r15" height="500" src="https://cdn.linux.do/uploads/default/original/3X/2/c/2c679672217e9ba60f083c24fb69fbfbb433af76.jpeg" width="411" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p><img alt="r16" height="383" src="https://cdn.linux.do/uploads/default/original/3X/0/3/0380c846b40c8ccddb1ea142dd9787b17072fe68.jpeg" width="480" /></p>\n</blockquote>\n<blockquote>\n<p><img alt="r17" height="455" src="https://cdn.linux.do/uploads/default/original/3X/7/6/76979448bbc4e26b53460882ffe8fe8fc9bf8e08.jpeg" width="480" /></p>\n</blockquote>\n<blockquote>\n<p><img alt="r18" height="460" src="https://cdn.linux.do/uploads/default/original/3X/b/0/b09d754b04ec6e6c916638b1d9b50f4feb43e3e6.jpeg" width="460" /></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/1/5/1587ad83b09c0d1ccc978c2569be557abd0e81af.jpeg" title="r19"><img alt="r19" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/1/5/1587ad83b09c0d1ccc978c2569be557abd0e81af_2_375x500.jpeg" width="375" /></a></div><p></p>\n</blockquote>\n<blockquote>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/d/0/d07749a269ae731f97db23d572154aa507ce4033.jpeg" title="r20"><img alt="r20" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/d/0/d07749a269ae731f97db23d572154aa507ce4033_2_434x500.jpeg" width="434" /></a></div><p></p>\n</blockquote>\n            <p><small>10 个帖子 - 10 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108091">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108091"
+}
+],
+"link": "https://linux.do/t/topic/108091",
+"published": "Sun, 09 Jun 2024 05:47:08 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=5,
+tm_min=47,
+tm_sec=8,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108091",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108091.rss",
+"title": "【程序员梗图】第三期 量大管饱！"
+}
+},
+{
+"title": "【Docker镜像下架了】，我的new-api怎么办呢！",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "【Docker镜像下架了】，我的new-api怎么办呢！"
+},
+"authors": [
+{
+"name": "xdh211985"
+}
+],
+"author": "xdh211985",
+"author_detail": {
+"name": "xdh211985"
+},
+"tags": [
+{
+"term": "快问快答",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p><strong>国内的小鸡，现在docker全部下架了，我靠，我的new-api都更新不了了。该怎么办呢？</strong></p>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/c/c/ccba80b7bfa9fc930fec1c7888566c8e71310fac.png" title="image"><img alt="image" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/c/c/ccba80b7bfa9fc930fec1c7888566c8e71310fac_2_533x500.png" width="533" /></a></div><p></p>\n            <p><small>5 个帖子 - 3 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108089">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p><strong>国内的小鸡，现在docker全部下架了，我靠，我的new-api都更新不了了。该怎么办呢？</strong></p>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https: //cdn.linux.do/uploads/default/original/3X/c/c/ccba80b7bfa9fc930fec1c7888566c8e71310fac.png" title="image"><img alt="image" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/c/c/ccba80b7bfa9fc930fec1c7888566c8e71310fac_2_533x500.png" width="533" /></a></div><p></p>\n            <p><small>5 个帖子 - 3 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108089">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108089"
+}
+],
+"link": "https://linux.do/t/topic/108089",
+"published": "Sun, 09 Jun 2024 05:44:16 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=5,
+tm_min=44,
+tm_sec=16,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108089",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108089.rss",
+"title": "【Docker镜像下架了】，我的new-api怎么办呢！"
+}
+},
+{
+"title": "Chrome 127 版本内置AI大模型了",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "Chrome 127 版本内置AI大模型了"
+},
+"authors": [
+{
+"name": "小彭前妻"
+}
+],
+"author": "小彭前妻",
+"author_detail": {
+"name": "小彭前妻"
+},
+"tags": [
+{
+"term": "软件分享",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p>Chrome 浏览器内置的 AI 大模型名为 Gemini Nano，它是 Google 最新推出的 Gemini 系列中最轻量级的版本，专为在设备端高效运行而设计。</p>\n<p>与需要庞大计算资源的服务器端 AI 模型不同，Gemini Nano 可以在用户设备本地运行，无需将数据上传到云端，从而最大程度地保护用户隐私，同时提供更快速、更流畅的 AI 体验。</p>\n<h4><a class="anchor" href="https: //linux.do#chrome-1" name="chrome-1"></a>如何体验 Chrome 内置大模型？</h4>\n<p>迫不及待想要体验 Chrome 内置大模型的强大功能？按照以下步骤操作，你就能亲自感受 Web AI 的魅力：</p>\n<ol>\n<li>\n<ol>\n<li><strong>下载 Chrome 127 Canary 版本</strong> ：访问 Chrome Release Channels<br />\n<a class="inline-onebox" href="https://chromium.org/getting-involved/dev-channel/">Chrome Release Channels</a><br />\n下载最新版的 Chrome Canary 浏览器。</li>\n</ol>\n</li>\n<li>\n<ol start="2">\n<li><strong>开启相关功能</strong>：在 Chrome 地址栏输入 <code>chrome://flags/</code>，找到以下两个选项并将其设置为 <strong>Enabled</strong>：</li>\n</ol>\n</li>\n</ol>\n<ul>\n<li>• <strong>Prompt API for Gemini Nano</strong></li>\n<li>• <strong>Enables optimization guide on device</strong> → <strong>Enable BypassPerfR</strong></li>\n</ul>\n<ol start="3">\n<li>\n<ol start="3">\n<li><strong>重启 Chrome</strong>：重启浏览器，使设置生效。</li>\n</ol>\n</li>\n<li>\n<ol start="4">\n<li><strong>检查模型下载</strong>：打开 <code>chrome://components/</code>，检查 <strong>Optimization Guide On Device Model</strong> 中模型是否成功下载，点击 <strong>Check for update</strong> 进行更新。</li>\n</ol>\n</li>\n<li>\n<ol start="5">\n<li><strong>测试模型功能</strong>：打开开发者工具的控制台，输入以下代码并运行，测试是否能够调用 Gemini Nano 模型：</li>\n</ol>\n</li>\n</ol>\n<pre><code class="lang-auto">async function testGeminiNano() {\n  try {\n    if (!window.ai) throw new Error("AI API not supported.");\n    if ((await window.ai.canCreateTextSession()) !== "readily") {\n      throw new Error("Gemini Nano not ready yet.");\n    }\n    console.log("Gemini Nano is ready to use!");\n    const session = await window.ai.createTextSession();\n    const stream = session.promptStreaming("Tell me a jok!");\n    for await (const chunk of stream) {\n      console.log(chunk); \n    }\n    session.destroy();\n  } catch (err) {\n    console.error(err.message);\n  }\n}\n\ntestGeminiNano(); \n</code></pre>\n<p>代码逻辑：</p>\n<ul>\n<li>检查 <code>window.ai</code> 是否存在，判断浏览器是否支持 AI API。</li>\n<li>调用 <code>window.ai.canCreateTextSession()</code> 检查 Gemini Nano 是否准备就绪。</li>\n<li>如果准备就绪，创建文本会话，并尝试让模型讲个笑话。</li>\n<li>最后，销毁会话以释放资源。</li>\n</ul>\n<p>如果一切顺利，你将看到控制台输出一个笑话，这意味着你已经成功调用了 Chrome 内置的 Gemini Nano 模型</p>\n<p>为了更直观地展现 Chrome 内置 Gemini Nano 模型的能力，让我们来尝试一个实际应用场景：撰写一封给客户的端午节商业祝福邮件。</p>\n<pre><code class="lang-auto">(async () =&gt; {\n  try {\n    if (!window.ai || (await window.ai.canCreateTextSession()) !== "readily") {\n      throw new Error("Gemini Nano not ready or not supported.");\n    }\n\n    const startTime = performance.now();\n    let charCount = 0;\n\n    const session = await window.ai.createTextSession();\n    const stream = session.promptStreaming("撰写一封给客户的端午节商业祝福邮件，300字以上。注意当前是2024年6月8日。请使用纯文本输出。");\n    let message = "";\n    for await (const chunk of stream) {\n      message = chunk;\n      charCount = chunk.length;\n    }\n\n    const endTime = performance.now();\n    const timeElapsed = (endTime - startTime) / 1000;\n\n    console.log(message);\n    console.log(`字数统计: ${charCount} 字`);\n    console.log(`每秒输出字符数: ${Math.round(charCount / timeElapsed)} 字符/秒`);\n\n    session.destroy();\n  } catch (error) {\n    console.error(error);\n  }\n})();\n</code></pre>\n            <p><small>16 个帖子 - 12 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108088">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p>Chrome 浏览器内置的 AI 大模型名为 Gemini Nano，它是 Google 最新推出的 Gemini 系列中最轻量级的版本，专为在设备端高效运行而设计。</p>\n<p>与需要庞大计算资源的服务器端 AI 模型不同，Gemini Nano 可以在用户设备本地运行，无需将数据上传到云端，从而最大程度地保护用户隐私，同时提供更快速、更流畅的 AI 体验。</p>\n<h4><a class="anchor" href="https://linux.do#chrome-1" name="chrome-1"></a>如何体验 Chrome 内置大模型？</h4>\n<p>迫不及待想要体验 Chrome 内置大模型的强大功能？按照以下步骤操作，你就能亲自感受 Web AI 的魅力：</p>\n<ol>\n<li>\n<ol>\n<li><strong>下载 Chrome 127 Canary 版本</strong> ：访问 Chrome Release Channels<br />\n<a class="inline-onebox" href="https://chromium.org/getting-involved/dev-channel/">Chrome Release Channels</a><br />\n下载最新版的 Chrome Canary 浏览器。</li>\n</ol>\n</li>\n<li>\n<ol start="2">\n<li><strong>开启相关功能</strong>：在 Chrome 地址栏输入 <code>chrome://flags/</code>，找到以下两个选项并将其设置为 <strong>Enabled</strong>：</li>\n</ol>\n</li>\n</ol>\n<ul>\n<li>• <strong>Prompt API for Gemini Nano</strong></li>\n<li>• <strong>Enables optimization guide on device</strong> → <strong>Enable BypassPerfR</strong></li>\n</ul>\n<ol start="3">\n<li>\n<ol start="3">\n<li><strong>重启 Chrome</strong>：重启浏览器，使设置生效。</li>\n</ol>\n</li>\n<li>\n<ol start="4">\n<li><strong>检查模型下载</strong>：打开 <code>chrome://components/</code>，检查 <strong>Optimization Guide On Device Model</strong> 中模型是否成功下载，点击 <strong>Check for update</strong> 进行更新。</li>\n</ol>\n</li>\n<li>\n<ol start="5">\n<li><strong>测试模型功能</strong>：打开开发者工具的控制台，输入以下代码并运行，测试是否能够调用 Gemini Nano 模型：</li>\n</ol>\n</li>\n</ol>\n<pre><code class="lang-auto">async function testGeminiNano() {\n  try {\n    if (!window.ai) throw new Error("AI API not supported.");\n    if ((await window.ai.canCreateTextSession()) !== "readily") {\n      throw new Error("Gemini Nano not ready yet.");\n    }\n    console.log("Gemini Nano is ready to use!");\n    const session = await window.ai.createTextSession();\n    const stream = session.promptStreaming("Tell me a jok!");\n    for await (const chunk of stream) {\n      console.log(chunk); \n    }\n    session.destroy();\n  } catch (err) {\n    console.error(err.message);\n  }\n}\n\ntestGeminiNano(); \n</code></pre>\n<p>代码逻辑：</p>\n<ul>\n<li>检查 <code>window.ai</code> 是否存在，判断浏览器是否支持 AI API。</li>\n<li>调用 <code>window.ai.canCreateTextSession()</code> 检查 Gemini Nano 是否准备就绪。</li>\n<li>如果准备就绪，创建文本会话，并尝试让模型讲个笑话。</li>\n<li>最后，销毁会话以释放资源。</li>\n</ul>\n<p>如果一切顺利，你将看到控制台输出一个笑话，这意味着你已经成功调用了 Chrome 内置的 Gemini Nano 模型</p>\n<p>为了更直观地展现 Chrome 内置 Gemini Nano 模型的能力，让我们来尝试一个实际应用场景：撰写一封给客户的端午节商业祝福邮件。</p>\n<pre><code class="lang-auto">(async () =&gt; {\n  try {\n    if (!window.ai || (await window.ai.canCreateTextSession()) !== "readily") {\n      throw new Error("Gemini Nano not ready or not supported.");\n    }\n\n    const startTime = performance.now();\n    let charCount = 0;\n\n    const session = await window.ai.createTextSession();\n    const stream = session.promptStreaming("撰写一封给客户的端午节商业祝福邮件，300字以上。注意当前是2024年6月8日。请使用纯文本输出。");\n    let message = "";\n    for await (const chunk of stream) {\n      message = chunk;\n      charCount = chunk.length;\n    }\n\n    const endTime = performance.now();\n    const timeElapsed = (endTime - startTime) / 1000;\n\n    console.log(message);\n    console.log(`字数统计: ${charCount} 字`);\n    console.log(`每秒输出字符数: ${Math.round(charCount / timeElapsed)} 字符/秒`);\n\n    session.destroy();\n  } catch (error) {\n    console.error(error);\n  }\n})();\n</code></pre>\n            <p><small>16 个帖子 - 12 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108088">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108088"
+}
+],
+"link": "https://linux.do/t/topic/108088",
+"published": "Sun, 09 Jun 2024 05:43:55 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=5,
+tm_min=43,
+tm_sec=55,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108088",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108088.rss",
+"title": "Chrome 127 版本内置AI大模型了"
+}
+},
+{
+"title": "请问大家在windows上从硬盘向移动硬盘转移大量文件有什么便捷的工具推荐吗？",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "请问大家在windows上从硬盘向移动硬盘转移大量文件有什么便捷的工具推荐吗？"
+},
+"authors": [
+{
+"name": "regwishie"
+}
+],
+"author": "regwishie",
+"author_detail": {
+"name": "regwishie"
+},
+"tags": [
+{
+"term": "快问快答",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p>看网上有推荐fastcopy或其他xxcopy的，没用过，用过的兄弟们说说看有什么值得推荐</p>\n            <p><small>4 个帖子 - 4 位参与者</small></p>\n            <p><a href="https: //linux.do/t/topic/108080">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p>看网上有推荐fastcopy或其他xxcopy的，没用过，用过的兄弟们说说看有什么值得推荐</p>\n            <p><small>4 个帖子 - 4 位参与者</small></p>\n            <p><a href="https: //linux.do/t/topic/108080">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108080"
+}
+],
+"link": "https://linux.do/t/topic/108080",
+"published": "Sun, 09 Jun 2024 05:26:35 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=5,
+tm_min=26,
+tm_sec=35,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108080",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108080.rss",
+"title": "请问大家在windows上从硬盘向移动硬盘转移大量文件有什么便捷的工具推荐吗？"
+}
+},
+{
+"title": "关于网友“0x0208v0”被NodeSeek网友扬言开盒的截图和时间线梳理",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "关于网友“0x0208v0”被NodeSeek网友扬言开盒的截图和时间线梳理"
+},
+"authors": [
+{
+"name": "nicemjj"
+}
+],
+"author": "nicemjj",
+"author_detail": {
+"name": "nicemjj"
+},
+"tags": [
+{
+"term": "搞七捻三",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p>看评论区，感谢lueluelue帮助发送</p>\n            <p><small>46 个帖子 - 22 位参与者</small></p>\n            <p><a href="https: //linux.do/t/topic/108070">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p>看评论区，感谢lueluelue帮助发送</p>\n            <p><small>46 个帖子 - 22 位参与者</small></p>\n            <p><a href="https: //linux.do/t/topic/108070">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108070"
+}
+],
+"link": "https://linux.do/t/topic/108070",
+"published": "Sun, 09 Jun 2024 04:54:07 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=4,
+tm_min=54,
+tm_sec=7,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108070",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108070.rss",
+"title": "关于网友“0x0208v0”被NodeSeek网友扬言开盒的截图和时间线梳理"
+}
+},
+{
+"title": "有没有插件屏蔽这个，一直提示",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "有没有插件屏蔽这个，一直提示"
+},
+"authors": [
+{
+"name": "yehuoshun"
+}
+],
+"author": "yehuoshun",
+"author_detail": {
+"name": "yehuoshun"
+},
+"tags": [
+{
+"term": "快问快答",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/d/4/d40bba759319848d3ee8fbaffce9aa6bf27200d9.png" title="image"><img alt="image" height="100" src="https://cdn.linux.do/uploads/default/original/3X/d/4/d40bba759319848d3ee8fbaffce9aa6bf27200d9.png" width="690" /></a></div><p></p>\n            <p><small>5 个帖子 - 3 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108064">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https: //cdn.linux.do/uploads/default/original/3X/d/4/d40bba759319848d3ee8fbaffce9aa6bf27200d9.png" title="image"><img alt="image" height="100" src="https://cdn.linux.do/uploads/default/original/3X/d/4/d40bba759319848d3ee8fbaffce9aa6bf27200d9.png" width="690" /></a></div><p></p>\n            <p><small>5 个帖子 - 3 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108064">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108064"
+}
+],
+"link": "https://linux.do/t/topic/108064",
+"published": "Sun, 09 Jun 2024 04:49:06 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=4,
+tm_min=49,
+tm_sec=6,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108064",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108064.rss",
+"title": "有没有插件屏蔽这个，一直提示"
+}
+},
+{
+"title": "自建了个docker镜像，欢迎使用",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "自建了个docker镜像，欢迎使用"
+},
+"authors": [
+{
+"name": "houlangs"
+}
+],
+"author": "houlangs",
+"author_detail": {
+"name": "houlangs"
+},
+"tags": [
+{
+"term": "配置调优",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p>镜像地址：<a href="https: //docker.hlyun.org" rel="noopener nofollow ugc">https://docker.hlyun.org</a><br />\n使用两台日本机器反代了Cloudflare workers，目前国内可用。</p>\n<p><s>小菜鸡，轻刷流量</s></p>\n<p>参考帖子：<a href="https://linux.do/t/topic/107166">https://linux.do/t/topic/107166</a></p>\n            <p><small>9 个帖子 - 7 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108061">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p>镜像地址：<a href="https: //docker.hlyun.org" rel="noopener nofollow ugc">https://docker.hlyun.org</a><br />\n使用两台日本机器反代了Cloudflare workers，目前国内可用。</p>\n<p><s>小菜鸡，轻刷流量</s></p>\n<p>参考帖子：<a href="https://linux.do/t/topic/107166">https://linux.do/t/topic/107166</a></p>\n            <p><small>9 个帖子 - 7 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108061">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108061"
+}
+],
+"link": "https://linux.do/t/topic/108061",
+"published": "Sun, 09 Jun 2024 04:42:29 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=4,
+tm_min=42,
+tm_sec=29,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108061",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108061.rss",
+"title": "自建了个docker镜像，欢迎使用"
+}
+},
+{
+"title": "开心一下 02",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "开心一下 02"
+},
+"authors": [
+{
+"name": "让我掉下眼泪的，不止昨夜的酒 🚃 🚶\u200d♂🍲 🎐"
+}
+],
+"author": "让我掉下眼泪的，不止昨夜的酒 🚃 🚶\u200d♂🍲 🎐",
+"author_detail": {
+"name": "让我掉下眼泪的，不止昨夜的酒 🚃 🚶\u200d♂🍲 🎐"
+},
+"tags": [
+{
+"term": "病友",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/7/3/738e921f672501ba0b33943af5d8de420d505151.jpeg" title="20240609_124043"><img alt="20240609_124043" height="342" src="https://cdn.linux.do/uploads/default/optimized/3X/7/3/738e921f672501ba0b33943af5d8de420d505151_2_690x342.jpeg" width="690" /></a></div><p></p>\n            <p><small>3 个帖子 - 3 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108059">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https: //cdn.linux.do/uploads/default/original/3X/7/3/738e921f672501ba0b33943af5d8de420d505151.jpeg" title="20240609_124043"><img alt="20240609_124043" height="342" src="https://cdn.linux.do/uploads/default/optimized/3X/7/3/738e921f672501ba0b33943af5d8de420d505151_2_690x342.jpeg" width="690" /></a></div><p></p>\n            <p><small>3 个帖子 - 3 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108059">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108059"
+}
+],
+"link": "https://linux.do/t/topic/108059",
+"published": "Sun, 09 Jun 2024 04:41:25 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=4,
+tm_min=41,
+tm_sec=25,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108059",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108059.rss",
+"title": "开心一下 02"
+}
+},
+{
+"title": "掷骰子，输了100w",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "掷骰子，输了100w"
+},
+"authors": [
+{
+"name": "snaily"
+}
+],
+"author": "snaily",
+"author_detail": {
+"name": "snaily"
+},
+"tags": [
+{
+"term": "病友",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p>看到burn hair的tg机器人里加了一个掷骰子的功能，就体验了一下，一下子输了100w，跟签到绑定的每天只能尝试一次，试完连签到都用不了了。按照现在的签到速度，什么时候才能弥补回去。他真的我哭死<img alt=": sob: " class="emoji" height="20" src="https: //cdn.linux.do/images/emoji/apple/sob.png?v=12" title=":sob:" width="20" /><br />\n</p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/a/b/abd2aed13e300da12c6c41f66f41145b121e4baa.jpeg" title="IMG_2075"><img alt="IMG_2075" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/a/b/abd2aed13e300da12c6c41f66f41145b121e4baa_2_231x500.jpeg" width="231" /></a></div><p></p>\n<p>珍爱生命，远离赌博！！！</p>\n            <p><small>78 个帖子 - 18 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108055">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p>看到burn hair的tg机器人里加了一个掷骰子的功能，就体验了一下，一下子输了100w，跟签到绑定的每天只能尝试一次，试完连签到都用不了了。按照现在的签到速度，什么时候才能弥补回去。他真的我哭死<img alt=": sob: " class="emoji" height="20" src="https: //cdn.linux.do/images/emoji/apple/sob.png?v=12" title=":sob:" width="20" /><br />\n</p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/a/b/abd2aed13e300da12c6c41f66f41145b121e4baa.jpeg" title="IMG_2075"><img alt="IMG_2075" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/a/b/abd2aed13e300da12c6c41f66f41145b121e4baa_2_231x500.jpeg" width="231" /></a></div><p></p>\n<p>珍爱生命，远离赌博！！！</p>\n            <p><small>78 个帖子 - 18 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108055">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108055"
+}
+],
+"link": "https://linux.do/t/topic/108055",
+"published": "Sun, 09 Jun 2024 04:35:13 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=4,
+tm_min=35,
+tm_sec=13,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108055",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108055.rss",
+"title": "掷骰子，输了100w"
+}
+},
+{
+"title": "请教oneapi负载均衡问题",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "请教oneapi负载均衡问题"
+},
+"authors": [
+{
+"name": "daydayup"
+}
+],
+"author": "daydayup",
+"author_detail": {
+"name": "daydayup"
+},
+"tags": [
+{
+"term": "快问快答",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p>oneapi负载均衡，应该怎么实现？</p>\n<ol>\n<li>创建多个渠道，每个渠道都用同样的模型，然后再创建一个令牌，会自动负载均衡</li>\n<li>还发现创建渠道时添加密钥可以选择“批量创建”，能填入多个密钥，会自动创建多个相同模型的渠道<br />\n<img alt="image" height="143" src="https://cdn.linux.do/uploads/default/original/3X/3/f/3fef49fbe141207e25bd17dd9f8f34fa05346811.png" width="674" /></li>\n</ol>\n<p>能在一个渠道中添加多个密钥而不创建多渠道吗？因为同模型太多渠道容易记混，不好管理</p>\n            <p><small>3 个帖子 - 3 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108049">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p>oneapi负载均衡，应该怎么实现？</p>\n<ol>\n<li>创建多个渠道，每个渠道都用同样的模型，然后再创建一个令牌，会自动负载均衡</li>\n<li>还发现创建渠道时添加密钥可以选择“批量创建”，能填入多个密钥，会自动创建多个相同模型的渠道<br />\n<img alt="image" height="143" src="https: //cdn.linux.do/uploads/default/original/3X/3/f/3fef49fbe141207e25bd17dd9f8f34fa05346811.png" width="674" /></li>\n</ol>\n<p>能在一个渠道中添加多个密钥而不创建多渠道吗？因为同模型太多渠道容易记混，不好管理</p>\n            <p><small>3 个帖子 - 3 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108049">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108049"
+}
+],
+"link": "https://linux.do/t/topic/108049",
+"published": "Sun, 09 Jun 2024 04:27:35 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=4,
+tm_min=27,
+tm_sec=35,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108049",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108049.rss",
+"title": "请教oneapi负载均衡问题"
+}
+},
+{
+"title": "现在这种api价格算怎样的",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "现在这种api价格算怎样的"
+},
+"authors": [
+{
+"name": "prysmall"
+}
+],
+"author": "prysmall",
+"author_detail": {
+"name": "prysmall"
+},
+"tags": [
+{
+"term": "快问快答",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p>八毛一刀<br />\n</p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/f/4/f4f94521f80b6d674db19f93d7dd90494c0ffe61.png" title="image"><img alt="image" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/f/4/f4f94521f80b6d674db19f93d7dd90494c0ffe61_2_455x500.png" width="455" /></a></div><p></p>\n            <p><small>24 个帖子 - 5 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108041">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p>八毛一刀<br />\n</p><div class="lightbox-wrapper"><a class="lightbox" href="https: //cdn.linux.do/uploads/default/original/3X/f/4/f4f94521f80b6d674db19f93d7dd90494c0ffe61.png" title="image"><img alt="image" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/f/4/f4f94521f80b6d674db19f93d7dd90494c0ffe61_2_455x500.png" width="455" /></a></div><p></p>\n            <p><small>24 个帖子 - 5 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108041">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108041"
+}
+],
+"link": "https://linux.do/t/topic/108041",
+"published": "Sun, 09 Jun 2024 04:21:40 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=4,
+tm_min=21,
+tm_sec=40,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108041",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108041.rss",
+"title": "现在这种api价格算怎样的"
+}
+},
+{
+"title": "好歌推荐 - 2024/06/09",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "好歌推荐 - 2024/06/09"
+},
+"authors": [
+{
+"name": "神墨网络🐾"
+}
+],
+"author": "神墨网络🐾",
+"author_detail": {
+"name": "神墨网络🐾"
+},
+"tags": [
+{
+"term": "音乐",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p><small>13 个帖子 - 10 位参与者</small></p>\n            <p><a href="https: //linux.do/t/topic/108037">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p><small>13 个帖子 - 10 位参与者</small></p>\n            <p><a href="https: //linux.do/t/topic/108037">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108037"
+}
+],
+"link": "https://linux.do/t/topic/108037",
+"published": "Sun, 09 Jun 2024 04:15:49 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=4,
+tm_min=15,
+tm_sec=49,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108037",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108037.rss",
+"title": "好歌推荐 - 2024/06/09"
+}
+},
+{
+"title": "VertexAI 食用指南",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "VertexAI 食用指南"
+},
+"authors": [
+{
+"name": "Raimbault Bruce"
+}
+],
+"author": "Raimbault Bruce",
+"author_detail": {
+"name": "Raimbault Bruce"
+},
+"tags": [
+{
+"term": "人工智能",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<blockquote>\n<p><strong>编辑中······</strong></p>\n</blockquote>\n<h2><a class="anchor" href="https: //linux.do#h-1" name="h-1"></a>简介</h2>\n<h2><a class="anchor" href="https://linux.do#h-2" name="h-2"></a>简单上手</h2>\n<h3><a class="anchor" href="https://linux.do#api-3" name="api-3"></a>开通API</h3>\n<p>访问 <a href="https://console.cloud.google.com/vertex-ai" rel="noopener nofollow ugc">Vertex AI 页</a>，点击开通API，会创建一个试用项目 <strong>My First Project</strong> 并赠送150刀</p>\n<blockquote>\n<p>下面的操作请始终注意，左上角是否已切换为试用项目 <strong>My First Project</strong></p>\n<hr />\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/0/0/009939740a512917e626cbbf44cdd18a869cbaeb.png" title="image"><img alt="image" height="27" src="https://cdn.linux.do/uploads/default/optimized/3X/0/0/009939740a512917e626cbbf44cdd18a869cbaeb_2_690x27.png" width="690" /></a></div><p></p>\n</blockquote>\n<h3><a class="anchor" href="https://linux.do#h-4" name="h-4"></a>创建实例</h3>\n<p>访问 <a href="https://console.cloud.google.com/compute" rel="noopener nofollow ugc">实例页</a>，点击蓝色按钮 创建实例，地区选台湾，默认E2并设置为最低配即可，防火墙注意勾选允许</p>\n<hr />\n<p><img alt="image" height="495" src="https://cdn.linux.do/uploads/default/original/3X/8/b/8b61d99cdcd4653443611ae8e678c73720643c93.png" width="595" /></p>\n<h3><a class="anchor" href="https://linux.do#h-5" name="h-5"></a>创建密钥</h3>\n<p>访问 <a href="https://console.cloud.google.com/iam-admin/serviceaccounts" rel="noopener nofollow ugc">账号页</a>，点击账号列表最后一列的 操作 下的三个点展开，然后依次点击 管理密钥 - 添加密钥 - 创建新密钥 - 创建，密钥文件会下载到本地</p>\n<h3><a class="anchor" href="https://linux.do#h-6" name="h-6"></a>测试运行</h3>\n<p>将密钥文件通过 FTP 上传至服务器</p>\n<ul>\n<li>安装依赖</li>\n</ul>\n<pre><code class="lang-auto">pip install langchain google-cloud-aiplatform\npip install --upgrade --quiet  langchain-google-vertexai\n</code></pre>\n<ul>\n<li>创建主程序</li>\n</ul>\n<pre><code class="lang-auto">vi main.py\n</code></pre>\n<p>写入以下代码</p>\n<pre><code class="lang-auto">import os\nfrom langchain_core.prompts import ChatPromptTemplate\nfrom langchain_google_vertexai import ChatVertexAI\n\nos.environ[\"GOOGLE_APPLICATION_CREDENTIALS\"] = \"你的密钥文件路径\"\n\nsystem = "You are a helpful assistant who translate English to French"\nhuman = "Translate this sentence from English to French. I love programming."\nprompt = ChatPromptTemplate.from_messages([("system", system), ("human", human)])\n\nchat = ChatVertexAI(model="gemini-pro", convert_system_message_to_human=True)\n\nchain = prompt | chat\n\nresult = chain.invoke({})\nprint(result.content)\n\n</code></pre>\n<ul>\n<li>测试运行</li>\n</ul>\n<pre><code class="lang-auto">python main.py\n</code></pre>\n<p>如果能输出法语翻译结果，则通过</p>\n<blockquote>\n<p><strong>注意：国内服务器需要科学设置</strong></p>\n</blockquote>\n<h3><a class="anchor" href="https://linux.do#h-7" name="h-7"></a>反代</h3>\n<h3><a class="anchor" href="https://linux.do#oneapi-8" name="oneapi-8"></a>oneapi配置</h3>\n<h2><a class="anchor" href="https://linux.do#h-9" name="h-9"></a>参考链接</h2>\n<ul>\n<li><a class="inline-onebox" href="https://python.langchain.com/v0.2/docs/integrations/chat/google_vertex_ai_palm/" rel="noopener nofollow ugc">ChatVertexAI | 🦜️🔗 LangChain</a></li>\n</ul>\n            <p><small>21 个帖子 - 19 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108036">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<blockquote>\n<p><strong>编辑中······</strong></p>\n</blockquote>\n<h2><a class="anchor" href="https://linux.do#h-1" name="h-1"></a>简介</h2>\n<h2><a class="anchor" href="https://linux.do#h-2" name="h-2"></a>简单上手</h2>\n<h3><a class="anchor" href="https://linux.do#api-3" name="api-3"></a>开通API</h3>\n<p>访问 <a href="https://console.cloud.google.com/vertex-ai" rel="noopener nofollow ugc">Vertex AI 页</a>，点击开通API，会创建一个试用项目 <strong>My First Project</strong> 并赠送150刀</p>\n<blockquote>\n<p>下面的操作请始终注意，左上角是否已切换为试用项目 <strong>My First Project</strong></p>\n<hr />\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/0/0/009939740a512917e626cbbf44cdd18a869cbaeb.png" title="image"><img alt="image" height="27" src="https://cdn.linux.do/uploads/default/optimized/3X/0/0/009939740a512917e626cbbf44cdd18a869cbaeb_2_690x27.png" width="690" /></a></div><p></p>\n</blockquote>\n<h3><a class="anchor" href="https://linux.do#h-4" name="h-4"></a>创建实例</h3>\n<p>访问 <a href="https://console.cloud.google.com/compute" rel="noopener nofollow ugc">实例页</a>，点击蓝色按钮 创建实例，地区选台湾，默认E2并设置为最低配即可，防火墙注意勾选允许</p>\n<hr />\n<p><img alt="image" height="495" src="https://cdn.linux.do/uploads/default/original/3X/8/b/8b61d99cdcd4653443611ae8e678c73720643c93.png" width="595" /></p>\n<h3><a class="anchor" href="https://linux.do#h-5" name="h-5"></a>创建密钥</h3>\n<p>访问 <a href="https://console.cloud.google.com/iam-admin/serviceaccounts" rel="noopener nofollow ugc">账号页</a>，点击账号列表最后一列的 操作 下的三个点展开，然后依次点击 管理密钥 - 添加密钥 - 创建新密钥 - 创建，密钥文件会下载到本地</p>\n<h3><a class="anchor" href="https://linux.do#h-6" name="h-6"></a>测试运行</h3>\n<p>将密钥文件通过 FTP 上传至服务器</p>\n<ul>\n<li>安装依赖</li>\n</ul>\n<pre><code class="lang-auto">pip install langchain google-cloud-aiplatform\npip install --upgrade --quiet  langchain-google-vertexai\n</code></pre>\n<ul>\n<li>创建主程序</li>\n</ul>\n<pre><code class="lang-auto">vi main.py\n</code></pre>\n<p>写入以下代码</p>\n<pre><code class="lang-auto">import os\nfrom langchain_core.prompts import ChatPromptTemplate\nfrom langchain_google_vertexai import ChatVertexAI\n\nos.environ[\"GOOGLE_APPLICATION_CREDENTIALS\"] = \"你的密钥文件路径\"\n\nsystem = "You are a helpful assistant who translate English to French"\nhuman = "Translate this sentence from English to French. I love programming."\nprompt = ChatPromptTemplate.from_messages([("system", system), ("human", human)])\n\nchat = ChatVertexAI(model="gemini-pro", convert_system_message_to_human=True)\n\nchain = prompt | chat\n\nresult = chain.invoke({})\nprint(result.content)\n\n</code></pre>\n<ul>\n<li>测试运行</li>\n</ul>\n<pre><code class="lang-auto">python main.py\n</code></pre>\n<p>如果能输出法语翻译结果，则通过</p>\n<blockquote>\n<p><strong>注意：国内服务器需要科学设置</strong></p>\n</blockquote>\n<h3><a class="anchor" href="https://linux.do#h-7" name="h-7"></a>反代</h3>\n<h3><a class="anchor" href="https://linux.do#oneapi-8" name="oneapi-8"></a>oneapi配置</h3>\n<h2><a class="anchor" href="https://linux.do#h-9" name="h-9"></a>参考链接</h2>\n<ul>\n<li><a class="inline-onebox" href="https://python.langchain.com/v0.2/docs/integrations/chat/google_vertex_ai_palm/" rel="noopener nofollow ugc">ChatVertexAI | 🦜️🔗 LangChain</a></li>\n</ul>\n            <p><small>21 个帖子 - 19 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108036">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108036"
+}
+],
+"link": "https://linux.do/t/topic/108036",
+"published": "Sun, 09 Jun 2024 04:14:02 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=4,
+tm_min=14,
+tm_sec=2,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108036",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108036.rss",
+"title": "VertexAI 食用指南"
+}
+},
+{
+"title": "Leetcode每日一题 ------ 974. 和可被 K 整除的子数组",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "Leetcode每日一题 ------ 974. 和可被 K 整除的子数组"
+},
+"authors": [
+{
+"name": "ninijia"
+}
+],
+"author": "ninijia",
+"author_detail": {
+"name": "ninijia"
+},
+"tags": [
+{
+"term": "软件开发",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p>从<a href="https: //linux.do/t/topic/41836">Leetcode 每日一题练习</a>继续讨论：</p>\n<p><a href="https://leetcode.cn/problems/subarray-sums-divisible-by-k/" rel="noopener nofollow ugc">974. 和可被 K 整除的子数组</a><br />\n<a href="https://leetcode.com/problems/subarray-sums-divisible-by-k/" rel="noopener nofollow ugc">974. Subarray Sums Divisible by K</a></p>\n<h3><a class="anchor" href="https://linux.do#h-1" name="h-1"></a>题解</h3>\n<p>本题和昨天的题目类似, 通过前缀和相同来得到能被k整除的连续子数组, 注意本题中k的范围为 <span class="math">10^4</span>, 因此可以用数组来保存前缀和对k取模后得到某个余数对应的下标位置个数. 后续遇到相同余数在结果中加上之前相同余数的位置个数, 并更新该余数对应的位置个数.</p>\n<h3><a class="anchor" href="https://linux.do#h-2" name="h-2"></a>代码</h3>\n<pre><code class="lang-go">func subarraysDivByK(nums []int, k int) int {\n    remain := make([]int, k)\n    remain[0] = 1\n    sum  := 0\n    result := 0\n    for _, value := range nums{\n        sum = ((sum + value)%k + k) % k\n        result += remain[sum]\n        remain[sum]++\n    }\n    return result\n}\n\n</code></pre>\n<h3><a class="anchor" href="https://linux.do#h-3" name="h-3"></a>总结</h3>\n<p>注意对负数取模的处理, 在这里为了将相同余数的位置个数保存到数组中, 要将负数取模后的数转换为正数(如对5取模得-4转换为1, 在求和过程中这二者的效果相同), 先取模再加一个k再取模(如果是正数通过再取模将加上的k消掉)即可</p>\n            <p><small>3 个帖子 - 2 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108028">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p>从<a href="https: //linux.do/t/topic/41836">Leetcode 每日一题练习</a>继续讨论：</p>\n<p><a href="https://leetcode.cn/problems/subarray-sums-divisible-by-k/" rel="noopener nofollow ugc">974. 和可被 K 整除的子数组</a><br />\n<a href="https://leetcode.com/problems/subarray-sums-divisible-by-k/" rel="noopener nofollow ugc">974. Subarray Sums Divisible by K</a></p>\n<h3><a class="anchor" href="https://linux.do#h-1" name="h-1"></a>题解</h3>\n<p>本题和昨天的题目类似, 通过前缀和相同来得到能被k整除的连续子数组, 注意本题中k的范围为 <span class="math">10^4</span>, 因此可以用数组来保存前缀和对k取模后得到某个余数对应的下标位置个数. 后续遇到相同余数在结果中加上之前相同余数的位置个数, 并更新该余数对应的位置个数.</p>\n<h3><a class="anchor" href="https://linux.do#h-2" name="h-2"></a>代码</h3>\n<pre><code class="lang-go">func subarraysDivByK(nums []int, k int) int {\n    remain := make([]int, k)\n    remain[0] = 1\n    sum  := 0\n    result := 0\n    for _, value := range nums{\n        sum = ((sum + value)%k + k) % k\n        result += remain[sum]\n        remain[sum]++\n    }\n    return result\n}\n\n</code></pre>\n<h3><a class="anchor" href="https://linux.do#h-3" name="h-3"></a>总结</h3>\n<p>注意对负数取模的处理, 在这里为了将相同余数的位置个数保存到数组中, 要将负数取模后的数转换为正数(如对5取模得-4转换为1, 在求和过程中这二者的效果相同), 先取模再加一个k再取模(如果是正数通过再取模将加上的k消掉)即可</p>\n            <p><small>3 个帖子 - 2 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108028">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108028"
+}
+],
+"link": "https://linux.do/t/topic/108028",
+"published": "Sun, 09 Jun 2024 03:49:31 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=3,
+tm_min=49,
+tm_sec=31,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108028",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108028.rss",
+"title": "Leetcode每日一题 ------ 974. 和可被 K 整除的子数组"
+}
+},
+{
+"title": "想买个本写代码，macbookpro2019的i7还是2020十代i5",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "想买个本写代码，macbookpro2019的i7还是2020十代i5"
+},
+"authors": [
+{
+"name": "floki"
+}
+],
+"author": "floki",
+"author_detail": {
+"name": "floki"
+},
+"tags": [
+{
+"term": "快问快答",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p>没用过Mac本，想买个用来写写小代码，看看剧儿。<br />\n听听佬们的建议 <img alt=": smiling_face_with_three_hearts: " class="emoji" height="20" src="https: //cdn.linux.do/images/emoji/apple/smiling_face_with_three_hearts.png?v=12" title=":smiling_face_with_three_hearts:" width="20" /></p>\n            <p><small>19 个帖子 - 15 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108026">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p>没用过Mac本，想买个用来写写小代码，看看剧儿。<br />\n听听佬们的建议 <img alt=": smiling_face_with_three_hearts: " class="emoji" height="20" src="https: //cdn.linux.do/images/emoji/apple/smiling_face_with_three_hearts.png?v=12" title=":smiling_face_with_three_hearts:" width="20" /></p>\n            <p><small>19 个帖子 - 15 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108026">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108026"
+}
+],
+"link": "https://linux.do/t/topic/108026",
+"published": "Sun, 09 Jun 2024 03:47:29 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=3,
+tm_min=47,
+tm_sec=29,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108026",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108026.rss",
+"title": "想买个本写代码，macbookpro2019的i7还是2020十代i5"
+}
+},
+{
+"title": "咨询众佬，我想像成为一名黑客或者红客，该去哪里开始学呢？",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "咨询众佬，我想像成为一名黑客或者红客，该去哪里开始学呢？"
+},
+"authors": [
+{
+"name": "Y0254"
+}
+],
+"author": "Y0254",
+"author_detail": {
+"name": "Y0254"
+},
+"tags": [
+{
+"term": "快问快答",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p>真的感觉黑客们好帅，好帅 <img alt=": heart_eyes: " class="emoji" height="20" src="https: //cdn.linux.do/images/emoji/apple/heart_eyes.png?v=12" title=":heart_eyes:" width="20" /></p>\n            <p><small>19 个帖子 - 15 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108021">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p>真的感觉黑客们好帅，好帅 <img alt=": heart_eyes: " class="emoji" height="20" src="https: //cdn.linux.do/images/emoji/apple/heart_eyes.png?v=12" title=":heart_eyes:" width="20" /></p>\n            <p><small>19 个帖子 - 15 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108021">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108021"
+}
+],
+"link": "https://linux.do/t/topic/108021",
+"published": "Sun, 09 Jun 2024 03:33:30 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=3,
+tm_min=33,
+tm_sec=30,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108021",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108021.rss",
+"title": "咨询众佬，我想像成为一名黑客或者红客，该去哪里开始学呢？"
+}
+},
+{
+"title": "各位大佬怎么备份服务器？",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "各位大佬怎么备份服务器？"
+},
+"authors": [
+{
+"name": "enjoy"
+}
+],
+"author": "enjoy",
+"author_detail": {
+"name": "enjoy"
+},
+"tags": [
+{
+"term": "快问快答",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<blockquote>\n<p>各位MJJ应该都有丢数据的经历吧？ <img alt=": sweat_smile: " class="emoji" height="20" src="https: //cdn.linux.do/images/emoji/apple/sweat_smile.png?v=12" title=":sweat_smile:" width="20" /></p>\n</blockquote>\n<p>使用 Duplicati 对服务器进行备份<br />\n</p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/a/9/a960fa4b411f5378a72d045a7d1a96d8791d608c.png" title="image"><img alt="image" height="174" src="https://cdn.linux.do/uploads/default/optimized/3X/a/9/a960fa4b411f5378a72d045a7d1a96d8791d608c_2_345x174.png" width="345" /></a></div><p></p>\n<p>贴一下<code>docker-compose.yml</code></p>\n<pre><code class="lang-yml">  backup:\n    image: lscr.io/linuxserver/duplicati:latest\n    environment:\n      - PUID=0\n      - PGID=0\n      - TZ=Asia/Shanghai\n      - CLI_ARGS= #optional\n    volumes:\n      - ./duplicati/config:/config # 存放duplicat的i配置文件\n      - ./duplicati/backups:/backups\n      - ../app:/source\n    restart: unless-stopped\n  rclone:\n    image: rclone/rclone\n    container_name: rclone\n    restart: unless-stopped\n    user: 0:0\n    depends_on:\n      - alist\n    devices:\n      - /dev/fuse\n    volumes:\n      - ./rclone/config/rclone:/config/rclone\n      - ./rclone/disk:/data:shared\n      - /etc/passwd:/etc/passwd:ro\n      - /etc/group:/etc/group:ro\n    cap_add:\n      - SYS_ADMIN\n    security_opt:\n      - apparmor:unconfined\n    command: ["mount","alist:","/data/yun","--allow-other","--allow-non-empty","--vfs-cache-mode","writes","--transfers=50"]\n</code></pre>\n<p>目前用的 rclone 挂载 远程的存储盘进行备份 （买的 10GB的小鸡，存储不太够）</p>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/5/c/5cae2e8febf8bae6b7ddb3a590bc551664ae2f30.png" title="image"><img alt="image" height="212" src="https://cdn.linux.do/uploads/default/optimized/3X/5/c/5cae2e8febf8bae6b7ddb3a590bc551664ae2f30_2_345x212.png" width="345" /></a></div><p></p>\n<p>各位大佬用的什么备份方式捏？</p>\n<p><a href="https://status.mcenjoy.cn/" rel="noopener nofollow ugc">监控站</a></p>\n            <p><small>21 个帖子 - 16 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108020">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<blockquote>\n<p>各位MJJ应该都有丢数据的经历吧？ <img alt=": sweat_smile: " class="emoji" height="20" src="https: //cdn.linux.do/images/emoji/apple/sweat_smile.png?v=12" title=":sweat_smile:" width="20" /></p>\n</blockquote>\n<p>使用 Duplicati 对服务器进行备份<br />\n</p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/a/9/a960fa4b411f5378a72d045a7d1a96d8791d608c.png" title="image"><img alt="image" height="174" src="https://cdn.linux.do/uploads/default/optimized/3X/a/9/a960fa4b411f5378a72d045a7d1a96d8791d608c_2_345x174.png" width="345" /></a></div><p></p>\n<p>贴一下<code>docker-compose.yml</code></p>\n<pre><code class="lang-yml">  backup:\n    image: lscr.io/linuxserver/duplicati:latest\n    environment:\n      - PUID=0\n      - PGID=0\n      - TZ=Asia/Shanghai\n      - CLI_ARGS= #optional\n    volumes:\n      - ./duplicati/config:/config # 存放duplicat的i配置文件\n      - ./duplicati/backups:/backups\n      - ../app:/source\n    restart: unless-stopped\n  rclone:\n    image: rclone/rclone\n    container_name: rclone\n    restart: unless-stopped\n    user: 0:0\n    depends_on:\n      - alist\n    devices:\n      - /dev/fuse\n    volumes:\n      - ./rclone/config/rclone:/config/rclone\n      - ./rclone/disk:/data:shared\n      - /etc/passwd:/etc/passwd:ro\n      - /etc/group:/etc/group:ro\n    cap_add:\n      - SYS_ADMIN\n    security_opt:\n      - apparmor:unconfined\n    command: ["mount","alist:","/data/yun","--allow-other","--allow-non-empty","--vfs-cache-mode","writes","--transfers=50"]\n</code></pre>\n<p>目前用的 rclone 挂载 远程的存储盘进行备份 （买的 10GB的小鸡，存储不太够）</p>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/5/c/5cae2e8febf8bae6b7ddb3a590bc551664ae2f30.png" title="image"><img alt="image" height="212" src="https://cdn.linux.do/uploads/default/optimized/3X/5/c/5cae2e8febf8bae6b7ddb3a590bc551664ae2f30_2_345x212.png" width="345" /></a></div><p></p>\n<p>各位大佬用的什么备份方式捏？</p>\n<p><a href="https://status.mcenjoy.cn/" rel="noopener nofollow ugc">监控站</a></p>\n            <p><small>21 个帖子 - 16 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108020">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108020"
+}
+],
+"link": "https://linux.do/t/topic/108020",
+"published": "Sun, 09 Jun 2024 03:31:24 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=3,
+tm_min=31,
+tm_sec=24,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108020",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108020.rss",
+"title": "各位大佬怎么备份服务器？"
+}
+},
+{
+"title": "Dcoker一键脚本工具箱",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "Dcoker一键脚本工具箱"
+},
+"authors": [
+{
+"name": "Rational"
+}
+],
+"author": "Rational",
+"author_detail": {
+"name": "Rational"
+},
+"tags": [
+{
+"term": "软件开发",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p>收集了一些自己比较喜欢的docker项目 做成了一键脚本供大家使用<br />\n项目地址：</p><aside class="onebox allowlistedgeneric">\n  <header class="source">\n      <img class="site-icon" height="32" src="https: //github.githubassets.com/favicons/favicon.svg" width="32" />\n\n      <a href="https://github.com/ecouus/Shell" rel="noopener nofollow ugc" target="_blank">GitHub</a>\n  </header>\n\n  <article class="onebox-body">\n    <div class="aspect-image"><img class="thumbnail" height="345" src="https://cdn.linux.do/uploads/default/optimized/3X/b/8/b8cf91990721349dfa1523a2c0a1b1b5f5635f85_2_690x345.png" width="690" /></div>\n\n<h3><a href="https://github.com/ecouus/Shell" rel="noopener nofollow ugc" target="_blank">GitHub - ecouus/Shell</a></h3>\n\n  <p>Contribute to ecouus/Shell development by creating an account on GitHub.</p>\n\n\n  </article>\n\n  <div class="onebox-metadata">\n    \n    \n  </div>\n\n  <div style="clear: both;"></div>\n</aside>\n<p>\n喜欢的话欢迎点个免费的star~<br />\n开源代码 如有问题欢迎指正</p>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/4/5/45affb215879f4b37684eddbd0656aaa9aea34ae.png" title=""><img alt="" height="500" src="https://cdn.linux.do/uploads/default/original/3X/4/5/45affb215879f4b37684eddbd0656aaa9aea34ae.png" width="616" /></a></div><p></p>\n            <p><small>7 个帖子 - 6 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108019">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p>收集了一些自己比较喜欢的docker项目 做成了一键脚本供大家使用<br />\n项目地址：</p><aside class="onebox allowlistedgeneric">\n  <header class="source">\n      <img class="site-icon" height="32" src="https: //github.githubassets.com/favicons/favicon.svg" width="32" />\n\n      <a href="https://github.com/ecouus/Shell" rel="noopener nofollow ugc" target="_blank">GitHub</a>\n  </header>\n\n  <article class="onebox-body">\n    <div class="aspect-image"><img class="thumbnail" height="345" src="https://cdn.linux.do/uploads/default/optimized/3X/b/8/b8cf91990721349dfa1523a2c0a1b1b5f5635f85_2_690x345.png" width="690" /></div>\n\n<h3><a href="https://github.com/ecouus/Shell" rel="noopener nofollow ugc" target="_blank">GitHub - ecouus/Shell</a></h3>\n\n  <p>Contribute to ecouus/Shell development by creating an account on GitHub.</p>\n\n\n  </article>\n\n  <div class="onebox-metadata">\n    \n    \n  </div>\n\n  <div style="clear: both;"></div>\n</aside>\n<p>\n喜欢的话欢迎点个免费的star~<br />\n开源代码 如有问题欢迎指正</p>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/4/5/45affb215879f4b37684eddbd0656aaa9aea34ae.png" title=""><img alt="" height="500" src="https://cdn.linux.do/uploads/default/original/3X/4/5/45affb215879f4b37684eddbd0656aaa9aea34ae.png" width="616" /></a></div><p></p>\n            <p><small>7 个帖子 - 6 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108019">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108019"
+}
+],
+"link": "https://linux.do/t/topic/108019",
+"published": "Sun, 09 Jun 2024 03:30:53 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=3,
+tm_min=30,
+tm_sec=53,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108019",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108019.rss",
+"title": "Dcoker一键脚本工具箱"
+}
+},
+{
+"title": "求汽水音乐免费听~",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "求汽水音乐免费听~"
+},
+"authors": [
+{
+"name": "祝小火"
+}
+],
+"author": "祝小火",
+"author_detail": {
+"name": "祝小火"
+},
+"tags": [
+{
+"term": "快问快答",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p>由于抖音里收藏的一些背景音乐什么的都是使用汽水音乐，虽然抖音上也可以听（我经常把抖音当播放器听歌用），但还是想尝试下汽水音乐</p>\n<p>有没有大佬有汽水音乐的破解版或者免费听汽水音乐里的歌曲也可以</p>\n<p>感谢<br />\n</p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/5/1/51150441896b06c2253dc88fa54258baeb9e6d4f.png" title="哇伊"><img alt="哇伊" height="100" src="https://cdn.linux.do/uploads/default/optimized/3X/5/1/51150441896b06c2253dc88fa54258baeb9e6d4f_2_116x100.png" width="116" /></a></div><p></p>\n            <p><small>9 个帖子 - 4 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108017">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p>由于抖音里收藏的一些背景音乐什么的都是使用汽水音乐，虽然抖音上也可以听（我经常把抖音当播放器听歌用），但还是想尝试下汽水音乐</p>\n<p>有没有大佬有汽水音乐的破解版或者免费听汽水音乐里的歌曲也可以</p>\n<p>感谢<br />\n</p><div class="lightbox-wrapper"><a class="lightbox" href="https: //cdn.linux.do/uploads/default/original/3X/5/1/51150441896b06c2253dc88fa54258baeb9e6d4f.png" title="哇伊"><img alt="哇伊" height="100" src="https://cdn.linux.do/uploads/default/optimized/3X/5/1/51150441896b06c2253dc88fa54258baeb9e6d4f_2_116x100.png" width="116" /></a></div><p></p>\n            <p><small>9 个帖子 - 4 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108017">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108017"
+}
+],
+"link": "https://linux.do/t/topic/108017",
+"published": "Sun, 09 Jun 2024 03:28:54 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=3,
+tm_min=28,
+tm_sec=54,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108017",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108017.rss",
+"title": "求汽水音乐免费听~"
+}
+},
+{
+"title": "使用Github Action将DockerHub镜像转存到阿里云私有仓库,供国内服务器使用，免费易用",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "使用Github Action将DockerHub镜像转存到阿里云私有仓库,供国内服务器使用，免费易用"
+},
+"authors": [
+{
+"name": "技术爬爬虾"
+}
+],
+"author": "技术爬爬虾",
+"author_detail": {
+"name": "技术爬爬虾"
+},
+"tags": [
+{
+"term": "配置调优",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p>使用Github Action将DockerHub镜像转存到阿里云私有仓库，供国内服务器使用，免费易用</p>\n<p>视频教程：<a class="inline-onebox" href="https: //www.bilibili.com/video/BV1Zn4y19743/" rel="noopener nofollow ugc">Docker镜像停服? 我编写了一个镜像转存工具，解决国内无法使用docker的问题_哔哩哔哩_bilibili</a></p>\n<p>项目地址   <a href="https://github.com/tech-shrimp/docker_image_pusher" rel="noopener nofollow ugc">https://github.com/tech-shrimp/docker_image_pusher</a></p>\n<h2><a class="anchor" href="https://linux.do#h-1" name="h-1"></a>使用方式</h2>\n<h3><a class="anchor" href="https://linux.do#h-2" name="h-2"></a>配置阿里云</h3>\n<p>登录阿里云容器镜像服务</p>\n<p><a href="https://cr.console.aliyun.com" rel="noopener nofollow ugc">https://cr.console.aliyun.com</a></p>\n<p>启用个人实例，创建一个命名空间（<strong>ALIYUN_NAME_SPACE</strong>）<br />\n</p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/d/2/d2900901ef66dabb1ee7d94f0a78088ddd74cb12.png" title="命名空间"><img alt="命名空间" height="395" src="https://cdn.linux.do/uploads/default/original/3X/d/2/d2900901ef66dabb1ee7d94f0a78088ddd74cb12.png" width="690" /></a></div><p></p>\n<p>访问凭证–&gt;获取环境变量<br />\n用户名（<strong>ALIYUN_REGISTRY_USER</strong>)<br />\n密码（<strong>ALIYUN_REGISTRY_PASSWORD</strong>)<br />\n仓库地址（<strong>ALIYUN_REGISTRY</strong>）</p>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/1/4/14ac5a5e096696d73f7151a8ab13f69b3c82d9eb.jpeg" title="用户名密码"><img alt="用户名密码" height="317" src="https://cdn.linux.do/uploads/default/optimized/3X/1/4/14ac5a5e096696d73f7151a8ab13f69b3c82d9eb_2_690x317.jpeg" width="690" /></a></div><p></p>\n<h3><a class="anchor" href="https://linux.do#fork-3" name="fork-3"></a>Fork本项目</h3>\n<p>Fork本项目<br />\n进入您自己的项目，点击Action，启用Github Action功能 配置环境变量，进入Settings-&gt;Secret and variables-&gt;Actions-&gt;New Repository secret</p>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/d/8/d87c933084fa03ba279ae08b4299f4c15aa0f9a9.png" title="配置环境变量"><img alt="配置环境变量" height="360" src="https://cdn.linux.do/uploads/default/optimized/3X/d/8/d87c933084fa03ba279ae08b4299f4c15aa0f9a9_2_690x360.png" width="690" /></a></div><p></p>\n<p>将上一步的 ALIYUN_NAME_SPACE，ALIYUN_REGISTRY_USER，ALIYUN_REGISTRY_PASSWORD，ALIYUN_REGISTRY 的值配置成环境变量</p>\n<h3><a class="anchor" href="https://linux.do#h-4" name="h-4"></a>添加镜像</h3>\n<p>打开images.txt文件，添加你想要的镜像，可以带tag，也可以不用（默认latest） 文件提交后自动进入Github Action构建</p>\n<h3><a class="anchor" href="https://linux.do#h-5" name="h-5"></a>使用镜像</h3>\n<p>回到阿里云，镜像仓库。点击任意镜像，可查看镜像状态。可将镜像改成公开（免登录拉取）<br />\n</p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/a/3/a3abe7f615a4edae2f852c891eb652ae138b5182.png" title="开始使用"><img alt="开始使用" height="299" src="https://cdn.linux.do/uploads/default/optimized/3X/a/3/a3abe7f615a4edae2f852c891eb652ae138b5182_2_690x299.png" width="690" /></a></div><p></p>\n<p>在国内服务器pull镜像：</p>\n<pre><code class="lang-auto">docker pull registry.cn-hangzhou.aliyuncs.com/shrimp-images/alpine\n</code></pre>\n<p><a href="http://registry.cn-hangzhou.aliyuncs.com" rel="noopener nofollow ugc">registry.cn-hangzhou.aliyuncs.com</a> 即 ALIYUN_REGISTRY<br />\nshrimp-images 即 ALIYUN_NAME_SPACE<br />\nalpine 即images.txt里面填的镜像</p>\n            <p><small>27 个帖子 - 23 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108014">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p>使用Github Action将DockerHub镜像转存到阿里云私有仓库，供国内服务器使用，免费易用</p>\n<p>视频教程：<a class="inline-onebox" href="https://www.bilibili.com/video/BV1Zn4y19743/" rel="noopener nofollow ugc">Docker镜像停服? 我编写了一个镜像转存工具，解决国内无法使用docker的问题_哔哩哔哩_bilibili</a></p>\n<p>项目地址   <a href="https://github.com/tech-shrimp/docker_image_pusher" rel="noopener nofollow ugc">https://github.com/tech-shrimp/docker_image_pusher</a></p>\n<h2><a class="anchor" href="https://linux.do#h-1" name="h-1"></a>使用方式</h2>\n<h3><a class="anchor" href="https://linux.do#h-2" name="h-2"></a>配置阿里云</h3>\n<p>登录阿里云容器镜像服务</p>\n<p><a href="https://cr.console.aliyun.com" rel="noopener nofollow ugc">https://cr.console.aliyun.com</a></p>\n<p>启用个人实例，创建一个命名空间（<strong>ALIYUN_NAME_SPACE</strong>）<br />\n</p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/d/2/d2900901ef66dabb1ee7d94f0a78088ddd74cb12.png" title="命名空间"><img alt="命名空间" height="395" src="https://cdn.linux.do/uploads/default/original/3X/d/2/d2900901ef66dabb1ee7d94f0a78088ddd74cb12.png" width="690" /></a></div><p></p>\n<p>访问凭证–&gt;获取环境变量<br />\n用户名（<strong>ALIYUN_REGISTRY_USER</strong>)<br />\n密码（<strong>ALIYUN_REGISTRY_PASSWORD</strong>)<br />\n仓库地址（<strong>ALIYUN_REGISTRY</strong>）</p>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/1/4/14ac5a5e096696d73f7151a8ab13f69b3c82d9eb.jpeg" title="用户名密码"><img alt="用户名密码" height="317" src="https://cdn.linux.do/uploads/default/optimized/3X/1/4/14ac5a5e096696d73f7151a8ab13f69b3c82d9eb_2_690x317.jpeg" width="690" /></a></div><p></p>\n<h3><a class="anchor" href="https://linux.do#fork-3" name="fork-3"></a>Fork本项目</h3>\n<p>Fork本项目<br />\n进入您自己的项目，点击Action，启用Github Action功能 配置环境变量，进入Settings-&gt;Secret and variables-&gt;Actions-&gt;New Repository secret</p>\n<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/d/8/d87c933084fa03ba279ae08b4299f4c15aa0f9a9.png" title="配置环境变量"><img alt="配置环境变量" height="360" src="https://cdn.linux.do/uploads/default/optimized/3X/d/8/d87c933084fa03ba279ae08b4299f4c15aa0f9a9_2_690x360.png" width="690" /></a></div><p></p>\n<p>将上一步的 ALIYUN_NAME_SPACE，ALIYUN_REGISTRY_USER，ALIYUN_REGISTRY_PASSWORD，ALIYUN_REGISTRY 的值配置成环境变量</p>\n<h3><a class="anchor" href="https://linux.do#h-4" name="h-4"></a>添加镜像</h3>\n<p>打开images.txt文件，添加你想要的镜像，可以带tag，也可以不用（默认latest） 文件提交后自动进入Github Action构建</p>\n<h3><a class="anchor" href="https://linux.do#h-5" name="h-5"></a>使用镜像</h3>\n<p>回到阿里云，镜像仓库。点击任意镜像，可查看镜像状态。可将镜像改成公开（免登录拉取）<br />\n</p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/a/3/a3abe7f615a4edae2f852c891eb652ae138b5182.png" title="开始使用"><img alt="开始使用" height="299" src="https://cdn.linux.do/uploads/default/optimized/3X/a/3/a3abe7f615a4edae2f852c891eb652ae138b5182_2_690x299.png" width="690" /></a></div><p></p>\n<p>在国内服务器pull镜像：</p>\n<pre><code class="lang-auto">docker pull registry.cn-hangzhou.aliyuncs.com/shrimp-images/alpine\n</code></pre>\n<p><a href="http://registry.cn-hangzhou.aliyuncs.com" rel="noopener nofollow ugc">registry.cn-hangzhou.aliyuncs.com</a> 即 ALIYUN_REGISTRY<br />\nshrimp-images 即 ALIYUN_NAME_SPACE<br />\nalpine 即images.txt里面填的镜像</p>\n            <p><small>27 个帖子 - 23 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108014">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108014"
+}
+],
+"link": "https://linux.do/t/topic/108014",
+"published": "Sun, 09 Jun 2024 03:26:54 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=3,
+tm_min=26,
+tm_sec=54,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108014",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108014.rss",
+"title": "使用Github Action将DockerHub镜像转存到阿里云私有仓库,供国内服务器使用，免费易用"
+}
+},
+{
+"title": "端午来女朋友家.6日游",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "端午来女朋友家.6日游"
+},
+"authors": [
+{
+"name": "WIlson"
+}
+],
+"author": "WIlson",
+"author_detail": {
+"name": "WIlson"
+},
+"tags": [
+{
+"term": "搞七捻三",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p>rt ，女朋友是桂林的，这里风景真是太好了！！！果然还是在这里的农村舒服呀jpeg)<br />\n</p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/7/8/78ceac97c0cb812aa684362fae8e5f70a0254bc3.jpeg" title="IMG_6814"><img alt="IMG_6814" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/7/8/78ceac97c0cb812aa684362fae8e5f70a0254bc3_2_666x500.jpeg" width="666" /></a></div><br />\n<div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/8/4/84240a72a844687c773c773cf9b8c518158dfc45.jpeg" title="IMG_6816"><img alt="IMG_6816" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/8/4/84240a72a844687c773c773cf9b8c518158dfc45_2_281x500.jpeg" width="281" /></a></div><br />\n<div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/2/7/27b49cad31195197552f8eb5779a6623a9d00a44.jpeg" title="IMG_6827"><img alt="IMG_6827" height="388" src="https://cdn.linux.do/uploads/default/optimized/3X/2/7/27b49cad31195197552f8eb5779a6623a9d00a44_2_690x388.jpeg" width="690" /></a></div><br />\n<div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/0/0/00d93ce7d47bb3c5e730e3ec80fab698127de8ad.jpeg" title="IMG_6832"><img alt="IMG_6832" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/0/0/00d93ce7d47bb3c5e730e3ec80fab698127de8ad_2_281x500.jpeg" width="281" /></a></div><p></p>\n            <p><small>43 个帖子 - 22 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108011">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p>rt ，女朋友是桂林的，这里风景真是太好了！！！果然还是在这里的农村舒服呀jpeg)<br />\n</p><div class="lightbox-wrapper"><a class="lightbox" href="https: //cdn.linux.do/uploads/default/original/3X/7/8/78ceac97c0cb812aa684362fae8e5f70a0254bc3.jpeg" title="IMG_6814"><img alt="IMG_6814" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/7/8/78ceac97c0cb812aa684362fae8e5f70a0254bc3_2_666x500.jpeg" width="666" /></a></div><br />\n<div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/8/4/84240a72a844687c773c773cf9b8c518158dfc45.jpeg" title="IMG_6816"><img alt="IMG_6816" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/8/4/84240a72a844687c773c773cf9b8c518158dfc45_2_281x500.jpeg" width="281" /></a></div><br />\n<div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/2/7/27b49cad31195197552f8eb5779a6623a9d00a44.jpeg" title="IMG_6827"><img alt="IMG_6827" height="388" src="https://cdn.linux.do/uploads/default/optimized/3X/2/7/27b49cad31195197552f8eb5779a6623a9d00a44_2_690x388.jpeg" width="690" /></a></div><br />\n<div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/0/0/00d93ce7d47bb3c5e730e3ec80fab698127de8ad.jpeg" title="IMG_6832"><img alt="IMG_6832" height="500" src="https://cdn.linux.do/uploads/default/optimized/3X/0/0/00d93ce7d47bb3c5e730e3ec80fab698127de8ad_2_281x500.jpeg" width="281" /></a></div><p></p>\n            <p><small>43 个帖子 - 22 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108011">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108011"
+}
+],
+"link": "https://linux.do/t/topic/108011",
+"published": "Sun, 09 Jun 2024 03:24:33 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=3,
+tm_min=24,
+tm_sec=33,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108011",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108011.rss",
+"title": "端午来女朋友家.6日游"
+}
+},
+{
+"title": "我觉着我爱上LINUX.DO了",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "我觉着我爱上LINUX.DO了"
+},
+"authors": [
+{
+"name": "马哥-扫地僧"
+}
+],
+"author": "马哥-扫地僧",
+"author_detail": {
+"name": "马哥-扫地僧"
+},
+"tags": [
+{
+"term": "病友",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p>注册论坛34天水到前一百，我觉着我爱上LINUX.DO了<br />\n</p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/c/7/c733b922c4a5ed158716ac1243646d83490c5a2f.jpeg" title="1717902706379"><img alt="1717902706379" height="242" src="https://cdn.linux.do/uploads/default/optimized/3X/c/7/c733b922c4a5ed158716ac1243646d83490c5a2f_2_345x242.jpeg" width="345" /></a></div><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/b/c/bc6f71fe16aa0fcd16975bc5093773e0f339c8dc.png" title="1717902731837"><img alt="1717902731837" height="250" src="https://cdn.linux.do/uploads/default/optimized/3X/b/c/bc6f71fe16aa0fcd16975bc5093773e0f339c8dc_2_216x250.png" width="216" /></a></div><p></p>\n            <p><small>40 个帖子 - 27 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108010">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p>注册论坛34天水到前一百，我觉着我爱上LINUX.DO了<br />\n</p><div class="lightbox-wrapper"><a class="lightbox" href="https: //cdn.linux.do/uploads/default/original/3X/c/7/c733b922c4a5ed158716ac1243646d83490c5a2f.jpeg" title="1717902706379"><img alt="1717902706379" height="242" src="https://cdn.linux.do/uploads/default/optimized/3X/c/7/c733b922c4a5ed158716ac1243646d83490c5a2f_2_345x242.jpeg" width="345" /></a></div><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn.linux.do/uploads/default/original/3X/b/c/bc6f71fe16aa0fcd16975bc5093773e0f339c8dc.png" title="1717902731837"><img alt="1717902731837" height="250" src="https://cdn.linux.do/uploads/default/optimized/3X/b/c/bc6f71fe16aa0fcd16975bc5093773e0f339c8dc_2_216x250.png" width="216" /></a></div><p></p>\n            <p><small>40 个帖子 - 27 位参与者</small></p>\n            <p><a href="https://linux.do/t/topic/108010">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108010"
+}
+],
+"link": "https://linux.do/t/topic/108010",
+"published": "Sun, 09 Jun 2024 03:14:10 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=3,
+tm_min=14,
+tm_sec=10,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108010",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108010.rss",
+"title": "我觉着我爱上LINUX.DO了"
+}
+},
+{
+"title": "没有车，支付宝加油券都没地方花，血亏",
+"title_detail": {
+"type": "text/plain",
+"language": null,
+"base": "",
+"value": "没有车，支付宝加油券都没地方花，血亏"
+},
+"authors": [
+{
+"name": "idontwant"
+}
+],
+"author": "idontwant",
+"author_detail": {
+"name": "idontwant"
+},
+"tags": [
+{
+"term": "病友",
+"scheme": null,
+"label": null
+}
+],
+"summary": "<p>套现又可能被封：（</p>\n            <p><small>10 个帖子 - 10 位参与者</small></p>\n            <p><a href="https: //linux.do/t/topic/108008">阅读完整话题</a></p>",
+"summary_detail": {
+"type": "text/html",
+"language": null,
+"base": "",
+"value": "<p>套现又可能被封：（</p>\n            <p><small>10 个帖子 - 10 位参与者</small></p>\n            <p><a href="https: //linux.do/t/topic/108008">阅读完整话题</a></p>"
+},
+"links": [
+{
+"rel": "alternate",
+"type": "text/html",
+"href": "https://linux.do/t/topic/108008"
+}
+],
+"link": "https://linux.do/t/topic/108008",
+"published": "Sun, 09 Jun 2024 03:11:47 +0000",
+"published_parsed": time.struct_time(tm_year=2024,
+tm_mon=6,
+tm_mday=9,
+tm_hour=3,
+tm_min=11,
+tm_sec=47,
+tm_wday=6,
+tm_yday=161,
+tm_isdst=0),
+"discourse_topicpinned": "No",
+"discourse_topicclosed": "No",
+"discourse_topicarchived": "No",
+"id": "linux.do-topic-108008",
+"guidislink": false,
+"source": {
+"href": "https://linux.do/t/topic/108008.rss",
+"title": "没有车，支付宝加油券都没地方花，血亏"
+}
+}
+
+
