@@ -30,7 +30,7 @@ def keep_alive(ctyun, retries=3, delay=10):
     app_model_value = "2"
     device_code_value = ctyun["deviceCode"]
     device_type_value = "60"
-    request_id_value = "1704522993726"
+    request_id_value = "1718366052351"
     tenant_id_value = "15"
     timestamp_value = str(int(time.time() * 1000))
     userid_value = ctyun["userid"]
@@ -55,7 +55,9 @@ def keep_alive(ctyun, retries=3, delay=10):
         'ctg-tenantid': tenant_id_value,
         'ctg-timestamp': timestamp_value,
         'ctg-userid': userid_value,
-        'ctg-version': version_value
+        'ctg-version': version_value,
+        'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+                      "Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0",
     }
 
     # 发起POST请求连接云电脑
@@ -98,6 +100,7 @@ def main():
     for ctyun in ctyuns:
         try:
             data = keep_alive(ctyun)
+            # print(data)
             code = data["code"]
             if code == 0:
                 # cf_worker(f"{ctyun['objId']} 保活成功")
