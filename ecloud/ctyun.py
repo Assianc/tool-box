@@ -4,7 +4,7 @@ import time
 from environs import Env
 
 
-def keep_alive(ctyun, retries=3, delay=10):
+def keep_alive(ctyun, user_data, retries=3, delay=10):
     # 设置API的URL和路径
     url = "https://desk.ctyun.cn:8810/api/"
     computer_connect = "desktop/client/connect"
@@ -33,9 +33,9 @@ def keep_alive(ctyun, retries=3, delay=10):
     request_id_value = "1718366052351"
     tenant_id_value = "15"
     timestamp_value = str(int(time.time() * 1000))
-    userid_value = ctyun["userid"]
+    userid_value = str(user_data["userId"])
     version_value = "201360101"
-    secret_key_value = ctyun["secret_key"]
+    secret_key_value = user_data["secretKey"]
 
     # 创建签名字符串
     signature_str = device_type_value + request_id_value + tenant_id_value + timestamp_value + userid_value + version_value + secret_key_value
@@ -65,6 +65,7 @@ def keep_alive(ctyun, retries=3, delay=10):
         try:
             response = requests.post(url + computer_connect, data=device_info, headers=headers, timeout=30)
             response.raise_for_status()
+            # print(response.json())
             return response.json()
         except requests.exceptions.ConnectTimeout:
             if attempt < retries - 1:
@@ -93,19 +94,76 @@ def cf_worker(message, method="qywx", api_type="default", msgtype="text", worker
     print(response.text)
 
 
+def sha256(password):
+    sha256 = hashlib.sha256()
+    sha256.update(password.encode('utf-8'))
+    return sha256.hexdigest()
+
+
+def login(ctyun):
+    headers = {
+        'ctg-appmodel': '2',
+        'ctg-devicecode': ctyun["deviceCode"],
+        'ctg-devicetype': '60',
+        'ctg-requestid': '1718366047928',
+        'ctg-timestamp': str(int(time.time() * 1000)),
+        'ctg-version': '201360101',
+        'dnt': '1',
+        'origin': 'https://pc.ctyun.cn',
+        'priority': 'u=1, i',
+        'referer': 'https://pc.ctyun.cn/',
+        'sec-ch-ua': '"Microsoft Edge";v="125", "Chromium";v="125", "Not.A/Brand";v="24"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'sec-gpc': '1',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0',
+    }
+
+    account = ctyun["account"]
+    password = sha256(ctyun["password"])
+
+    data = {
+        'userAccount': account,
+        'password': password,
+        'sha256Password': password,
+        'deviceCode': ctyun["deviceCode"],
+        'deviceName': 'Edge浏览器',
+        'deviceType': '60',
+        'deviceModel': 'Windows NT 10.0; Win64; x64',
+        'appVersion': '1.36.1',
+        'sysVersion': 'Windows NT 10.0; Win64; x64',
+        'clientVersion': '201360101',
+    }
+
+    response = requests.post('https://desk.ctyun.cn:8810/api/auth/client/login', headers=headers, data=data)
+
+    data = response.json()
+    user_data = {}
+    if data["code"] == 0:
+        user_data["userId"] = data["data"]["userId"]
+        user_data["secretKey"] = data["data"]["secretKey"]
+        return user_data
+    else:
+        cf_worker(f"登录失败：{data}")
+        return None
+
+
 def main():
     env = Env()
     env.read_env()
     ctyuns = env.json("CTYUN")
     for ctyun in ctyuns:
         try:
-            data = keep_alive(ctyun)
+            user_data = login(ctyun)
+            if user_data is None:
+                continue
+            data = keep_alive(ctyun, user_data)
             # print(data)
             code = data["code"]
-            if code == 0:
-                # cf_worker(f"{ctyun['objId']} 保活成功")
-                pass
-            else:
+            if code != 0:
                 cf_worker(f"保活失败：{data}")
         except Exception as e:
             cf_worker(f"保活失败：{e}")
