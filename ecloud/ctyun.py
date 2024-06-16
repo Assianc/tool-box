@@ -75,23 +75,17 @@ def keep_alive(ctyun, user_data, retries=3, delay=10):
                 raise "连接超时"
 
 
-def cf_worker(message, method="qywx", api_type="default", msgtype="text", worker_url="https://qyapi.bxin.top/msg",
-              webhook=None):
-    # 构建POST请求的数据
+def cf_msg(message, method="qywx", webhook="H", type="text", worker_url="https://api.xbxin.com/msg", ):
     data = {
         "method": method,
         "content": {
-            "type": api_type,
-            "msgtype": msgtype,
-            "message": message,
             "webhook": webhook,
+            "type": type,
+            "message": message,
         },
     }
 
-    # 发送POST请求到Cloudflare Worker
-    response = requests.post(worker_url, json=data)
-
-    print(response.text)
+    requests.post(worker_url, json=data)
 
 
 def sha256(password):
@@ -147,7 +141,7 @@ def login(ctyun):
         user_data["secretKey"] = data["data"]["secretKey"]
         return user_data
     else:
-        cf_worker(f"登录失败：{data}")
+        cf_msg(f"登录失败：{data}")
         return None
 
 
@@ -164,9 +158,9 @@ def main():
             # print(data)
             code = data["code"]
             if code != 0:
-                cf_worker(f"保活失败：{data}")
+                cf_msg(f"保活失败：{data}")
         except Exception as e:
-            cf_worker(f"保活失败：{e}")
+            cf_msg(f"保活失败：{e}")
 
 
 if __name__ == '__main__':

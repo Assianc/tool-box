@@ -118,7 +118,7 @@ def login(username, password):
         s.get(redirect_url)
         return s
     except Exception as e:
-        cf_worker(f"天翼云签到登录失败{str(e)}")
+        cf_msg(f"天翼云签到登录失败{str(e)}")
         return None
 
 
@@ -159,26 +159,20 @@ def main():
 
             content += f"\n抽奖获得{description}"
 
-    cf_worker(content)
+    cf_msg(content)
 
 
-def cf_worker(message, method="qywx", api_type="default", msgtype="text", worker_url="https://qyapi.bxin.top/msg",
-              webhook=None):
-    # 构建POST请求的数据
+def cf_msg(message, method="qywx", webhook="H", type="text", worker_url="https://api.xbxin.com/msg", ):
     data = {
         "method": method,
         "content": {
-            "type": api_type,
-            "msgtype": msgtype,
-            "message": message,
             "webhook": webhook,
+            "type": type,
+            "message": message,
         },
     }
 
-    # 发送POST请求到Cloudflare Worker
-    response = requests.post(worker_url, json=data)
-
-    print(response.text)
+    requests.post(worker_url, json=data)
 
 
 if __name__ == "__main__":

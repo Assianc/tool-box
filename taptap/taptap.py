@@ -45,23 +45,17 @@ def getdata():
     return response.json()
 
 
-def cf_worker(message, method="qywx", api_type="default", msgtype="text", worker_url="https://qyapi.bxin.top/msg",
-              webhook=None):
-    # 构建POST请求的数据
+def cf_msg(message, method="qywx", webhook="H", type="text", worker_url="https://api.xbxin.com/msg", ):
     data = {
         "method": method,
         "content": {
-            "type": api_type,
-            "msgtype": msgtype,
-            "message": message,
             "webhook": webhook,
+            "type": type,
+            "message": message,
         },
     }
 
-    # 发送POST请求到Cloudflare Worker
-    response = requests.post(worker_url, json=data)
-
-    print(response.text)
+    requests.post(worker_url, json=data)
 
 
 def create_message(data):
@@ -70,7 +64,7 @@ def create_message(data):
 
     now = datetime.datetime.now()
     content = f"游戏时间：{time}\n昵称：{name}\n查询时间：{now.strftime('%Y-%m-%d %H:%M:%S')}"
-    cf_worker(content)
+    cf_msg(content)
 
 
 def main():

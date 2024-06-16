@@ -26,19 +26,17 @@ def fetch_rss_feed(url, retries=2, timeout=10):
             time.sleep(2)
 
 
-def msg(message, method="qywx", webhook="H", msgtype="text", worker_url="https://api.bxin.top/msg"):
-    # 构建POST请求的数据
+def cf_msg(message, method="qywx", webhook="H", type="text", worker_url="https://api.xbxin.com/msg", ):
     data = {
         "method": method,
         "content": {
             "webhook": webhook,
-            "type": msgtype,
-            "message": message
+            "type": type,
+            "message": message,
         },
     }
 
-    response = requests.post(worker_url, json=data)
-    print(response)
+    requests.post(worker_url, json=data)
 
 
 def main():
@@ -80,7 +78,7 @@ def main():
                 post_id = int(parts[-1])
 
                 if post_id > latest:
-                    msg(post_data)
+                    cf_msg(post_data)
                     print(post_data)
                 else:
                     break
