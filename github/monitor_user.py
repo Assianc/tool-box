@@ -101,7 +101,7 @@ def monitor_user_updates(users, latest_ids):
                         # 未处理
                         message += f"未处理：{event['payload']}"
 
-                    messages += message + "\n——————————"
+                    messages += message + "\n——————————\n"
             new_event_ids[user] = new_event_id
         cf_msg(messages)
     return new_event_ids
