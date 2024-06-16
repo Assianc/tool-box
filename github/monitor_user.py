@@ -82,6 +82,7 @@ def monitor_user_updates(users, latest_ids):
                         break
 
                     created_at = event['created_at']
+                    created_at = created_at.replace('T', ' ').replace('Z', '')
                     event_type = event['type']
                     repo = event['repo']['name']
 
