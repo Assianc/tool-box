@@ -1,12 +1,11 @@
-name: 'cust-schedule'
+name: 189 Cloud Check-in
 
 on:
   schedule:
-    - cron: '0 12 * * *'
+    - cron: '0 0 * * *'
 
 jobs:
   build:
-    if: false
     runs-on: ubuntu-latest
 
     steps:
@@ -18,9 +17,9 @@ jobs:
           python-version: '3.x'
 
       - name: 'Install dependencies'
-        run: pip install -r cust/requirements.txt
+        run: pip install -r 189/requirements.txt
+
       - name: 'Run script'
         env:
-          GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
-          PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
-        run: python cust/schedule.py
+          TY_CLOUD: ${{ secrets.TY_CLOUD }}
+        run: python 189/cloud_check_in.py

@@ -1,30 +1,21 @@
-import os
 import time
 import re
 import base64
 import hashlib
 import rsa
 import requests
-from dotenv import load_dotenv
-
-load_dotenv()
-# 在下面两行的引号内贴上账号（仅支持手机号）和密码
-username = os.environ['ECLOUD_USERNAME']
-password = os.environ['ECLOUD_PASSWORD']
-
-assert username and password, "请填入有效账号和密码"
-
-BI_RM = list("0123456789abcdefghijklmnopqrstuvwxyz")
-B64MAP = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+from environs import Env
 
 s = requests.Session()
 
 
 def int2char(a):
-    return BI_RM[a]
+    base36_chars = list("0123456789abcdefghijklmnopqrstuvwxyz")
+    return base36_chars[a]
 
 
 def b64tohex(a):
+    B64MAP = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
     d = ""
     e = 0
     c = 0
@@ -66,7 +57,8 @@ def calculate_md5_sign(params):
 
 def login(username, password):
     try:
-        urlToken = "https://m.cloud.189.cn/udb/udb_login.jsp?pageId=1&pageKey=default&clientType=wap&redirectURL=https://m.cloud.189.cn/zhuanti/2021/shakeLottery/index.html"
+        urlToken = ("https://m.cloud.189.cn/udb/udb_login.jsp?pageId=1&pageKey=default&clientType=wap&redirectURL"
+                    "=https://m.cloud.189.cn/zhuanti/2021/shakeLottery/index.html")
         r = s.get(urlToken)
         pattern = r"https?://[^\s'\"]+"  # 匹配以http或https开头的url
         match = re.search(pattern, r.text)  # 在文本中搜索匹配
@@ -122,14 +114,15 @@ def login(username, password):
         return None
 
 
-def main():
+def check_in(username, password):
     s = login(username, password)
     if not s:
         print("登录失败")
         return
 
     rand = str(round(time.time() * 1000))
-    surl = f'https://api.cloud.189.cn/mkt/userSign.action?rand={rand}&clientType=TELEANDROID&version=8.6.3&model=SM-G930K'
+    surl = (f'https://api.cloud.189.cn/mkt/userSign.action?rand={rand}&clientType=TELEANDROID&version=8.6.3&model=SM'
+            f'-G930K')
     url_list = [
         'https://m.cloud.189.cn/v2/drawPrizeMarketDetails.action?taskId=TASK_SIGNIN&activityId=ACT_SIGNIN',
         'https://m.cloud.189.cn/v2/drawPrizeMarketDetails.action?taskId=TASK_SIGNIN_PHOTOS&activityId=ACT_SIGNIN',
@@ -173,6 +166,16 @@ def cf_msg(message, method="qywx", webhook="H", type="text", worker_url="https:/
     }
 
     requests.post(worker_url, json=data)
+
+
+def main():
+    env = Env()
+    env.read_env()
+    userList = env.json("TY_CLOUD")
+    for user in userList:
+        username = user['username']
+        password = user['password']
+        check_in(username, password)
 
 
 if __name__ == "__main__":
