@@ -2,7 +2,8 @@ import requests
 import json
 import os
 from environs import Env
-
+from datetime import datetime
+import pytz
 
 def read_latest_ids(data_file):
     """
@@ -82,11 +83,15 @@ def monitor_user_updates(users, latest_ids):
                         break
 
                     created_at = event['created_at']
-                    created_at = created_at.replace('T', ' ').replace('Z', '')
+
+                    utc_date_object = datetime.strptime(created_at, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=pytz.UTC)
+                    shanghai_tz = pytz.timezone('Asia/Shanghai')
+                    shanghai_date_object = utc_date_object.astimezone(shanghai_tz).replace(tzinfo=None)
+
                     event_type = event['type']
                     repo = event['repo']['name']
 
-                    message = f"{created_at}\n仓库：{repo}\n"
+                    message = f"{shanghai_date_object}\n仓库：{repo}\n"
                     if event_type == 'PushEvent':
                         # 提交信息
                         message += f"提交信息：{event['payload']['commits'][0]['message']}"
