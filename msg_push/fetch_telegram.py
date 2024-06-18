@@ -1,4 +1,5 @@
 import re
+import time
 
 import feedparser
 import requests
@@ -52,12 +53,12 @@ def send_linux_do(entry):
 
     clean_text = soup.get_text()
     clean_text = unescape(clean_text)
-    print(clean_text)
+    # print(clean_text)
     content_match = re.search(r"发帖\s*(.*)", clean_text, re.DOTALL)
 
     if content_match:
         clean_text = content_match.group(1).strip()
-    print(clean_text)
+    # print(clean_text)
     msg = f"{title}\n\n{entry.link}\n\n{str(clean_text)}"
     cf_msg(msg)
 
@@ -106,6 +107,7 @@ def main():
     last_post = read_last_post(post_file)
 
     for rss in rss_list:
+        time.sleep(2)
         last = last_post.get(rss)
 
         last = fetch_rss(rss, last)
