@@ -25,9 +25,9 @@ jobs:
 
       - name: Update data
         run: |
-          mkdir -p data
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
+          git pull
           git add -A
           git commit -m "ci: update data (automatically)" || exit 0
           git push
