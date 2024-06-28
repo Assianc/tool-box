@@ -1,7 +1,6 @@
 ### 实现功能
 
 - [ ] Cloudflare IP优选并修改DNS
-- [ ] Gemini Pro 聊天
 - [ ] 每日课表推送
 - [ ] 天翼云盘每日签到
 - [ ] Excel数据映射到地图中
@@ -11,8 +10,6 @@
     - [ ] Pushplus
     - [ ] 邮箱
 - [ ] TapTap 查询个人信息
-- [ ] uuid 生成
-- [ ] Python 依赖更新
 - [ ] pdf转word
 - [x] 获取bing每日图片并下载 bing/pic.py
 

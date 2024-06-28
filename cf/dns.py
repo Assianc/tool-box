@@ -1,4 +1,3 @@
-import os
 import traceback
 
 import requests
@@ -67,21 +66,15 @@ def update_dns_record(record_id, name, cf_ip, cf):
             return f"ip {cf_ip} 解析失败：{response.text}"
 
 
-def msg(message, method="qywx", api_type="default", msgtype="text", worker_url="https://qyapi.bxin.top/msg",
-        webhook=None):
-    # 构建POST请求的数据
+def send_msg(message, action="qywx", webhook="H", msg_type="text", url="https://api.xbxin.com/msg"):
     data = {
-        "method": method,
-        "content": {
-            "type": api_type,
-            "msgtype": msgtype,
-            "message": message,
-            "webhook": webhook,
-        },
+        "message": message,
+        "action": action,
+        "webhook": webhook,
+        "msg_type": msg_type,
     }
 
-    # 发送POST请求到Cloudflare Worker
-    requests.post(worker_url, json=data)
+    requests.post(url, json=data)
 
 
 # 主函数
@@ -108,7 +101,7 @@ def main():
                 content += f'{dns}\n'
 
         if content:
-            msg(content)
+            send_msg(content)
 
 
 if __name__ == '__main__':

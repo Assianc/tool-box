@@ -1,15 +1,12 @@
-name: Monitor User
+name: Linux DO Push Post
 
 on:
   schedule:
-    - cron: '*/90 * * * *'
-#  watch:
-#    types: started
-
-
+    - cron: '*/30 * * * *'
 
 jobs:
   build:
+    if: false
     runs-on: ubuntu-latest
 
     steps:
@@ -21,12 +18,10 @@ jobs:
           python-version: '3.x'
 
       - name: 'Install dependencies'
-        run: pip install -r github/requirements.txt
+        run: pip install -r linuxdo/requirements.txt
 
       - name: 'Run script'
-        env:
-          PERSONAL_ACCESS_TOKEN: ${{ secrets.PersonalAccessToken }}
-        run: python github/monitor_user.py
+        run: python linuxdo/pushpost.py
 
       - name: Update data
         run: |
