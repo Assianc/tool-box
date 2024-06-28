@@ -66,17 +66,15 @@ def update_dns_record(record_id, name, cf_ip, cf):
             return f"ip {cf_ip} 解析失败：{response.text}"
 
 
-def cf_msg(message, method="qywx", webhook="H", type="text", worker_url="https://api.xbxin.com/msg", ):
+def send_msg(message, action="qywx", webhook="H", msg_type="text", url="https://api.xbxin.com/msg"):
     data = {
-        "method": method,
-        "content": {
-            "webhook": webhook,
-            "type": type,
-            "message": message,
-        },
+        "message": message,
+        "action": action,
+        "webhook": webhook,
+        "msg_type": msg_type,
     }
 
-    requests.post(worker_url, json=data)
+    requests.post(url, json=data)
 
 
 # 主函数
@@ -103,7 +101,7 @@ def main():
                 content += f'{dns}\n'
 
         if content:
-            cf_msg(content)
+            send_msg(content)
 
 
 if __name__ == '__main__':

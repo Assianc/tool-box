@@ -61,17 +61,15 @@ def parse(courses):
     return content
 
 
-def cf_msg(message, method="qywx", webhook="H", type="text", worker_url="https://api.xbxin.com/msg", ):
+def send_msg(message, action="qywx", webhook="H", msg_type="text", url="https://api.xbxin.com/msg"):
     data = {
-        "method": method,
-        "content": {
-            "webhook": webhook,
-            "type": type,
-            "message": message,
-        },
+        "message": message,
+        "action": action,
+        "webhook": webhook,
+        "msg_type": msg_type,
     }
 
-    requests.post(worker_url, json=data)
+    requests.post(url, json=data)
 
 
 def main():
@@ -85,7 +83,7 @@ def main():
     if content is None:
         content = '明天没课啦'
 
-    cf_msg(content,webhook='M')
+    send_msg(content, webhook='M')
 
 
 if __name__ == '__main__':

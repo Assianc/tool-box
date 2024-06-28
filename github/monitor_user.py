@@ -41,7 +41,7 @@ def fetch_latest_events(user):
     if response.status_code == 200:
         return response.json()
     else:
-        cf_msg(f"Error fetching events for {user}: {response.status_code}")
+        send_msg(f"Error fetching events for {user}: {response.status_code}")
         return []
 
 
@@ -109,21 +109,19 @@ def monitor_user_updates(users, latest_ids):
 
                     messages += message + "\n——————————\n"
             new_event_ids[user] = new_event_id
-        cf_msg(messages)
+        send_msg(messages)
     return new_event_ids
 
 
-def cf_msg(message, method="qywx", webhook="H", type="text", worker_url="https://api.xbxin.com/msg", ):
+def send_msg(message, action="qywx", webhook="H", msg_type="text", url="https://api.xbxin.com/msg"):
     data = {
-        "method": method,
-        "content": {
-            "webhook": webhook,
-            "type": type,
-            "message": message,
-        },
+        "message": message,
+        "action": action,
+        "webhook": webhook,
+        "msg_type": msg_type,
     }
 
-    requests.post(worker_url, json=data)
+    requests.post(url, json=data)
 
 
 def main():

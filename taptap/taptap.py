@@ -45,17 +45,15 @@ def getdata():
     return response.json()
 
 
-def cf_msg(message, method="qywx", webhook="H", type="text", worker_url="https://api.xbxin.com/msg", ):
+def send_msg(message, action="qywx", webhook="H", msg_type="text", url="https://api.xbxin.com/msg"):
     data = {
-        "method": method,
-        "content": {
-            "webhook": webhook,
-            "type": type,
-            "message": message,
-        },
+        "message": message,
+        "action": action,
+        "webhook": webhook,
+        "msg_type": msg_type,
     }
 
-    requests.post(worker_url, json=data)
+    requests.post(url, json=data)
 
 
 def create_message(data):
@@ -64,7 +62,7 @@ def create_message(data):
 
     now = datetime.datetime.now()
     content = f"游戏时间：{time}\n昵称：{name}\n查询时间：{now.strftime('%Y-%m-%d %H:%M:%S')}"
-    cf_msg(content)
+    send_msg(content)
 
 
 def main():

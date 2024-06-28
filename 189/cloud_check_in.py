@@ -110,7 +110,7 @@ def login(username, password):
         s.get(redirect_url)
         return s
     except Exception as e:
-        cf_msg(f"天翼云签到登录失败{str(e)}")
+        send_msg(f"天翼云签到登录失败{str(e)}")
         return None
 
 
@@ -152,20 +152,18 @@ def check_in(username, password):
 
             content += f"\n抽奖获得{description}"
 
-    cf_msg(content)
+    send_msg(content)
 
 
-def cf_msg(message, method="qywx", webhook="H", type="text", worker_url="https://api.xbxin.com/msg", ):
+def send_msg(message, action="qywx", webhook="H", msg_type="text", url="https://api.xbxin.com/msg"):
     data = {
-        "method": method,
-        "content": {
-            "webhook": webhook,
-            "type": type,
-            "message": message,
-        },
+        "message": message,
+        "action": action,
+        "webhook": webhook,
+        "msg_type": msg_type,
     }
 
-    requests.post(worker_url, json=data)
+    requests.post(url, json=data)
 
 
 def main():

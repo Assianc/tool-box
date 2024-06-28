@@ -75,17 +75,15 @@ def keep_alive(ctyun, user_data, retries=3, delay=10):
                 raise "连接超时"
 
 
-def cf_msg(message, method="qywx", webhook="H", type="text", worker_url="https://api.xbxin.com/msg", ):
+def send_msg(message, action="qywx", webhook="H", msg_type="text", url="https://api.xbxin.com/msg"):
     data = {
-        "method": method,
-        "content": {
-            "webhook": webhook,
-            "type": type,
-            "message": message,
-        },
+        "message": message,
+        "action": action,
+        "webhook": webhook,
+        "msg_type": msg_type,
     }
 
-    requests.post(worker_url, json=data)
+    requests.post(url, json=data)
 
 
 def sha256(password):
@@ -141,7 +139,7 @@ def login(ctyun):
         user_data["secretKey"] = data["data"]["secretKey"]
         return user_data
     else:
-        cf_msg(f"登录失败：{data}")
+        send_msg(f"登录失败：{data}")
         return None
 
 
@@ -158,9 +156,9 @@ def main():
             # print(data)
             code = data["code"]
             if code != 0:
-                cf_msg(f"保活失败：{data}")
+                send_msg(f"保活失败：{data}")
         except Exception as e:
-            cf_msg(f"保活失败：{e}")
+            send_msg(f"保活失败：{e}")
 
 
 if __name__ == '__main__':

@@ -35,7 +35,7 @@ def fetch_rss(rss, last):
 
 def send_push(entry):
     msg = f"{entry.title}\n\n{entry.link}\n\n{entry.description}"
-    cf_msg(msg)
+    send_msg(msg)
 
 
 def send_linux_do(entry):
@@ -60,7 +60,7 @@ def send_linux_do(entry):
         clean_text = content_match.group(1).strip()
     # print(clean_text)
     msg = f"{title}\n\n{entry.link}\n\n{str(clean_text)}"
-    cf_msg(msg)
+    send_msg(msg)
 
 
 def read_last_post(post_file):
@@ -88,17 +88,15 @@ def write_last_post(post_file, last_post):
             json.dump(last_post, file)
 
 
-def cf_msg(message, method="qywx", webhook="H", type="text", worker_url="https://api.xbxin.com/msg"):
-    # 构建POST请求的数据
+def send_msg(message, action="qywx", webhook="H", msg_type="text", url="https://api.xbxin.com/msg"):
     data = {
-        "method": method,
-        "content": {
-            "webhook": webhook,
-            "type": type,
-            "message": message,
-        },
+        "message": message,
+        "action": action,
+        "webhook": webhook,
+        "msg_type": msg_type,
     }
-    requests.post(worker_url, json=data)
+
+    requests.post(url, json=data)
 
 
 def main():
