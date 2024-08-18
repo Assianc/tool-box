@@ -107,17 +107,23 @@ def monitor_user_updates(users, latest_ids):
     return new_event_ids
 
 
-def cf_msg(message, method="qywx", webhook="H", type="text", worker_url="https://api.xbxin.com/msg", ):
-    data = {
-        "method": method,
-        "content": {
-            "webhook": webhook,
-            "type": type,
-            "message": message,
-        },
+def cf_msg(message, action="qywx", webhook="H", msg_type="text", url="https://api.xbxin.com/msg"):
+    env = Env()
+    env.read_env()
+    token = env.str("BX_TOKEN")
+
+    headers = {
+        'Authorization': f'Bearer {token}',
     }
 
-    requests.post(worker_url, json=data)
+    data = {
+        "message": message,
+        "action": action,
+        "webhook": webhook,
+        "msg_type": msg_type,
+    }
+
+    requests.post(url, json=data, headers=headers)
 
 
 def main():
