@@ -107,27 +107,20 @@ def monitor_user_updates(users, latest_ids):
     return new_event_ids
 
 
-def cf_msg(message, action="qywx", webhook="W", msg_type="text", url="https://api.xbxin.com/msg"):
-    env = Env()
-    env.read_env()
-    token = env.str("TOKEN")
-
-    headers = {
-        'Authorization': f'Bearer {token}',
-    }
+def cf_msg(message):
+    url = 'https://hono-kit.azure334792.workers.dev/msg/admin/corp'
 
     data = {
-        "message": message,
-        "action": action,
-        "webhook": webhook,
-        "msg_type": msg_type,
+        "title": "Github MSG",
+        "desc": "每日信息",
+        "content": message,
     }
 
-    requests.post(url, json=data, headers=headers)
+    requests.post(url, json=data)
 
 
 def main():
-    users = ['ZhouBinxin','sakura-ryoko','Fallen-Breath']  # GitHub 用户名列表
+    users = ['ZhouBinxin', 'sakura-ryoko', 'Fallen-Breath']  # GitHub 用户名列表
     data_file = 'data.json'
     latest_ids = read_latest_ids(data_file)
     new_latest_ids = monitor_user_updates(users, latest_ids)
